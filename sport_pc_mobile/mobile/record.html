@@ -1,0 +1,576 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="browsermode" content="application" />
+    <title>UP-Sport</title>
+    <link href="styles/main.css" rel="stylesheet" />
+	<!--色系-->
+    <link href="green/styles/green.css" rel="stylesheet" />
+</head>
+<body>
+    <!--表頭-->
+    <div class="header">
+        <a id="btn_popRecord_back" class="btn_back" style="display:none;"></a>
+        <a class="btn_update"></a>
+        <div class="header_T2">投注记录</div>
+        <a class="btn_closeRecord"></a>
+    </div>
+    <ul class="menuSub">
+        <li id="btn_betRecord_cash" class="on"><a>可兌現</a></li>
+        <!--未结算，如要显示数量a请增加class="showNum"-->
+        <li id="btn_betRecord_immed"><a class="showNum">未结算<span class="betRecord_num">99</span></a></li>
+        <li id="btn_betRecord_history"><a>已结算</a></li>
+        <li id="btn_betRecord_gift"><a>贈禮</a></li>
+    </ul>
+    <!--內容-->
+    <div class="popRecord">
+        <div id="open_betRecord_cash" class="popRecordC popRecordC_cash">
+            <div class="popRecordC_scroll">
+                
+                
+                
+                <ul class="popupC">
+                    <li class="popupC_T">
+                        <div class="popupC_T_text"><span class="t_blue">小</span> <div class="t_inlineBox"><span class="t_red">3.5</span> @ <span class="t_red">0.95</span></div></div>
+                        <div class="btn_popupC_arrow"></div>
+                    </li>
+                    <li>籃球 - [全场]</li>
+                    <li class="btn_link">費城76人<span class="t_orange">(主)</span><span class="t_gray"> VS </span>波士頓賽爾提克</li>
+                    <li class="popupC_data">
+                        <div class="multiRow"><div class="multiRow_T">聯盟：</div><div class="multiRow_In">NBA美國職業籃球</div></div>
+                        <div>下注：<span>10-22 10:59</span><span class="orderNum">1022105923485855</span></div>
+                        <div>比賽：<span>10-22 20:00</span></div>
+                        <div>賠率：<span>含本金</span></div>
+                    </li>
+                    <li>
+                        <div class="L48">投注額：<span class="t_blue">000000.00</span></div>
+                        <div class="R48">最高返還：<span class="t_red">255.55</span></div>
+                    </li>
+                    <li>
+                        投注後餘額：<span class="t_bold">000000000.00</span>
+                    </li>
+                    <li class="img_check" style="display: block;">已確認</li>
+                    <li class="cashContent">
+                        <!--兌現按鈕步驟-->
+                        <!--Step1-->
+                        <button class="btn_cash">兌現<span>84.60</span></button>
+                        <!--Step2-->
+                        <div class="cashBox" style="display:none;">
+                            <button class="btn_cashCancel">取消</button>
+                            <button class="btn_cashConfirm">確認<span>84.60</span></button>
+                        </div>
+                        <!--Step3-->
+                        <div class="cashLoad" style="display:none;">等待中</div>
+                        <!--Step4-->
+                        <!--<div class="cashOk" style="display:none;">兌現成功<span>84.60</span></div>-->
+                        <!--Step5-->
+                        <div class="cashBox" style="display:none;">
+                            <div class="cashNo">兌現失敗</div>
+                            <button class="btn_cashBack">返回</button>
+                        </div>
+                        <!--Step6-->
+                        <!--<div class="cashBox" style="display:none;">
+                            <button class="btn_cashCancel">取消</button>
+                            <button class="btn_cashChange">金額变动<span>999999.99</span></button>
+                        </div>-->
+                        <!--Step7-->
+                        <div class="cashStop" style="display:none;">无法兌現</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="open_betRecord_immed" class="popRecordC popRecordC_immed" style="display:none;">
+            <div class="popRecordC_scroll">
+                
+               
+                
+                <ul class="popupC">
+                    <li class="popupC_T">
+                        <div class="popupC_T_text"><span class="t_blue">小</span> <div class="t_inlineBox"><span class="t_red">3.5</span> @ <span class="t_red">0.95</span></div></div>
+                        <div class="btn_popupC_arrow"></div>
+                    </li>
+                    <li>籃球 - [全場]</li>
+                    <li class="btn_link">費城76人<span class="t_orange">(主)</span><span class="t_gray"> VS </span>波士頓賽爾提克</li>
+                    <li class="popupC_data">
+                        <div class="multiRow"><div class="multiRow_T">聯盟：</div><div class="multiRow_In">NBA美國職業籃球</div></div>
+                        <div>下注：<span>10-22 10:59</span><span class="orderNum">1022105923485855</span></div>
+                        <div>比賽：<span>10-22 20:00</span></div>
+                        <div>賠率：<span>含本金</span></div>
+                    </li>
+                    <li>
+                        <div class="L48">投注額：<span class="t_blue">000000.00</span></div>
+                        <div class="R48">最高返還：<span class="t_red">255.55</span></div>
+                    </li>
+                    <li>
+                        投注後餘額：<span class="t_bold">000000000.00</span>
+                    </li>
+                    <li class="img_refuse" style="display: none;">投注拒绝</li>
+                </ul>
+                
+            </div>
+            <ul class="popRecordB2">
+                <li>
+                    投注額：<div class="t_yellow">99999999</div>
+                </li>
+                <li>
+                    最高返還：<div class="t_red">99999999.00</div>
+                </li>
+            </ul>
+        </div>
+        <div id="open_betRecord_history" class="popRecordC" style="display:none;">
+            <div class="popRecordC_scroll">
+                <div id="OBE_step1">
+                    <table class="historyTable">
+                        <tr>
+                            <th class="HT_date">比賽日期</th>
+                            <th>投注金額</th>
+                            <th>返水</th>
+                            <th class="HT_result">结果</th>
+                        </tr>
+                    </table>
+                    <div class="btn_HT">早盤</div>
+                    <table class="historyTable" id="historyAdvance">
+                        <tr>
+                            <td class="HT_date">
+                                其它日期
+                            </td>
+                            <td>9999</td>
+                            <td><span class="t_green">0.99</span></td>
+                            <td class="HT_result"><a class="t_red">-99.90</a></td>
+                        </tr>
+                        <tr class="HT_total">
+                            <td class="HT_date">合計</td>
+                            <td>9999</td>
+                            <td><span class="t_green">0.99</span></td>
+                            <td class="HT_result"><span class="t_red">-999.90</span></td>
+                        </tr>
+                    </table>
+                    <div class="btn_HT">本周</div>
+                    <table class="historyTable">
+                        <tr>
+                            <td class="HT_date">
+                                10-23<br />
+                                星期二
+                            </td>
+                            <td>9999999</td>
+                            <td>999999.00</td>
+                            <td class="HT_result"><a>-9999999.00</a></td>
+                        </tr>
+                        <tr>
+                            <td class="HT_date">
+                                10-22<br />
+                                星期一
+                            </td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="HT_result"><a>0.00</a></td>
+                        </tr>
+                        <tr class="HT_total">
+                            <td class="HT_date">合計</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="HT_result">0.00</td>
+                        </tr>
+                    </table>
+                    <div class="btn_HT">上周</div>
+                    <table class="historyTable">
+                        <tr>
+                            <td class="HT_date">
+                                10-21<br />
+                                星期日
+                            </td>
+                            <td>000000000</td>
+                            <td><span class="t_green">999999.99</span></td>
+                            <td class="HT_result"><a>-999999.99</a></td>
+                        </tr>
+                        <tr>
+                            <td class="HT_date">
+                                10-20<br />
+                                星期六
+                            </td>
+                            <td>0</td>
+                            <td><span class="t_green">0.57</span></td>
+                            <td class="HT_result"><a class="t_red">-399.00</a></td>
+                        </tr>
+                        <tr>
+                            <td class="HT_date">
+                                10-19<br />
+                                星期五
+                            </td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="HT_result"><a>9.99</a></td>
+                        </tr>
+                        <tr>
+                            <td class="HT_date">
+                                10-18<br />
+                                星期四
+                            </td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="HT_result"><a class="t_green">999.00</a></td>
+                        </tr>
+                        <tr>
+                            <td class="HT_date">
+                                10-17<br />
+                                星期三
+                            </td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="HT_result"><a>9.09</a></td>
+                        </tr>
+                        <tr>
+                            <td class="HT_date">
+                                10-16<br />
+                                星期二
+                            </td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="HT_result"><a>9.09</a></td>
+                        </tr>
+                        <tr>
+                            <td class="HT_date">
+                                10-15<br />
+                                星期一
+                            </td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td class="HT_result"><a>9.09</a></td>
+                        </tr>
+                        <tr class="HT_total">
+                            <td class="HT_date">合計</td>
+                            <td>340</td>
+                            <td><span class="t_green">0.90</span></td>
+                            <td class="HT_result"><span class="t_red">-559.00</span></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="OBE_step2" style="display: none">
+                    <table class="historyTable">
+                        <tr>
+                            <th class="HT_date">10-23</th>
+                            <th>投注金額</th>
+                            <th>返水</th>
+                            <th class="HT_result">结果</th>
+                        </tr>
+                    </table>
+                    <table class="historyTable">
+                        <tr>
+                            <td class="HT_date">籃球</td>
+                            <td>000000000</td>
+                            <td><span class="t_green">000000.00</span></td>
+                            <td class="HT_result"><a class="t_blue">-99999999.00</a></td>
+                        </tr>
+                        <tr>
+                            <td class="HT_date">篮球</td>
+                            <td>40</td>
+                            <td><span class="t_green">0.12</span></td>
+                            <td class="HT_result"><a class="t_red">-40.00</a></td>
+                        </tr>
+                        <tr>
+                            <td class="HT_date">过关</td>
+                            <td>30</td>
+                            <td><span class="t_green">0.09</span></td>
+                            <td class="HT_result"><a class="t_green">30.00</a></td>
+                        </tr>
+                        <tr class="HT_total">
+                            <td class="HT_date">合計</td>
+                            <td>00000000</td>
+                            <td><span class="t_green">0.21</span></td>
+                            <td class="HT_result"><span class="t_red">-10.00</span></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="OBE_step3" style="display: none">
+                    <ul class="popupC">
+                        <li class="popupC_T">
+                            <div class="popupC_T_text"><spna class="t_blue">小</spna> <div class="t_inlineBox"><span class="t_red">222</span> @ <span class="t_red">1.07</span></div></div>
+                            <div class="btn_popupC_arrow"></div>
+                        </li>
+                        <li>籃球 - [全場]</li>
+                        <li class="btn_link">多倫多暴龍 <span class="t_orange">(主)</span><span class="t_gray"> VS </span>夏洛特黃蜂</li>
+                        <li>賽果：<span class="t_green">127 : 106</span></li>
+                        <li class="popupC_data">
+                            <div class="multiRow"><div class="multiRow_T">聯盟：</div><div class="multiRow_In">NBA美國職業籃球</div></div>
+                            <div>下注：<span>10-22 10:59</span><span class="orderNum">1022105923485855</span></div>
+                            <div>比賽：<span>10-22 20:00</span></div>
+                            <div>派彩：<span>10-22 20:00</span></div>
+                            <div>賠率：<span>含本金</span></div>
+                        </li>
+                        <li>
+                            <div class="L48">投注額：<span class="t_blue deleteLine">100.00</span></div>
+                            <div class="R48">返水：<span class="deleteLine">0.30</span></div>
+                        </li>
+                        <li>
+                            投注後餘額：<span class="t_bold deleteLine">000000000.00</span>
+                        </li>
+                        <li>
+                            <div class="L48">返還：<span>0.30</span></div>
+                            <div class="R48">结果：<span class="t_result t_green deleteLine">200.70</span></div>
+                        </li>
+                        <li class="btn_status_iG" style="display: block;">兌現成功<div class="statusInfo">07-30 00:30</div></li>
+                    </ul>
+                    <ul class="popupC">
+                        <li class="popupC_T">
+                            <div class="popupC_T_text"><spna class="t_blue">小</spna> <div class="t_inlineBox"><span class="t_red">222</span> @ <span class="t_red">1.07</span></div></div>
+                            <div class="btn_popupC_arrow"></div>
+                        </li>
+                        <li>籃球 - [全場]</li>
+                        <li class="btn_link">多倫多暴龍 <span class="t_orange">(主)</span><span class="t_gray"> VS </span>夏洛特黃蜂</li>
+                        <li>賽果：<span class="t_green">127 : 106</span></li>
+                        <li class="popupC_data">
+                            <div class="multiRow"><div class="multiRow_T">聯盟：</div><div class="multiRow_In">NBA美國職業籃球</div></div>
+                            <div>下注：<span>10-22 10:59</span><span class="orderNum">1022105923485855</span></div>
+                            <div>比賽：<span>10-22 20:00</span></div>
+                            <div>派彩：<span>10-22 20:00</span></div>
+                            <div>賠率：<span>含本金</span></div>
+                        </li>
+                        <li>
+                            <div class="L48">投注額：<span class="t_blue deleteLine">100.00</span></div>
+                            <div class="R48">返水：<span class="deleteLine">0.30</span></div>
+                        </li>
+                        <li>
+                            投注後餘額：<span class="t_bold deleteLine">000000000.00</span>
+                        </li>
+                        <li>
+                            <div class="L48">返還：<span>0.30</span></div>
+                            <div class="R48">结果：<span class="t_result t_green deleteLine">200.70</span></div>
+                        </li>
+                        <li class="btn_status_i" style="display: block;">兌現取消<div class="statusInfo">比分异动</div></li>
+                    </ul>
+                    <ul class="popupC">
+                        <li class="popupC_T">
+                            <div class="popupC_T_text"><spna class="t_blue">小</spna> <div class="t_inlineBox"><span class="t_red">222</span> @ <span class="t_red">1.07</span></div></div>
+                            <div class="btn_popupC_arrow"></div>
+                        </li>
+                        <li>籃球 - [全場]</li>
+                        <li class="btn_link">多倫多暴龍 <span class="t_orange">(主)</span><span class="t_gray"> VS </span>夏洛特黃蜂</li>
+                        <li>賽果：<span class="t_green">127 : 106</span></li>
+                        <li class="popupC_data">
+                            <div class="multiRow"><div class="multiRow_T">聯盟：</div><div class="multiRow_In">NBA美國職業籃球</div></div>
+                            <div>下注：<span>10-22 10:59</span><span class="orderNum">1022105923485855</span></div>
+                            <div>比賽：<span>10-22 20:00</span></div>
+                            <div>派彩：<span>10-22 20:00</span></div>
+                            <div>賠率：<span>含本金</span></div>
+                        </li>
+                        <li>
+                            <div class="L48">投注額：<span class="t_blue deleteLine">100.00</span></div>
+                            <div class="R48">返水：<span class="deleteLine">0.30</span></div>
+                        </li>
+                        <li>
+                            投注後餘額：<span class="t_bold deleteLine">000000000.00</span>
+                        </li>
+                        <li>
+                            <div class="L48">返還：<span>0.30</span></div>
+                            <div class="R48">结果：<span class="t_result t_green deleteLine">200.70</span></div>
+                        </li>
+                        <li class="btn_status_iR" style="display: block;">賽事待定<div class="statusInfo">由于賽果不明确，注單将暂为待定，如賽果確認将会在第一時间进行结算，待定相关说明请参阅体育一般规则「第19条例」，谢谢!</div></li>
+                    </ul>
+                    <ul class="popupC">
+                        <li class="popupC_T">
+                            <div class="popupC_T_text">过关 <span>4串11 x 11</span></div>
+                            <div class="btn_popupC_arrow"></div>
+                        </li>
+                        <li class="popupC_data">
+                            <ul>
+                                <li class="popupC_dataT">
+                                    <div class="popupC_dataT_text"><span class="t_blue">小</span> <div class="t_inlineBox"><span class="t_red">3.5</span> @ <span class="t_red">0.95</span></div></div>
+                                </li>
+                                <li>籃球 - [全場]</li>
+                                <li class="btn_link">日本U19<span class="t_gray"> VS </span>波士頓賽爾提克 <span class="t_orange">(主)</span></li>
+                                <li class="multiRow"><div class="multiRow_T">聯盟：</div><div class="multiRow_In">NBA美國職業籃球NBA美國職業籃球NBA美國職業籃球NBA美國職業籃球NBA美國職業籃球NBA美國職業籃球</div></li>
+                                <li>賽果：<span class="t_green">127 : 106</span></li>
+                                <li>比賽：<span>10-22 20:00</span><div class="RT_win">Win</div></li>
+                            </ul>
+                            <ul>
+                                <li class="popupC_dataT">
+                                    <div class="popupC_dataT_text"><span class="t_blue">小</span> <div class="t_inlineBox"><span class="t_red">3.5</span> @ <span class="t_red">0.95</span></div></div>
+                                </li>
+                                <li>籃球 - [全場]</li>
+                                <li class="btn_link">日本U19<span class="t_gray"> VS </span>波士頓賽爾提克 <span class="t_orange">(主)</span></li>
+                                <li class="multiRow"><div class="multiRow_T">聯盟：</div><div class="multiRow_In">NBA美國職業籃球</div></li>
+                                <li>賽果：<span class="t_green">127 : 106</span></li>
+                                <li>比賽：<span>10-22 20:00</span><div class="RT_win">50%</div></li>
+                            </ul>
+                            <ul>
+                                <li class="popupC_dataT">
+                                    <div class="popupC_dataT_text"><span class="t_blue">小</span> <div class="t_inlineBox"><span class="t_red">3.5</span> @ <span class="t_red">0.95</span></div></div>
+                                </li>
+                                <li>籃球 - [全場]</li>
+                                <li class="btn_link">日本U19<span class="t_gray"> VS </span>波士頓賽爾提克 <span class="t_orange">(主)</span></li>
+                                <li class="multiRow"><div class="multiRow_T">聯盟：</div><div class="multiRow_In">NBA美國職業籃球</div></li>
+                                <li>賽果：<span class="t_green">127 : 106</span></li>
+                                <li>比賽：<span>10-22 20:00</span><div class="RT_lose">-75%</div></li>
+                            </ul>
+                            <ul>
+                                <li class="popupC_dataT">
+                                    <div class="popupC_dataT_text"><span class="t_blue">小</span> <div class="t_inlineBox"><span class="t_red">3.5</span> @ <span class="t_red">0.95</span></div></div>
+                                </li>
+                                <li>籃球 - [全場]</li>
+                                <li class="btn_link">日本U19<span class="t_gray"> VS </span>波士頓賽爾提克 <span class="t_orange">(主)</span></li>
+                                <li class="multiRow"><div class="multiRow_T">聯盟：</div><div class="multiRow_In">NBA美國職業籃球</div></li>
+                                <li>賽果：<span class="t_green">127 : 106</span></li>
+                                <li>比賽：<span>10-22 20:00</span><div class="RT_lose">-75%</div></li>
+                            </ul>
+                            <ul class="popupC_data_sumUp">
+                                <li>下注：<span>12-11 16:25</span><span class="orderNum">1022105923485855</span><span class="btn_sumUpInfo" onclick="location.href='record_pass.html';"></span></li>
+                                <li>賠率：<span>含本金</span></li>
+                                <li>2串1 x 6<span>(每组15元 x 1组) = <strong>90</strong></span></li>
+                                <li>3串1 x 4<span>(每组15元 x 1组) = <strong>60</strong></span></li>
+                                <li>4串1 x 1<span>(每组15元 x 1组) = <strong>15</strong></span></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="L48">投注額：<span class="t_blue">000000.00</span></div>
+                            <div class="R48">返水：<span>0.30</span></div>
+                        </li>
+                        <li>
+                            投注後餘額：<span class="t_bold">000000000.00</span>
+                        </li>
+                        <li>
+                            <div class="L48">返還：<span>0000000.00</span></div>
+                            <div class="R48">结果：<span class="t_result t_red">-0000000.00</span></div>
+                        </li>
+                    </ul>
+                    <ul class="popupC">
+                        <li class="popupC_T">
+                            <div class="popupC_T_text">过关 <span>3串1 x 1</span> <span class="t_red">降星</span></div>
+                            <div class="btn_popupC_arrow"></div>
+                        </li>
+                        <li class="popupC_data">
+                            <ul>
+                                <li class="popupC_dataT">
+                                    <div class="popupC_dataT_text"><span class="t_blue">小</span> <div class="t_inlineBox"><span class="t_red">3.5</span> @ <span class="t_red">0.95</span></div></div>
+                                </li>
+                                <li>籃球 - [全場]</li>
+                                <li class="btn_link">日本U19<span class="t_gray"> VS </span>波士頓賽爾提克 <span class="t_orange">(主)</span></li>
+                                <li class="multiRow"><div class="multiRow_T">聯盟：</div><div class="multiRow_In">NBA美國職業籃球NBA美國職業籃球</div></li>
+                                <li>賽果：<span class="t_green">127 : 106</span></li>
+                                <li>比賽：<span>10-22 20:00</span></li>
+                                <li class="img_refuse" style="display: none;">进球單取消</li>
+                            </ul>
+                            <ul>
+                                <li class="popupC_dataT">
+                                    <div class="popupC_dataT_text"><span class="t_blue">小</span> <div class="t_inlineBox"><span class="t_red">3.5</span> @ <span class="t_red">0.95</span></div></div>
+                                </li>
+                                <li>籃球 - [全場]</li>
+                                <li class="btn_link">日本U19<span class="t_gray"> VS </span>波士頓賽爾提克 <span class="t_orange">(主)</span></li>
+                                <li class="multiRow"><div class="multiRow_T">聯盟：</div><div class="multiRow_In">NBA美國職業籃球</div></li>
+                                <li>賽果：<span class="t_green">127 : 106</span></li>
+                                <li>比賽：<span>10-22 20:00</span></li>
+                                <li class="btn_status_iR" style="display: block;">已删除<div class="statusInfo">賽事提前到20時50分開賽</div></li>
+                            </ul>
+                            <ul>
+                                <li class="popupC_dataT">
+                                    <div class="popupC_dataT_text"><span class="t_blue">小</span> <div class="t_inlineBox"><span class="t_red">3.5</span> @ <span class="t_red">0.95</span></div></div>
+                                </li>
+                                <li>籃球 - [全場]</li>
+                                <li class="btn_link">日本U19<span class="t_gray"> VS </span>波士頓賽爾提克 <span class="t_orange">(主)</span></li>
+                                <li class="multiRow"><div class="multiRow_T">聯盟：</div><div class="multiRow_In">NBA美國職業籃球</div></li>
+                                <li>賽果：<span class="t_green">127 : 106</span></li>
+                                <li>比賽：<span>10-22 20:00</span><div class="RT_lose">Lose</div></li>
+                            </ul>
+                            <ul class="popupC_data_sumUp">
+                                <li>下注：<span>12-11 16:25</span><span class="orderNum">1022105923485855</span><span class="btn_sumUpInfo" onclick="location.href='record_pass.html';"></span></li>
+                                <li>賠率：<span>含本金</span></li>
+                                <li>3串1 x 1<span>(每组15元 x 1组) = <strong>15</strong></span></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="L48">投注額：<span class="t_blue">000000.00</span></div>
+                            <div class="R48">返水：<span>0.30</span></div>
+                        </li>
+                        <li>
+                            投注後餘額：<span class="t_bold">000000000.00</span>
+                        </li>
+                        <li>
+                            <div class="L48">返還：<span>0000000.00</span></div>
+                            <div class="R48">结果：<span class="t_result t_red">-0000000.00</span></div>
+                        </li>
+                    </ul>
+                    <ul class="popupC">
+                        <li class="popupC_T">
+                            <div class="popupC_T_text"><span class="t_blue">小小小小小小小小小小小小小小小小小小</span> <div class="t_inlineBox"><span class="t_red">3.5</span> @ <span class="t_red">0.95</span></div></div>
+                            <div class="btn_popupC_arrow"></div>
+                        </li>
+                        <li>籃球 - [全場]</li>
+                        <li class="btn_link">費城76人<span class="t_orange">(主)</span><span class="t_gray"> VS </span>波士頓賽爾提克</li>
+                        <li>賽果：<span class="t_green">3 : 1</span></li>
+                        <li class="popupC_data">
+                            <div class="multiRow"><div class="multiRow_T">聯盟：</div><div class="multiRow_In">NBA美國職業籃球NBA美國職業籃球NBA美國職業籃球NBA美國職業籃球NBA美國職業籃球</div></div>
+                            <div>下注：<span>10-22 10:59</span><span class="orderNum">1022105923485855</span></div>
+                            <div>比賽：<span>10-22 20:00</span></div>
+                            <div>派彩：<span>10-22 20:00</span></div>
+                            <div>賠率：<span>含本金</span></div>
+                        </li>
+                        <li>
+                            <div class="L48">投注額：<span class="t_blue">000000.00</span></div>
+                            <div class="R48">返水：<span>000.00</span></div>
+                        </li>
+                        <li>
+                            投注後餘額：<span class="t_bold">000000000.00</span>
+                        </li>
+                        <li>
+                            <div class="L48">返還：<span>0000000.00</span></div>
+                            <div class="R48">结果：<span class="t_result t_red">-0000000.00</span></div>
+                        </li>
+                        <li class="img_refuse" style="display: none;">投注拒绝</li>
+                    </ul>
+                    <ul class="popupC">
+                        <li class="popupC_T">
+                            <div class="popupC_T_text"><span class="t_blue">小</span> <div class="t_inlineBox"><span class="t_red">222</span> @ <span class="t_red">1.07</span></div></div>
+                            <div class="btn_popupC_arrow"></div>
+                        </li>
+                        <li>籃球 - [全場]</li>
+                        <li class="btn_link">多倫多暴龍 <span class="t_orange">(主)</span><span class="t_gray"> VS </span>夏洛特黃蜂</li>
+                        <li>賽果：<span class="t_green">127 : 106</span></li>
+                        <li class="popupC_data">
+                            <div class="multiRow"><div class="multiRow_T">聯盟：</div><div class="multiRow_In">NBA美國職業籃球</div></div>
+                            <div>下注：<span>10-22 10:59</span><span class="orderNum">1022105923485855</span></div>
+                            <div>比賽：<span>10-22 20:00</span></div>
+                            <div>派彩：<span>10-22 20:00</span></div>
+                            <div>賠率：<span>含本金</span></div>
+                        </li>
+                        <li>
+                            <div class="L48">投注額：<span class="t_blue deleteLine">100.00</span></div>
+                            <div class="R48">返水：<span class="deleteLine">0.30</span></div>
+                        </li>
+                        <li>
+                            投注後餘額：<span class="t_bold deleteLine">000000000.00</span>
+                        </li>
+                        <li>
+                            <div class="L48">返還：<span>0.30</span></div>
+                            <div class="R48">结果：<span class="t_result t_green deleteLine">200.70</span></div>
+                        </li>
+                        <li class="btn_status_iR" style="display: block;">已删除<div class="statusInfo">賽事提前到20時50分開賽</div></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="popRecordB">
+                <li>
+                    投注額：<div class="t_yellow">000000000</div>
+                </li>
+                <li>
+                    返水：<div class="t_green">000000.00</div>
+                </li>
+                <li>
+                    结果：<div class="t_red">-00000000.00</div>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+    <!--小視頻-->
+    
+    <!--Go Top-->
+    <div class="btn_goTop"></div>
+    <script src="scripts/jquery1.11.0.min.js"></script>
+    <script src="scripts/preventPullRefresh.js"></script>
+    <script src="scripts/ArtDemo.js"></script>
+
+</body>
+</html>

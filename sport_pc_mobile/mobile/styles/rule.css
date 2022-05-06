@@ -1,0 +1,1413 @@
+/*選單*/
+.menuRule {
+    height: 50px;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    font-size: 0.8em;
+    position: fixed;
+    top: 40px;
+    z-index: 3;
+    box-sizing: border-box;
+    background-color: #dbdbdb;
+}
+
+    .menuRule a {
+        position: relative;
+        color: #404040;
+        min-width: 58px;
+        height: 100%;
+        font-size: 0.8rem;
+        text-align: center;
+        line-height: 1em;
+        display: inline-block;
+        cursor: pointer;
+        vertical-align: middle;
+        padding: 6px 10px 0;
+        box-sizing: border-box;
+    }
+
+        .menuRule a:not(.on):active {
+            opacity: 0.5;
+        }
+
+        .menuRule a img {
+            display: block;
+            width: auto;
+            height: 18px;
+            margin: 0 auto 6px;
+        }
+
+        .menuRule a.on {
+            background-color: #ededed;
+        }
+
+.containerRule {
+    background-color: #ededed;
+    height: 100%;
+    margin-top: 0;
+    padding-top: 90px;
+    box-sizing: border-box;
+}
+
+    .containerRule * {
+        -webkit-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+    }
+
+@media (min-width: 350px) {
+    .menuRule a {
+        min-width: 65px;
+        padding-top: 7px;
+    }
+}
+
+@media (min-width: 375px) {
+    .menuRule a {
+        min-width: 68px;
+    }
+}
+
+@media (min-width: 400px) {
+    .menuRule {
+        height: 55px;
+        font-size: 0.9em;
+        top: 45px;
+    }
+
+        .menuRule a {
+            font-size: 0.9rem;
+            min-width: 75px;
+            padding: 8px 20px 0;
+        }
+
+            .menuRule a img {
+                height: 20px;
+            }
+
+    .containerRule {
+        padding-top: 100px;
+    }
+}
+
+@media (min-width: 530px) {
+    .menuRule a {
+        min-width: 72px;
+    }
+}
+
+@media (min-width: 600px) {
+    .menuRule a {
+        min-width: 80px;
+        padding: 8px 23px 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .menuRule {
+        height: 65px;
+        font-size: 1.2em;
+        top: 55px;
+    }
+
+        .menuRule a {
+            font-size: 1.2rem;
+            min-width: 90px;
+        }
+
+            .menuRule a img {
+                height: 26px;
+                margin-bottom: 6px;
+            }
+
+    .containerRule {
+        padding-top: 120px;
+    }
+}
+/*---------------------------即時比分----------------------------*/
+.liveScore {
+    font-size: 0.75em;
+    padding: 10px 5px;
+    display: none;
+}
+
+    .liveScore.on {
+        display: block;
+    }
+
+.LS_list {
+    float: left;
+    width: 30%;
+    margin-left: 2.5%;
+    cursor: pointer;
+}
+
+    .LS_list a {
+        color: #0053ff;
+        text-decoration: underline;
+    }
+
+        .LS_list a:active {
+            color: #ff5e00;
+        }
+
+.LS_list_img {
+    background-color: #fff;
+    width: 93px;
+    height: 35px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+
+    .LS_list_img:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #7a7a7a;
+        box-sizing: border-box;
+        z-index: 1;
+    }
+
+    .LS_list_img img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+.LS_list_text {
+    text-align: center;
+    height: 35px;
+    margin-top: 8px;
+    line-height: 1.2em;
+}
+
+@media (min-width: 350px) {
+    .LS_list_img {
+        width: 104px;
+        height: 39px;
+    }
+}
+
+@media (min-width: 375px) {
+    .LS_list_img {
+        width: 109px;
+        height: 41px;
+    }
+}
+
+@media (min-width: 400px) {
+    .LS_list_img {
+        width: 120px;
+        height: 45px;
+    }
+}
+
+@media (min-width: 530px) {
+    .liveScore {
+        padding: 13px 8px;
+    }
+
+    .LS_list {
+        width: 22.5%;
+        margin-left: 2%;
+    }
+
+    .LS_list_img {
+        width: 117px;
+        height: 44px;
+    }
+}
+
+@media (min-width: 600px) {
+    .liveScore {
+        font-size: 0.8em;
+    }
+
+    .LS_list_img {
+        width: 131px;
+        height: 49px;
+    }
+
+    .LS_list_text {
+        height: 40px;
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .liveScore {
+        padding: 15px 8px;
+    }
+
+    .LS_list {
+        width: 132.3px;
+    }
+
+    .LS_list_img {
+        width: 133px;
+        height: 50px;
+    }
+}
+
+/*---------------------------規則-----------------------------*/
+.ruleBox {
+    padding: 10px 15px;
+    display: none;
+}
+
+    .ruleBox.on {
+        display: block;
+    }
+
+.ruleBox_T, .btn_ruleBox_T {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 3px;
+    border: 1px solid #dfdfdf;
+    text-align: center;
+    font-size: 0.8em;
+    min-height: 35px;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+}
+
+.ruleBox_T {
+    padding: 5px;
+}
+
+.btn_ruleBox_T {
+    padding: 5px 30px;
+}
+
+    .btn_ruleBox_T:after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 7px 6px 0 6px;
+        border-color: #000 transparent transparent transparent;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        opacity: 0.5;
+    }
+
+    .btn_ruleBox_T:active {
+        background-color: #dbdbdb;
+        border-color: transparent;
+    }
+
+.ruleBox_In {
+    font-size: 0.75em;
+    padding: 10px 0;
+}
+
+    .ruleBox_In h3 {
+        font-size: 1.1em;
+        margin: 0 0 10px 0;
+    }
+
+    .ruleBox_In h5 {
+        font-size: 1em;
+        margin: 0 0 10px 17px;
+    }
+
+        .ruleBox_In h5 + .RB_list {
+            margin-left: 6px;
+        }
+
+@media (min-width: 400px) {
+    .ruleBox {
+        padding: 13px 18px;
+    }
+
+    .ruleBox_T {
+        font-size: 1.05em;
+    }
+
+    .ruleBox_T, .btn_ruleBox_T {
+        font-size: 0.9em;
+        min-height: 40px;
+    }
+
+    .btn_ruleBox_T {
+        padding: 5px 35px;
+    }
+
+        .btn_ruleBox_T:after {
+            border-width: 8px 7px 0 7px;
+            right: 12px;
+        }
+
+    .ruleBox_In {
+        font-size: 0.8em;
+        padding-top: 13px;
+    }
+}
+
+@media (min-width: 768px) {
+    .ruleBox {
+        padding: 18px 23px;
+    }
+
+    .ruleBox_T {
+        font-size: 1.35em;
+    }
+
+    .ruleBox_T, .btn_ruleBox_T {
+        border-radius: 5px;
+        font-size: 1.2em;
+        min-height: 50px;
+    }
+
+    .btn_ruleBox_T {
+        padding: 5px 45px;
+    }
+
+        .btn_ruleBox_T:after {
+            border-width: 10px 9px 0 9px;
+            right: 15px;
+        }
+
+    .ruleBox_In {
+        font-size: 1em;
+        padding-top: 18px;
+    }
+
+        .ruleBox_In h5 + .RB_list {
+            margin-left: 10px;
+        }
+}
+
+.popList.popRSMenu .popLB_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2em;
+    min-height: 37px;
+}
+
+@media (min-width: 400px) {
+    .popList.popRSMenu .popLB_list {
+        min-height: 47px;
+    }
+}
+
+@media (min-width: 768px) {
+    .popList.popRSMenu .popLB_list {
+        min-height: 57px;
+    }
+}
+
+/*內文*/
+.RB_list, .RB_listPoint {
+    padding-left: 25px;
+    margin: 0 0 20px;
+}
+
+    .RB_list li {
+        list-style: decimal;
+        padding-left: 5px;
+        margin-bottom: 10px;
+    }
+
+    .RB_listPoint li {
+        list-style: disc;
+        padding-left: 5px;
+        margin-bottom: 10px;
+    }
+
+.RB_textBox {
+    display: inline-table;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.RB_textT, .RB_textIn {
+    display: table-cell;
+}
+
+.RB_textT {
+    width: 1%;
+    min-width: 14px;
+    white-space: nowrap;
+}
+
+.RB_calcText {
+    margin: 0 0 20px;
+}
+
+.RB_contentText {
+    margin: 0 0 20px;
+}
+
+h3 + .RB_contentText {
+    margin-top: -10px;
+}
+
+.RB_contentText + .RB_tableBet, .RB_contentText + .RB_table {
+    margin-top: -10px;
+}
+
+/*ruleTable*/
+.ruleTable, .ruleTable_s {
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+}
+
+.ruleTable_L {
+    width: 110px;
+    float: left;
+}
+
+.ruleTable_R {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: calc(100% - 110px);
+}
+
+/*左*/
+.ruleTable_L_In {
+    width: 100%;
+    background-color: #585858;
+    position: relative;
+    white-space: nowrap;
+}
+
+.RTL_T {
+    height: 30px;
+    line-height: 30px;
+    background-color: #696969;
+    color: #fff;
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+    .RTL_T:after {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 107%;
+        margin-right: -1px;
+        vertical-align: middle;
+    }
+
+.RTL_line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 30px;
+    z-index: 1;
+}
+
+    .RTL_line:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        height: 20px;
+        width: 1px;
+        background-color: #777;
+        margin: auto 0;
+    }
+
+.RTL_box {
+    width: 100%;
+    position: relative;
+}
+
+    .RTL_box ul {
+        border-right: 1px solid #5f5f5f;
+        border-bottom: 1px solid #666;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+.RTL_height2 {
+    height: 70px;
+    box-sizing: border-box;
+}
+
+.RTL_height3 {
+    height: 105px;
+    box-sizing: border-box;
+}
+
+.RTL_box li {
+    color: #fff;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 8px 0 8px 5px;
+    margin-right: 5px;
+    box-sizing: border-box;
+    line-height: 22px;
+}
+
+.RTL_box .RTL_height2 li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: 20px;
+}
+
+.RTL_time {
+    color: #bbb;
+    font-size: 0.75em;
+}
+
+.RTL_point {
+    position: absolute;
+    left: 100%;
+    right: -180px;
+    bottom: 0;
+    text-align: center;
+    z-index: 2;
+    pointer-events: none;
+}
+
+    .RTL_point > div {
+        position: relative;
+    }
+
+    .RTL_point ul {
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 0;
+    }
+
+    .RTL_point li {
+        width: 4px;
+        height: 4px;
+        background-color: #404040;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 2px;
+    }
+
+        .RTL_point li.on {
+            background-color: #8aa6c2;
+        }
+
+/*右*/
+.ruleTable_R table {
+    display: block;
+    text-align: center;
+    position: relative;
+}
+
+.ruleTable_R tbody {
+    display: block;
+}
+
+.ruleTable_R tr {
+    display: block;
+    font-size: 0;
+    white-space: nowrap;
+}
+
+.ruleTable_R th, .ruleTable_R td {
+    display: inline-block;
+    min-width: 90px;
+    padding: 0;
+    margin: 0;
+}
+
+.ruleTable_R th {
+    background-color: #696969;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    font-weight: normal;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+}
+
+.ruleTable_R td {
+    color: #ffdf1b;
+    background-color: #585858;
+    font-size: 0.72rem;
+    vertical-align: top;
+}
+
+.ruleTable_R .width1 th, .ruleTable_R .width1 td {
+    width: 100%;
+}
+
+.ruleTable_R .width2 th, .ruleTable_R .width2 td {
+    width: 50%;
+}
+
+.ruleTable_R .width3 th, .ruleTable_R .width3 td {
+    width: 33.5%;
+}
+
+    .ruleTable_R .width3 th:last-child, .ruleTable_R .width3 td:last-child {
+        width: 33%;
+    }
+
+.ruleTable_R .width4 th, .ruleTable_R .width4 td {
+    width: 25%;
+}
+
+.ruleTable_R .width5 th, .ruleTable_R .width5 td {
+    width: 20%;
+}
+
+.ruleTable_R td ul {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .ruleTable_R td ul:after, .ruleTable_R td ul:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    .ruleTable_R td ul:after {
+        width: 100%;
+        height: 1px;
+        left: 0;
+        background-color: #666;
+        z-index: 2;
+    }
+
+    .ruleTable_R td ul:before {
+        width: 1px;
+        height: 100%;
+        top: 0;
+        background-color: #5f5f5f;
+        z-index: 1;
+    }
+
+.ruleTable_R td li {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    position: relative;
+}
+
+    .ruleTable_R td li:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        right: 0;
+        left: 0;
+        background-color: #5f5f5f;
+        z-index: 1;
+    }
+
+.ruleTable_R .L50, .ruleTable_R .R50 {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ruleTable_R .L50 {
+    color: #fff;
+    text-align: right;
+}
+
+.ruleTable_R .width1 .L50 {
+    padding-right: 4.5%;
+}
+
+.ruleTable_R .width1 .R50 {
+    text-align: left;
+    padding-left: 4.5%;
+}
+
+@media (min-width:350px) {
+    .RTL_T {
+        padding: 0 7px;
+    }
+
+    .RTL_box li {
+        padding: 8px 0 8px 7px;
+        margin-right: 7px;
+    }
+
+    .RTL_point {
+        right: -220px;
+    }
+
+        .RTL_point li {
+            margin: 0 3px 0 2px;
+        }
+
+    .ruleTable_s th, .ruleTable_s td {
+        min-width: 33% !important;
+        letter-spacing: -0.5px;
+    }
+}
+
+@media (min-width:375px) {
+    .RTL_point {
+        right: -235px;
+    }
+}
+
+@media (min-width:400px) {
+    .ruleTable_L {
+        width: 120px;
+    }
+
+    .ruleTable_R {
+        width: calc(100% - 120px);
+    }
+
+    .RTL_point {
+        right: -258px;
+    }
+
+        .RTL_point li {
+            width: 5px;
+            height: 5px;
+        }
+
+    .ruleTable_s th, .ruleTable_s td {
+        letter-spacing: 0;
+    }
+}
+
+@media (min-width:530px) {
+    .ruleTable_L {
+        width: 25%;
+    }
+
+    .ruleTable_R {
+        width: 75%;
+    }
+
+    .RTL_T {
+        height: 32px;
+        line-height: 31px;
+    }
+
+    .RTL_line {
+        height: 32px;
+    }
+
+    .RTL_point {
+        right: -300%;
+    }
+
+    .ruleTable_R th, .ruleTable_R td {
+        min-width: 25% !important;
+    }
+
+    .ruleTable_R th {
+        height: 32px;
+        line-height: 32px;
+    }
+}
+
+@media (min-width:600px) {
+    .RTL_T {
+        height: 33px;
+        line-height: 32px;
+    }
+
+    .RTL_line {
+        height: 33px;
+    }
+
+    .ruleTable_R th {
+        height: 33px;
+        line-height: 33px;
+    }
+}
+
+@media (min-width:768px) {
+    .ruleTable, .ruleTable_s {
+        font-size: 1rem;
+    }
+
+    .RTL_T {
+        height: 36px;
+        line-height: 36px;
+        padding: 0 10px;
+    }
+
+    .RTL_line {
+        height: 36px;
+    }
+
+    .RTL_point li {
+        margin: 0 3px 0 4px;
+    }
+
+    .RTL_height2 {
+        height: 80px;
+    }
+
+    .RTL_height3 {
+        height: 120px;
+    }
+
+    .RTL_box li {
+        padding: 10px 0 10px 10px;
+        margin-right: 10px;
+        line-height: 25px
+    }
+
+    .RTL_box .RTL_height2 li {
+        line-height: 23px;
+    }
+
+    .ruleTable_R th, .ruleTable_R td {
+        min-width: 20% !important;
+    }
+
+    .ruleTable_R th {
+        height: 36px;
+        line-height: 36px;
+        font-size: 1rem;
+    }
+
+    .ruleTable_R td {
+        font-size: 0.95rem;
+    }
+
+        .ruleTable_R td li {
+            height: 40px;
+            line-height: 40px;
+        }
+}
+
+/*波膽/入球數/半全場table*/
+.ruleGameStyle {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+    line-height: 30px;
+    height: 30px;
+}
+
+    .ruleGameStyle tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        text-align: center;
+    }
+
+    .ruleGameStyle th, .ruleGameStyle td {
+        padding: 0;
+        vertical-align: middle;
+    }
+
+    .ruleGameStyle th {
+        background-color: #696969;
+        color: #fff;
+        border-right: 1px solid #707070;
+    }
+
+        .ruleGameStyle th:last-child {
+            border-right: 0
+        }
+
+    .ruleGameStyle td {
+        background-color: #585858;
+        color: #ffdf1b;
+        border-right: 1px solid #5f5f5f;
+        border-bottom: 1px solid #5f5f5f;
+        padding: 4px 0;
+        line-height: 1.45em;
+    }
+
+        .ruleGameStyle td:last-child {
+            border-right: 0;
+        }
+
+    .ruleGameStyle tr:last-child td {
+        border-bottom: 0;
+    }
+
+    .ruleGameStyle .L50, .ruleGameStyle .T50 {
+        color: #fff;
+    }
+
+.RGS_name {
+    background-color: #336699;
+    color: #fff;
+}
+
+@media(min-width:400px) {
+    .ruleGameStyle td {
+        padding: 5px 0;
+        line-height: 1.5em;
+    }
+}
+
+@media(min-width:600px) {
+    /*表格"線"在600px裝置顯示不出來,用此方式解決*/
+    .ruleGameStyle td {
+        border-top: 0.5px solid transparent;
+    }
+}
+
+@media(min-width:768px) {
+    .ruleGameStyle {
+        font-size: 1rem;
+        line-height: 36px;
+        height: 36px;
+    }
+
+        .ruleGameStyle td {
+            height: 46px;
+            border-top: 0px;
+        }
+}
+
+/*範例說明table*/
+.ruleTable + .RB_tableEx,
+.RB_tableEx + .RB_tableEx,
+.ruleGameStyle + .RB_tableEx {
+    margin-top: -10px;
+}
+
+.RB_tableEx {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: #000;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    margin-bottom: 20px;
+    table-layout: fixed;
+}
+
+    .RB_tableEx th, .RB_tableEx td {
+        vertical-align: middle;
+        height: 25px;
+        line-height: 1.2em;
+        padding: 2px 3px;
+        box-sizing: border-box;
+    }
+
+    .RB_tableEx th {
+        background-color: #ddd;
+        color: #000;
+        border-left: 1px solid #999;
+        border-bottom: 1px solid #ccc;
+        position: relative;
+    }
+
+        .RB_tableEx th:first-child {
+            border-left: 1px solid #ccc;
+        }
+
+        .RB_tableEx th:before, .RB_tableEx th:after {
+            content: '';
+            position: absolute;
+            left: -2px;
+            width: 3px;
+            height: 6px;
+            background-color: #ddd;
+        }
+
+        .RB_tableEx th:before {
+            top: -0.2px;
+        }
+
+        .RB_tableEx th:after {
+            bottom: -0.2px;
+        }
+
+        .RB_tableEx th:first-child:before, .RB_tableEx th:first-child:after {
+            display: none;
+        }
+
+    .RB_tableEx td {
+        background-color: #f3f3f3;
+        border-left: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+
+        .RB_tableEx td.on {
+            background-color: #e8e8e8;
+        }
+
+    .RB_tableEx .t_red {
+        color: #f00;
+    }
+
+    .RB_tableEx th.RBT_subTitle {
+        padding: 2px 5px;
+        text-align: left;
+        background-color: #c3c3c3;
+        color: #000;
+    }
+
+.RBT_row {
+    line-height: 1.8em;
+}
+
+.RBT_alignC {
+    text-align: center;
+}
+
+.RBT_w15 {
+    width: 15%;
+}
+
+.RBT_w20 {
+    width: 20%;
+}
+
+.RBT_w25 {
+    width: 25%;
+}
+
+.RBT_w30 {
+    width: 30%;
+}
+
+.RBT_w35 {
+    width: 35%;
+}
+
+@media(min-width:350px) {
+    .RB_tableEx th.RBT_subTitle {
+        padding: 2px 7px;
+    }
+
+    .RBT_row {
+        padding: 0 7px;
+    }
+}
+
+@media(min-width:530px) {
+    .RB_tableEx th br {
+        display: none;
+    }
+
+    .RB_tableEx th, .RB_tableEx td {
+        height: 28px;
+        padding: 4px 7px;
+    }
+
+        .RB_tableEx th.RBT_subTitle {
+            padding: 4px 7px;
+        }
+}
+
+@media(min-width:600px) {
+    /*表格"線"在600px裝置顯示不出來,用此方式解決*/
+    .RB_tableEx th, .RB_tableEx td {
+        border-top: 0.5px solid transparent;
+    }
+}
+
+@media(min-width:768px) {
+    .RB_tableEx {
+        font-size: 0.95em;
+    }
+
+        .RB_tableEx th, .RB_tableEx td {
+            height: 30px;
+            padding: 5px 10px;
+            border-top: 0px;
+        }
+
+            .RB_tableEx th.RBT_subTitle {
+                padding: 5px 10px;
+            }
+
+    .RBT_row {
+        padding: 0 10px;
+    }
+}
+/*盤口對照表*/
+.RB_prompt {
+    color: #000;
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+.RB_prompt_T {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+    margin-bottom: 8px;
+}
+
+.RB_prompt_In {
+    margin-bottom: 8px;
+}
+
+@media(min-width:530px) {
+    .RB_prompt {
+        padding: 0 15px;
+    }
+
+    .RB_prompt_T {
+        padding: 8px 0;
+        margin-bottom: 11px;
+    }
+
+    .RB_prompt_In {
+        margin-bottom: 11px;
+    }
+}
+
+@media(min-width:768px) {
+    .RB_prompt {
+        padding: 0 20px;
+        font-size: 0.95em;
+    }
+
+    .RB_prompt_T {
+        margin-bottom: 15px;
+    }
+
+    .RB_prompt_In {
+        margin-bottom: 15px;
+    }
+}
+
+/*--------------------------公告專區---------------------------*/
+.containerANC {
+    background-color: #e4e4e4;
+    height: 100%;
+    margin-top: 0;
+    padding-top: 40px;
+    box-sizing: border-box;
+}
+
+.ANCBox {
+    padding: 8px;
+}
+
+.ANCB_list {
+    font-size: 0.8em;
+    background-color: #f3f3f3;
+    border-radius: 3px;
+    box-shadow: rgba(0,0,0,0.1)0px 0px 3px;
+    cursor: pointer;
+}
+
+    .ANCB_list + .ANCB_list {
+        margin-top: 8px;
+    }
+
+.ANCB_listT {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #dfdfdf;
+    position: relative;
+}
+
+.btn_ANCB_list_arrow {
+    width: 30px;
+    height: 100%;
+    align-self: flex-start;
+}
+
+    .btn_ANCB_list_arrow:after {
+        content: '';
+        flex-grow: 0;
+        flex-shrink: 0;
+        display: block;
+        background: url(../images/btn_arrow.svg) no-repeat center;
+        background-size: 14px;
+        width: 100%;
+        height: 29px;
+        opacity: 0.35;
+    }
+
+    .btn_ANCB_list_arrow:active {
+        opacity: 0.6;
+    }
+
+.ANCB_listT_name {
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 5px 0 5px 8px;
+}
+
+.ANCB_listT_date {
+    flex-grow: 0;
+    flex-shrink: 0;
+    color: #999;
+    align-self: flex-start;
+    line-height: 29px;
+    font-size: 0.95em;
+}
+
+.ANCB_listIn {
+    padding: 5px 8px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 20px;
+    color: #555;
+}
+
+/*展開*/
+.ANCB_list.on {
+    background-color: #fff;
+}
+
+    .ANCB_list.on .btn_ANCB_list_arrow {
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+    }
+
+    .ANCB_list.on .ANCB_listIn {
+        white-space: normal;
+        overflow: inherit;
+        word-break: break-all;
+        word-wrap: break-word;
+        color: #000;
+    }
+
+/*暫無訊息*/
+.ANC_noInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    width: 80%;
+    top: 40px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 1em;
+}
+
+    .ANC_noInfo img {
+        width: 65px;
+        height: 65px;
+        display: block;
+        margin: 0 auto 5px;
+        opacity: 0.5;
+    }
+
+@media(min-width:400px) {
+    .containerANC {
+        padding-top: 45px;
+    }
+
+    .ANCBox {
+        padding: 10px;
+    }
+
+    .ANCB_list {
+        font-size: 0.85em;
+    }
+
+        .ANCB_list + .ANCB_list {
+            margin-top: 10px;
+        }
+
+    .ANCB_listT_name {
+        padding-left: 10px;
+    }
+
+    .ANCB_listT_date {
+        line-height: 35px;
+    }
+
+    .btn_ANCB_list_arrow {
+        width: 35px;
+    }
+
+        .btn_ANCB_list_arrow:after {
+            background-size: 17px;
+            height: 35px;
+        }
+
+    .ANCB_listIn {
+        padding: 7px 10px 8px;
+    }
+
+    .ANC_noInfo {
+        top: 45px;
+        font-size: 1.1em;
+    }
+
+        .ANC_noInfo img {
+            width: 70px;
+            height: 70px;
+        }
+}
+
+@media(min-width:768px) {
+    .containerANC {
+        padding-top: 55px;
+    }
+
+    .ANCBox {
+        padding: 15px;
+    }
+
+    .ANCB_list {
+        font-size: 1.2em;
+    }
+
+        .ANCB_list + .ANCB_list {
+            margin-top: 15px;
+        }
+
+    .ANCB_listT_name {
+        padding-left: 15px;
+    }
+
+    .ANCB_listT_date {
+        line-height: 40px;
+    }
+
+    .btn_ANCB_list_arrow {
+        width: 40px;
+    }
+
+        .btn_ANCB_list_arrow:after {
+            background-size: 20px;
+            height: 40px;
+        }
+
+    .ANCB_listIn {
+        padding: 7px 15px 8px;
+        line-height: 25px;
+    }
+
+    .ANC_noInfo {
+        top: 55px;
+        font-size: 1.4em;
+    }
+
+        .ANC_noInfo img {
+            width: 90px;
+            height: 90px;
+        }
+}

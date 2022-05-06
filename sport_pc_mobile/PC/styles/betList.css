@@ -1,0 +1,1325 @@
+﻿/*--------------------------------遊戲盤面(左)-列表資料----------------------------*/
+
+/*在列表收合時隱藏欄位，由js需後方帶入數字控制如.screenOff_1,.screenOff_2*/
+[class*="screenOff"] {
+    display: none;
+}
+
+/*標題*/
+.gameTitle {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #404040;
+    color: #bbb;
+    border-bottom: 1px solid #333;
+}
+
+    .gameTitle td {
+        line-height: 35px;
+        height: 35px;
+        text-align: center;
+        vertical-align: top;
+        padding: 0;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+        .gameTitle td:not(.GT_T) {
+            padding: 0 3px;
+            height: auto;
+        }
+
+        .gameTitle td:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            height: 50%;
+            display: block;
+            background-color: rgba(255,255,255,0.25);
+            margin: auto 0;
+            box-sizing: border-box;
+        }
+
+        .gameTitle td:first-child:before {
+            display: none;
+        }
+
+        /*修正ie td空值分隔線消失問題*/
+        .gameTitle td:after {
+            content: '';
+            width: 1px;
+            height: 100%;
+            display: block;
+            float: left;
+            margin-left: -1px;
+            visibility: hidden;
+        }
+
+        .gameTitle td:first-child:after {
+            display: none;
+        }
+
+.GT_T {
+    width: 400px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.GT_more {
+    width: 60px !important;
+}
+
+.GT_TBox {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.btn_gameList_all {
+    width: 50px;
+    height: 100%;
+    margin-right: 5px;
+    position: relative;
+    flex-grow: 0; /*不分配flex剩餘空間*/
+    flex-shrink: 0; /*不縮減超出flex寬度*/
+}
+
+    .btn_gameList_all:after {
+        content: '';
+        background: url(../images/btn_arrow_w.svg) no-repeat center;
+        background-size: 13px;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        opacity: 0.5;
+    }
+
+    .btn_gameList_all.off:after {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+
+.GT_T.hover .btn_gameList_all:after {
+    opacity: 1;
+}
+
+.GT_T_name {
+    text-align: left;
+    height: 100%;
+    flex-grow: 1; /*分配1份,剩餘空間*/
+    flex-shrink: 1; /*縮減1份,超出flex寬度*/
+    overflow: hidden;
+    margin-right: 5px;
+}
+
+.GT_T_nameIn {
+    float: left;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn_GT_sel {
+    position: relative;
+    height: 100%;
+    cursor: pointer;
+    flex-grow: 0; /*不分配flex剩餘空間*/
+    flex-shrink: 0; /*不縮減超出flex寬度*/
+}
+
+.GT_selT {
+    padding-right: 30px;
+    position: relative;
+}
+
+    .GT_selT:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 5px 0 5px;
+        border-color: #fff transparent transparent transparent;
+        top: 0;
+        bottom: 0;
+        right: 10px;
+        margin: auto;
+        opacity: 0.5;
+    }
+
+.btn_GT_sel.on .GT_selT:after {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.btn_GT_sel:hover .GT_selT:after, .btn_GT_sel.on .GT_selT:after {
+    opacity: 1;
+}
+
+.GT_selIn {
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    z-index: 1;
+    display: none;
+}
+
+    .GT_selIn:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 9px 11px 9px;
+        border-color: transparent transparent #ddd transparent;
+        position: absolute;
+        right: 6px;
+        top: -10px;
+        z-index: 1;
+    }
+
+.GT_selInBox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 115px;
+    text-align: left;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    display: none;
+}
+
+    .GT_selInBox a {
+        line-height: 35px;
+        display: block;
+        color: #000;
+        text-decoration: none;
+        white-space: nowrap;
+        padding: 0 35px 0 10px;
+        background-color: #ddd;
+        border-bottom: 1px solid #ccc;
+    }
+
+        .GT_selInBox a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .GT_selInBox a.on {
+            background-color: #f0f0f0;
+            color: #006ede;
+            font-weight: bold;
+        }
+
+.GT_nameT {
+    max-width: calc(100% + 1px);
+    padding: 0 0.5px;
+    box-sizing: border-box;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+
+.GT_nameShow {
+    position: absolute;
+    background-color: #f0f0f0;
+    color: #000;
+    border-radius: 3px;
+    line-height: 16px;
+    padding: 3px 5px;
+    z-index: 1;
+    box-shadow: rgba(0,0,0,0.5) 0px 0px 10px;
+    max-width: 300px;
+    word-break: break-all;
+    word-wrap: break-word;
+    margin-right: -300px;
+    display: none;
+    pointer-events: none;
+}
+
+    .GT_nameShow:before {
+        content: '';
+        border-style: solid;
+        border-color: #f0f0f0 transparent transparent transparent;
+        border-width: 6px 5px 0 5px;
+        position: absolute;
+        left: 10px;
+        bottom: -5px;
+    }
+
+.GT_Num {
+    position: absolute;
+    right: 0;
+    width: 35px;
+    text-align: center;
+}
+
+/*左側收合-右側詳細列表展開時*/
+@media (max-width:1670px) {
+    .gamePanel_L.ZoomOut .GT_T {
+        width: 48%;
+    }
+}
+
+@media (max-width:1600px) {
+    .GT_T {
+        width: 330px;
+    }
+
+    .gamePanel_L.ZoomOut .GT_T {
+        width: 38%;
+    }
+}
+
+@media (max-width:1400px) {
+    .GT_T {
+        width: 235px;
+        /*JS輔助控制 電競-特別投注 表頭寬*/
+    }
+
+    .gamePanel_L.ZoomOut .GT_T {
+        width: 235px;
+    }
+}
+
+/*列表*/
+.gameList_scroll,
+.gameListAll_scroll {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -ms-overflow-style: none; /*IE*/
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none; /*Firefox 64*/
+}
+
+.gameList_scroll {
+    top: 36px;
+}
+
+    .gameList_scroll::-webkit-scrollbar,
+    .gameListAll_scroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    .gameList_scroll:after,
+    .gameListAll_scroll:after {
+        content: '';
+        display: table;
+        width: 100%;
+        height: 30px;
+    }
+
+.btn_GLT {
+    background-color: #696969;
+    color: #fff;
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    cursor: pointer;
+}
+
+    .btn_GLT.off {
+        border-bottom: 1px solid #4f4f4f;
+    }
+
+    .btn_GLT li {
+        display: table-cell;
+        height: 35px;
+        line-height: 17px;
+        vertical-align: middle;
+        text-align: left;
+    }
+
+.icon_gameList_list {
+    width: 50px;
+    position: relative;
+    padding-right: 5px;
+}
+
+    .icon_gameList_list:after {
+        content: '';
+        background: url(../images/btn_arrow_w.svg) no-repeat center;
+        background-size: 13px;
+        width: 15px;
+        height: 15px;
+        display: block;
+        margin: auto;
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        opacity: 0.5;
+    }
+
+.btn_GLT.off .icon_gameList_list:after {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.GLIn {
+    position: relative;
+}
+
+    .GLIn:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #666;
+    }
+
+.GLInBox {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    background-color: #666;
+}
+
+    .GLInBox tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+.GLInList {
+    background-color: #585858;
+    vertical-align: top;
+}
+
+    .GLInList:hover {
+        background-color: #5f5f5f;
+    }
+
+    .GLInList > td {
+        box-sizing: border-box;
+        height: 30px;
+        border-left: 1px solid #5f5f5f;
+        border-bottom: 1px solid #666;
+        padding: 0;
+    }
+
+        .GLInList > td:first-child {
+            border-left: 0;
+        }
+
+    .GLInList:last-child > td {
+        border-bottom: 0;
+    }
+
+    .GLInList:hover > td {
+        border-left-color: #6a6a6a;
+    }
+
+.GLIL_T {
+    width: 400px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.GLIL_More {
+    width: 60px !important;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+    .GLIL_More.on {
+        background-color: #336699;
+    }
+
+    .GLIL_More img {
+        vertical-align: middle;
+    }
+
+.GLIL_MoreRow {
+    margin: 3px 0;
+}
+
+.GLIL_MoreStatus {
+    display: inline-block;
+    position: relative;
+    margin-right: 3px;
+    cursor: default;
+}
+
+.GLIL_MoreRow .GLIL_MoreStatus:last-child {
+    margin-right: 0;
+}
+
+.MS_prompt {
+    position: absolute;
+    background-color: #f0f0f0;
+    color: #000;
+    border-radius: 3px;
+    line-height: 16px;
+    bottom: -22px;
+    right: -3px;
+    padding: 3px 5px;
+    z-index: 1;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    white-space: nowrap;
+    display: none;
+    pointer-events: none;
+}
+
+.icon_liveTv, .icon_liveMc, .icon_liveData {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    cursor: default;
+}
+
+.icon_liveTv {
+    background: url(../images/icon_live_tv.svg) no-repeat center top;
+    background-size: 100% auto;
+}
+
+.icon_liveMc {
+    background: url(../images/icon_live_mc_20210817.svg) no-repeat center;
+    background-size: 100% auto;
+}
+
+.icon_liveData {
+    background: url(../images/icon_live_data.svg) no-repeat center top;
+    background-size: 100% auto;
+}
+
+    .icon_liveTv:hover, .icon_liveMc:hover, .icon_liveData:hover {
+        background-position: bottom;
+    }
+
+.GLIL_MoreStatus.off .icon_liveTv:hover,
+.GLIL_MoreStatus.off .icon_liveMc,
+.GLIL_MoreStatus.off .icon_liveMc:hover,
+.GLIL_MoreStatus.off .icon_liveData:hover {
+    background-position: top;
+}
+
+.GLIL_MoreNum {
+    text-align: center;
+    width: 20px;
+    line-height: 21px;
+    height: 20px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 3px;
+}
+
+/*左側收合-右側詳細列表展開時*/
+@media (max-width:1670px) {
+    .gamePanel_L.ZoomOut .GLIL_T {
+        width: 48%;
+    }
+}
+
+@media (max-width:1600px) {
+    .GLIL_T {
+        width: 330px;
+    }
+
+    .gamePanel_L.ZoomOut .GLIL_T {
+        width: 38%;
+    }
+}
+
+@media (max-width:1400px) {
+    .GLIL_T {
+        width: 235px;
+    }
+
+    .gamePanel_L.ZoomOut .GLIL_T {
+        width: 235px;
+    }
+}
+
+/**/
+.GLInTBox {
+    display: table;
+    width: 100%;
+    height: 100%;
+    min-height: 61px;
+    text-align: center;
+    table-layout: fixed;
+    cursor: pointer;
+}
+
+    .GLInTBox li {
+        display: table-cell;
+        vertical-align: middle;
+        line-height: 18px;
+    }
+
+.GLInTBox_round {
+    color: #bbb;
+    width: 50px;
+    position: relative;
+}
+
+    .GLInTBox_round .t_score {
+        width: 10px;
+        display: inline-block;
+        word-wrap: break-word;
+        line-height: 24px;
+        color: #ffdf1b;
+    }
+
+        .GLInTBox_round .t_score:first-child {
+            color: #bbb;
+        }
+
+.roundScore {
+    position: absolute;
+    z-index: 1;
+    box-shadow: rgba(0,0,0,0.5) 0px 0px 10px;
+    margin-left: 52px;
+    display: none;
+    pointer-events: none;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+}
+
+    .roundScore:before {
+        content: '';
+        border-style: solid;
+        border-color: transparent #f0f0f0 transparent transparent;
+        border-width: 6px 7px 6px 0;
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: -6px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+    }
+
+    .roundScore table {
+        border-collapse: separate;
+        border-spacing: 0;
+        border: 0;
+        background-color: #f0f0f0;
+        color: #000;
+        line-height: 20px;
+        border-radius: 3px;
+        overflow: hidden;
+        text-align: center;
+    }
+
+        .roundScore table tr {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+            .roundScore table tr:first-child {
+                background-color: #ccc;
+                border-bottom: none;
+                border-radius: 3px 3px 0 0;
+            }
+
+            .roundScore table tr:last-child {
+                border-bottom: none;
+            }
+
+        .roundScore table th {
+            color: #777;
+        }
+
+        .roundScore table th, .roundScore table td {
+            width: 22px;
+        }
+
+            .roundScore table th:first-child, .roundScore table td:first-child {
+                padding-left: 6px;
+            }
+
+            .roundScore table th:last-child, .roundScore table td:last-child {
+                padding-right: 6px;
+            }
+
+    .roundScore .t_yellow {
+        color: #ffbe00;
+    }
+
+.Ball_green, .Ball_no {
+    width: 10px;
+    height: 10px;
+    display: block;
+    padding: 1px;
+    box-sizing: border-box;
+}
+
+    .Ball_green:before {
+        content: '';
+        background-color: #23f145;
+        width: 8px;
+        height: 8px;
+        display: block;
+        border-radius: 50%;
+    }
+
+.t_score span[class*="Ball"]:first-child {
+    margin-bottom: 14px;
+}
+
+.GLInTBox_Name {
+    padding: 0 5px;
+    text-align: left;
+}
+
+.GLInTBox_Score {
+    width: 25px;
+    color: #fff;
+}
+
+    .GLInTBox_Score .t_yellow {
+        color: #ffdf1b;
+    }
+
+.GLInTBox_row {
+    /*padding: 3px 0;*/
+    margin: 6px 0;
+}
+
+.GLInTBox_nameBox {
+    line-height: 0;
+    position: relative;
+}
+
+.GLInTBox_nameT {
+    max-width: calc(100% - 15px);
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 18px;
+    height: 18px;
+    vertical-align: middle;
+}
+
+    .GLInTBox_nameT .t_gray {
+        color: #aaa;
+    }
+
+.GLInTBox_nameShow {
+    position: absolute;
+    background-color: #f0f0f0;
+    color: #000;
+    border-radius: 3px;
+    line-height: 16px;
+    bottom: 22px;
+    left: -5px;
+    padding: 3px 5px;
+    z-index: 1;
+    box-shadow: rgba(0,0,0,0.5) 0px 0px 10px;
+    max-width: 300px;
+    word-break: break-all;
+    word-wrap: break-word;
+    margin-right: -300px;
+    display: none;
+    pointer-events: none;
+}
+
+    .GLInTBox_nameShow:before {
+        content: '';
+        border-style: solid;
+        border-color: #f0f0f0 transparent transparent transparent;
+        border-width: 6px 5px 0 5px;
+        position: absolute;
+        left: 8px;
+        bottom: -5px;
+    }
+
+/*針對chrome修正-強制斷行*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .GLInTBox_nameShow {
+        word-break: break-word;
+    }
+}
+
+.GLInTBox_redCard {
+    display: inline-block;
+    background-color: #cc0200;
+    color: #fff;
+    width: 11px;
+    height: 15px;
+    line-height: 16px;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 2px;
+}
+
+.GLInTBox_star {
+    width: 30px;
+}
+
+[class*="icon_court_"] {
+    background: url(../images/icon_court.jpg) no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    width: 23px;
+    height: 15px;
+    margin: 5px auto;
+    cursor: default;
+}
+
+.icon_court_soccer {
+    background-position: 0 top;
+}
+
+.icon_court_soccer_gray {
+    background-position: 0 bottom;
+}
+
+.icon_court_basketball {
+    background-position: -23px top;
+}
+
+.icon_court_basketball_gray {
+    background-position: -23px bottom;
+}
+
+.icon_court_tennis {
+    background-position: calc(-23px*2) top;
+}
+
+.icon_court_tennis_gray {
+    background-position: calc(-23px*2) bottom;
+}
+
+.btn_GLIn_star {
+    width: 19px;
+    height: 19px;
+    background: url(../images/icon_star.svg) no-repeat center bottom;
+    background-size: 100% auto;
+    margin: 2px auto;
+    display: block;
+}
+
+    .btn_GLIn_star:before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
+    }
+
+    .btn_GLIn_star.on {
+        background-position: center top;
+    }
+
+/*賠率*/
+.GLOdds {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+
+    .GLOdds li {
+        display: table;
+        width: 100%;
+        white-space: normal;
+        line-height: 30px;
+        height: 30px;
+        border-top: 1px solid #5f5f5f;
+        text-align: center;
+    }
+
+        .GLOdds li:first-child {
+            border-top: 0;
+        }
+
+.GLInList:hover .GLOdds li:not(.on) {
+    border-top-color: #6a6a6a;
+}
+
+.btn_GLOdds {
+    color: #9adeff;
+    cursor: pointer;
+    position: relative;
+}
+
+    .btn_GLOdds:hover {
+        background-color: #777;
+    }
+
+    .btn_GLOdds.on {
+        border-top: 1px solid #ccc;
+        background-color: #fff;
+        color: #0080ff;
+        position: relative;
+    }
+
+        .btn_GLOdds.on:before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            background-color: #ccc;
+            top: -1px;
+            bottom: 0;
+            left: -1px;
+            margin: auto 0;
+        }
+
+    .btn_GLOdds:first-child.on:before {
+        top: 0;
+    }
+
+.GLIL_T + td .GLOdds:first-child .btn_GLOdds:before {
+    display: none;
+}
+
+.GLOdds_L {
+    float: left;
+    width: 50%;
+    text-align: right;
+    padding-right: 7px;
+    box-sizing: border-box;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.btn_GLOdds.on .GLOdds_L {
+    color: #000;
+}
+
+.GLOdds_R {
+    float: right;
+    width: 50%;
+    text-align: left;
+    padding-left: 7px;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.btn_GLOdds.on .GLOdds_R {
+    color: #0080ff;
+}
+
+@media (max-width:1500px) {
+    .GLOdds_L {
+        padding-right: 4px;
+    }
+
+    .GLOdds_R {
+        padding-left: 4px;
+    }
+}
+
+@media (max-width:1400px) {
+    .GLOdds_L {
+        padding-right: 5px;
+    }
+
+    .GLOdds_R {
+        padding-left: 5px;
+    }
+}
+
+/*收藏夾*/
+.bg_FAV_olympic {
+    background-color: #bb3b3c;
+}
+
+.bg_FAV_worldCup {
+    background-color: #3ca925;
+}
+
+.bg_FAV_UEFA {
+    background-color: #568ec7;
+}
+
+.bg_FAV_fives {
+    background-color: #dc5e5e;
+}
+
+.bg_FAV_champion {
+    background-color: #b1ae1b;
+}
+
+.bg_FAV_soccer {
+    background-color: #208750;
+}
+
+.bg_FAV_basketball {
+    background-color: #d37245;
+}
+
+.bg_FAV_baseball {
+    background-color: #bb9b50;
+}
+
+.bg_FAV_tennis {
+    background-color: #7d9364;
+}
+
+.bg_FAV_hockey {
+    background-color: #76aaa8;
+}
+
+.bg_FAV_football {
+    background-color: #b25332;
+}
+
+.bg_FAV_volleyball {
+    background-color: #e0bf36;
+}
+
+.bg_FAV_badminton {
+    background-color: #dc7d90;
+}
+
+.bg_FAV_handball {
+    background-color: #ad9e60;
+}
+
+.bg_FAV_waterpolo {
+    background-color: #489ab7;
+}
+
+.bg_FAV_pingpong {
+    background-color: #c6914b;
+}
+
+.bg_FAV_billiard {
+    background-color: #a370ab;
+}
+
+.bg_FAV_pcgame {
+    background-color: #7082b1;
+}
+
+.bg_FAV_boxing {
+    background-color: #b93939;
+}
+
+.bg_FAV_other {
+    background-color: #6e889c;
+}
+
+.gameTitle[class*="bg_FAV_"] {
+    color: rgba(255,255,255,0.8);
+    border-bottom-color: rgba(0,0,0,0.1);
+}
+
+/*足球-波膽*/
+.GLInBoxT {
+    background-color: #636363;
+    height: 30px;
+    padding-left: 10px;
+    font-weight: normal;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+    .GLInBoxT .GLIL_MoreStatus {
+        display: inline-block;
+        vertical-align: middle;
+        margin: -4px 0 0px 4px;
+    }
+
+    .GLInBoxT .MS_prompt {
+        bottom: -25px;
+        right: 50%;
+        transform: translateX(50%);
+        -webkit-transform: translateX(50%);
+    }
+
+    .GLInBoxT .btn_GLIn_star {
+        margin: 0 auto;
+    }
+
+.GLInBoxT_time {
+    color: #bbb;
+    margin-right: 10px;
+}
+
+.GLInBoxT_vs {
+    margin: 0 5px;
+    color: #bbb;
+}
+
+.GLInBoxT_score {
+    margin: 0 5px;
+    color: #bbb;
+}
+
+    .GLInBoxT_score span {
+        color: #fff;
+    }
+
+        .GLInBoxT_score span.t_yellow {
+            color: #ffdf1b;
+        }
+
+.GLInBoxT_redCard {
+    display: inline-block;
+    background-color: #cc0200;
+    color: #fff;
+    width: 11px;
+    height: 15px;
+    line-height: 16px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 2px;
+    vertical-align: text-top;
+}
+
+    .GLInBoxT_redCard:first-child {
+        margin-right: 3px;
+    }
+
+    .GLInBoxT_redCard:last-child {
+        margin-left: 3px;
+    }
+
+td.btn_GLOdds {
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+    td.btn_GLOdds.on {
+        border-top: 0;
+        border-bottom-color: #ccc;
+    }
+
+        td.btn_GLOdds.on:before {
+            top: 0;
+        }
+
+.GLOdds_T {
+    color: #fff;
+    white-space: nowrap;
+}
+
+.btn_GLOdds.on .GLOdds_T {
+    color: #000;
+}
+
+.GLOdds_B {
+    white-space: nowrap;
+}
+
+.btn_GLOdds.on .GLOdds_B {
+    color: #0080ff;
+}
+
+/*足球-特定15分*/
+/*單盤+單節+單局*/
+.GLOdds15mins_T,
+.GLOddsSingle_T {
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    background-color: #636363;
+    color: #dfdfdf;
+}
+
+.GLInList:hover .GLOdds15mins_T,
+.GLInList:hover .GLOddsSingle_T {
+    background-color: #6f6f6f;
+}
+
+.GLOdds15mins, .GLOddsSingle {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    position: relative;
+}
+
+    .GLOdds15mins:last-child:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        width: 100%;
+        height: 1px;
+        background-color: #5f5f5f;
+    }
+
+    .GLOdds15mins .GLOdds,
+    .GLOddsSingle .GLOdds {
+        display: table-cell;
+        vertical-align: top;
+        border-left: 1px solid #5f5f5f;
+    }
+
+.GLInList:hover .GLOdds15mins:last-child:after {
+    background-color: #6a6a6a;
+}
+
+.GLInList:hover .GLOdds15mins .GLOdds,
+.GLInList:hover .GLOddsSingle .GLOdds {
+    border-left-color: #6a6a6a;
+}
+
+.GLOdds15mins .GLOdds[class*="screenOff"],
+.GLOddsSingle .GLOdds[class*="screenOff"] {
+    display: none;
+}
+
+.GLOdds15mins .GLOdds:first-child,
+.GLOddsSingle .GLOdds:first-child {
+    border-left: 0;
+}
+
+/*電子競技-單局 + 滾球(籃球/美足)單隊總得分(1行7欄)*/
+.GLInBoxPcgame {
+    width: calc(100% + 1px);
+    margin-right: -1px;
+}
+
+.GLOddsPcgame {
+    width: 25%;
+    float: left;
+    border-right: 1px solid #5f5f5f;
+    border-bottom: 1px solid #5f5f5f;
+    box-sizing: border-box;
+}
+
+.cell7 .GLOddsPcgame {
+    width: calc(100%/7);
+    border-bottom: 0;
+}
+
+.GLInList:hover .GLOddsPcgame {
+    border-right-color: #6a6a6a;
+    border-bottom-color: #6a6a6a;
+}
+
+.GLOddsPcgame_T {
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    background-color: #636363;
+    color: #dfdfdf;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 5px;
+}
+
+.GLInList:hover .GLOddsPcgame_T {
+    background-color: #6f6f6f;
+}
+
+.GLOddsPcgame_In .GLOdds li:first-child {
+    border-left: 0;
+}
+
+.GLInList:hover .GLOddsPcgame_In .GLOdds li {
+    border-left-color: #6a6a6a;
+}
+
+.GLOddsPcgame_In .btn_GLOdds.on:before {
+    top: 0;
+}
+
+/*優勝冠軍*/
+.GLInBoxWinner {
+    width: calc(100% + 1px);
+    margin-right: -1px;
+}
+
+    .GLInBoxWinner .GLOdds li {
+        float: left;
+        width: 33.33%;
+        padding: 0 5px 0 18px;
+        display: block;
+        border-top: 0;
+        border-bottom: 1px solid #5f5f5f;
+        border-right: 1px solid #5f5f5f;
+        box-sizing: border-box;
+        text-align: left;
+        white-space: nowrap;
+        position: relative;
+    }
+
+    .GLInBoxWinner .GLInList:hover .GLOdds li:not(.on) {
+        border-color: #6a6a6a;
+    }
+
+    .GLInBoxWinner .GLOdds li.on {
+        border-color: #ccc;
+    }
+
+        .GLInBoxWinner .GLOdds li.on:before {
+            display: none;
+        }
+
+    .GLInBoxWinner .GLOdds_L, .GLInBoxWinner .GLOdds_R {
+        float: left;
+        width: auto;
+        text-align: left;
+    }
+
+    .GLInBoxWinner .GLOdds_L {
+        max-width: calc(100% - 50px);
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+.GLOdds_textShow {
+    position: absolute;
+    background-color: #f0f0f0;
+    color: #000;
+    border-radius: 3px;
+    line-height: 16px;
+    bottom: 30px;
+    left: 12px;
+    padding: 3px 5px;
+    z-index: 1;
+    box-shadow: rgba(0,0,0,0.5) 0px 0px 10px;
+    max-width: 300px;
+    white-space: normal;
+    word-break: break-all;
+    word-wrap: break-word;
+    display: none;
+    pointer-events: none;
+}
+
+    .GLOdds_textShow:before {
+        content: '';
+        border-style: solid;
+        border-color: #f0f0f0 transparent transparent transparent;
+        border-width: 6px 5px 0 5px;
+        position: absolute;
+        left: 8px;
+        bottom: -5px;
+    }
+
+@media (max-width:1300px) {
+    .GLInBoxWinner .GLOdds li {
+        width: 50%;
+    }
+}
+.gametype{
+	padding: 0 5px;
+    font-weight: bold;
+	}
+.baseball{  color:#FC3}
+.basketball{ color: #F60}
+.soccer{ color:#0C0}
+.hockey{ color:#0CF}
+

@@ -1,0 +1,1596 @@
+﻿/*-----------------------------主結構--main.css--------------------------------*/
+body {
+    background-color: #f3f3f3;
+}
+
+.t_grayL {
+    color: #999;
+}
+
+/*--------------------表頭---------------------*/
+.header {
+    background-color: #3fa381;
+}
+
+    .header:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
+    }
+
+.homeList {
+    background-color: #fff;
+}
+
+    .homeList:before {
+        border-color: transparent transparent #fff transparent;
+    }
+
+    .homeList li:active {
+        background-color: #e6f7ff;
+    }
+
+    .homeList li + li:before {
+        background-color: #ddd;
+    }
+
+.headerMore {
+    background-color: #3fa381;
+}
+
+    .headerMore.header:after {
+        display: none;
+    }
+
+.btn_header.on {
+    background-color: #fff;
+    color: #6da9e5;
+}
+
+.icon_money:before {
+    background-image: url(../images/icon_header_money.svg);
+}
+
+/*--------------------選單---------------------*/
+.menu, .menuDate {
+    background-color: #3fa381;
+}
+
+    .menu a, .menuDate a {
+        color: rgba(255,255,255,0.6);
+    }
+
+        .menu a img, .menuDate a img {
+            opacity: 0.6;
+        }
+
+        .menu a.on, .menuDate a.on {
+            color: #fff;
+        }
+
+        .menu a:not(.btn_favorite):not(.btn_noArrow).on:after,
+        .menuDate a:not(.btn_favorite):not(.btn_noArrow).on:after {
+            background-image: url(../images/btn_arrowAll_yellow.svg);
+        }
+
+.btn_dateMenu {
+    background-color: #085239 !important;
+}
+
+.icon_dateMenu {
+    color: #fff;
+}
+
+    .icon_dateMenu:before {
+        background-image: url(../images/btn_date.svg);
+    }
+
+a.btn_favorite {
+    background-color: #6da9e5;
+}
+
+/*--------------------子目錄----------------------*/
+.menuSub {
+    background-color: #6da9e5;
+}
+
+    .menuSub li.on a:after {
+        background-color: #fff;
+    }
+
+/*--------------------主要內容----------------------*/
+.container {
+    background-color: #fff;
+}
+
+/*各球類選擇玩法*/
+.setPlayIn {
+    background-color: #d0d0d0;
+    color: #000;
+}
+
+/*左側賽事表格*/
+.leagueL_all {
+    background-color: #d0d0d0;
+}
+
+/*單一行用league且外層不用leagueL_all，左右分割用leagueL和leagueR */
+.league, .leagueL {
+    background-color: #fff;
+}
+
+    .leagueL.on:after {
+        background-color: #e3e3e3;
+    }
+
+.leagueTitle {
+    background-color: #e8e8e8;
+    color: #444;
+}
+
+.btn_arrow {
+    background-color: #e8e8e8;
+}
+
+    .btn_arrow:before {
+        background-image: url(../../images/btn_arrow.svg);
+    }
+
+    .btn_arrow.on:after {
+        background-color: #d8d8d8;
+    }
+
+.leagueGame {
+    border-right-color: #f3f3f3;
+    border-bottom-color: #eee;
+}
+
+.leagueContent {
+    color: #000;
+}
+
+.leagueStatus {
+    color: #888;
+}
+
+    .leagueStatus .t_yellow {
+        color: #ff8800;
+    }
+
+    .leagueStatus .t_score {
+        color: #ff8800;
+    }
+
+.leaguePoint {
+    color: #000;
+}
+
+    .leaguePoint .t_yellow {
+        color: #ff8800;
+    }
+
+.leagueContent > div .Ball_green {
+    background-color: #00c103;
+}
+
+/*右側賽事表格*/
+.leagueR {
+    background-color: #d0d0d0;
+    color: #000;
+}
+
+    .leagueR table.on:after {
+        background-color: #e3e3e3;
+    }
+
+    .leagueR th {
+        background-color: #e8e8e8;
+        color: #444;
+    }
+
+    .leagueR td {
+        background-color: #fff;
+    }
+
+        .leagueR td ul:before, .leagueR td li:after {
+            background-color: #ececec;
+        }
+
+    .leagueR table:not(.noMore) td:nth-last-child(2) ul:before {
+        display: none;
+    }
+
+    .leagueR table:not(.noMore) td:last-child li {
+        background-color: #fff;
+    }
+
+    .leagueR td ul:after {
+        background-color: #eee;
+    }
+
+.btn_li {
+    color: #30679e;
+    font-weight: bold;
+}
+
+    .btn_li:active {
+        background-color: #ffe1ae;
+    }
+
+    .btn_li .L50, .btn_li .T50 {
+        color: #000;
+        font-weight: normal;
+    }
+
+    .btn_li.on {
+        background-color: #ffd5d5;
+        color: #0080ff;
+    }
+
+.scroll_point li {
+    background-color: #ddd;
+}
+
+    .scroll_point li.on {
+        background-color: #aac7e2;
+    }
+
+.leagueMore {
+    color: #000;
+}
+
+    .leagueMore li {
+        background-color: #fff;
+        border-left-color: #f3f3f3;
+        border-bottom-color: #eee;
+    }
+
+        .leagueMore li:active {
+            -webkit-filter: brightness(0.96);
+            filter: brightness(0.96);
+        }
+
+/*(波膽/入球數/半全場)賽事表格*/
+.leagueTable {
+    background-color: #fff;
+}
+
+    .leagueTable caption {
+        background-color: #f3f3f3;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+        .leagueTable caption:active {
+            background-color: #f8f8f8;
+        }
+
+.LT_time {
+    color: #888;
+}
+
+    .LT_time .t_yellow {
+        color: #ff8800;
+    }
+
+.LT_more {
+    border-left-color: #e0e0e0;
+    color: #000;
+}
+
+.LT_name {
+    color: #000;
+}
+
+.LT_score {
+    color: #888;
+}
+
+    .LT_score span {
+        color: #000;
+    }
+
+        .LT_score span.t_yellow {
+            color: #ff8800;
+        }
+
+span.LT_redCard {
+    color: #fff;
+}
+
+.leagueTable th {
+    border-right-color: #f3f3f3;
+    color: #888;
+    font-weight: normal;
+}
+
+.leagueTable td {
+    border-right-color: #f3f3f3;
+    border-top-color: #f3f3f3;
+}
+
+.leagueTable .T50 {
+    color: #888;
+}
+
+/*------------------快速投注-------------------*/
+.betList {
+    box-shadow: rgba(0,0,0,0.25) 0px -3px 8px;
+}
+
+.betListT {
+    background-color: #6da9e5;
+}
+
+.betMenu li.on {
+    background-color: #fff;
+    color: #6da9e5;
+}
+
+.betMenu span {
+    color: #ffbc00;
+}
+
+.betListIn {
+    border-color: #bbb;
+}
+/*--------------------彈窗---------------------*/
+.popupT {
+    background-color: #6da9e5;
+}
+
+.popupBet li.on {
+    background-color: #fff;
+    color: #6da9e5;
+}
+
+.popupBet span {
+    color: #ffbc00;
+}
+
+/*--------------------頁腳---------------------*/
+.footer {
+    background-color: #eee;
+    border-color: #ccc;
+}
+
+    .footer a {
+        color: #5f5f5f;
+    }
+
+.icon_transfer {
+    background-image: url(../images/icon_footer_transfer.svg);
+}
+
+.icon_league {
+    background-image: url(../images/icon_footer_league.svg);
+}
+
+.footer a.on .icon_league {
+    background-image: url(../images/icon_footer_league_y.svg);
+}
+
+.icon_record {
+    background-image: url(../images/icon_footer_record.svg);
+}
+
+.icon_more {
+    background-image: url(../images/icon_footer_more.svg);
+}
+
+.icon_present {
+    border-color: #5e5e5e;
+    color: #5e5e5e;
+}
+
+.footer a.on .icon_present {
+    border-color: #ff9600;
+    color: #ff9600;
+}
+
+.clickBet_odds {
+    color: #ff9600;
+}
+
+.icon_update {
+    background-image: url(../images/icon_footer_update.svg);
+}
+
+/*--------------暫無賽事/暫無賽果-------------*/
+.noGmae, .noResult {
+    color: #000;
+}
+
+/*-----------------過關計算器-----------------*/
+.calculator {
+    background-color: #d0d0d0;
+}
+
+.calcTable_T, .calcTable_In {
+    background-color: #eee;
+    border-color: #c9c9c9;
+}
+
+.calcPassCount_ratio.off {
+    background-color: #ccc;
+}
+
+.calc_totalBetR .calcKeyNum.off {
+    background-color: #ccc;
+}
+
+.calcPrompt {
+    background-color: #eee;
+}
+
+.formula {
+    border-color: #aaa;
+}
+
+/*------------投注記錄(共用設定)-----------*/
+.popRecordB, .popRecordB2 {
+    background-color: #5c9dde;
+}
+
+    .popRecordB .t_green, .popRecordB2 .t_green {
+        color: #4df742;
+    }
+
+    .popRecordB .t_red, .popRecordB2 .t_red {
+        color: #ffaaaa;
+    }
+
+/*------------------賽果-列表-----------------*/
+.GR_leagueR .t_yellow {
+    color: #ff8800;
+}
+
+/*---(早盤日期/系統信息/規則次目錄/對戰組合選單)彈跳視窗-共用設定---*/
+.popList:after, .popListBox_T, .popListBox_scroll {
+    background-color: #fff;
+    border-color: #c4ccd7;
+}
+
+.popListBox_T_text:after {
+    background-color: #ccc;
+}
+
+.popLB_list {
+    border-color: #ddd;
+}
+
+/*---------------系統信息-微調---------------*/
+.popListBox_In {
+    background-color: #fff;
+    border-left-color: #c4ccd7;
+    border-right-color: #c4ccd7;
+}
+
+/*---------------滾球頁面配色----------------*/
+.rollLive .btn_li {
+    color: #ff8800;
+}
+
+/*------------------賠率變化-----------------*/
+.btn_li .oddsText,
+.btn_li.on .oddsText {
+    color: #009eda !important;
+}
+
+.oddsUp {
+    color: #ff0000 !important;
+}
+
+.btn_li.on .oddsUp, .btn_li.on.oddsUp {
+    color: #e20000 !important;
+}
+
+.oddsDown {
+    color: #00cc00 !important;
+}
+
+.btn_li.on .oddsDown, .btn_li.on.oddsDown {
+    color: #00a500 !important;
+}
+
+/*------------------快速轉帳-----------------*/
+.fastTransfer_In { /*6944*/
+    background-color: #eee;
+}
+
+/*--------------------盤口-------------------*/
+/*盤口nav*/
+.tutorials_nav {
+    border-top: 0;
+    background-color: #6da9e5;
+}
+
+    .tutorials_nav li {
+        opacity: 0.6;
+    }
+
+        .tutorials_nav li.on img {
+            filter: drop-shadow(0px 0px 0px #fff);
+        }
+
+/*------------------------------更多玩法--more.css------------------------------*/
+.headerName .t_grayL {
+    color: #ddd;
+}
+
+.morePage_scroll { /*183*/
+    background-color: #eee;
+}
+
+/*-----------------視頻區域-----------------*/
+.viewMore_T.solid {
+   background-color: #555;
+}
+
+/*------------------滾球動畫-----------------*/
+.runData {
+    background-color: #fff;
+    border-bottom-color: #bbb;
+}
+
+.btn_radarTime:before {
+    background-image: url(../../bgColor_w/images/btn_radarTime.svg);
+}
+
+.RDTB_Loading {
+    background-color: #eaeaea;
+}
+
+    .RDTB_Loading:before {
+        background-image: url(../../bgColor_w/images/icon_loading.svg);
+        opacity: 0.5;
+    }
+
+/*-----------------賽事數據-----------------*/
+.gameData {
+    background-color: #eee;
+    color: #000;
+    border-bottom-color: #bbb;
+}
+
+    .gameData .owl-theme .owl-dots .owl-dot span {
+        background-color: rgba(150,150,150,0.7);
+    }
+
+    .gameData .owl-prev span, .gameData .owl-next span {
+        background-image: url(../../images/btn_arrow.svg);
+        opacity: 0.3;
+    }
+
+    .gameData .owl-prev:hover span, .gameData .owl-next:hover span {
+        opacity: 0.6;
+    }
+
+.GD_moreDate {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/*------賽事數據-輪播page1------*/
+/*足球bar/籃球bar/網球bar-共用*/
+.runBar {
+    border-bottom-color: #bbb;
+}
+
+.RB_T {
+    color: #555;
+}
+
+.RB_Num {
+    color: #000;
+}
+
+/*籃球bar-微調*/
+.RB_basketball {
+    color: #000;
+}
+
+    .RB_basketball .RB_Num {
+        color: #fff;
+    }
+
+/*網球bar-微調*/
+.RB_tennis {
+    color: #000;
+}
+
+    .RB_tennis .RB_Num {
+        color: #fff;
+    }
+
+/*足球/籃球-下方共用*/
+.RO_T {
+    color: #555;
+}
+
+.RO_Num {
+    color: #000;
+}
+
+/*------賽事數據-輪播page2------*/
+.gameData_top + .gameData_top {
+    border-left-color: #bbb;
+}
+
+.gameData_btm + .gameData_btm {
+    border-left-color: #bbb;
+}
+
+.gameData_btm {
+    border-top-color: #bbb;
+}
+
+.GD_T {
+    color: #555;
+}
+
+.GD_Num {
+    color: #ff8800;
+}
+
+[class*='bg_GD_color'] {
+    color: #fff;
+}
+
+/*-------------列表-全開全關-------------*/
+.menuMore, .btn_gameStyle_all {
+    background-color: #666;
+}
+
+    .menuMore a {
+        background-color: transparent;
+    }
+
+        .menuMore a.on:after {
+            background-color: #daefff;
+        }
+
+        .menuMore a.roll:after {
+            background-color: #ffad00;
+        }
+
+.btn_moreRecord {
+    background-color: #666;
+}
+
+.icon_moreRecord:after {
+    filter: brightness(1.5);
+    opacity: 0.8;
+}
+
+/*----------------內文------------------*/
+.gameStyle_T {
+    background-color: #eee;
+    color: #000;
+    border-top-color: #ccc;
+    border-bottom-color: #ccc;
+}
+
+    .gameStyle_T:before {
+        background-image: url(../../images/btn_arrow.svg);
+        opacity: 0.5;
+    }
+
+    .gameStyle_T .t_yellow {
+        color: #e87800;
+    }
+
+.gameStyle_In {
+    border-bottom-color: #e3e3e3;
+}
+
+.btn_GST_i:before {
+    background-image: url(../images/icon_GST_i.svg);
+}
+
+.btn_GST_i:after {
+    border-top-color: #fff;
+}
+
+.GST_InBox {
+    background-color: #fff;
+}
+
+.btn_GST_i.boxBottom:after {
+    border-bottom-color: #fff;
+}
+
+.gameStyle_Table th {
+    background-color: #fff;
+    color: #000;
+    border-right-color: #eee;
+    border-bottom-color: #eee;
+    font-weight: normal;
+}
+
+    .gameStyle_Table th:first-child {
+        border-left: 0;
+    }
+
+.gameStyle_Table td {
+    background-color: #fff;
+    border-bottom-color: #eee;
+}
+
+    .gameStyle_Table td:not(.btn_li) {
+        color: #000;
+    }
+
+.betBox > div + div {
+    border-left-color: #eee;
+}
+
+/*-------------賽果詳細列表------------*/
+.containerResult .gameStyle_Table th {
+    background-color: #e8e8e8;
+}
+
+.containerResult .gameStyle_Table td {
+    border-right-color: #f3f3f3;
+}
+
+    .containerResult .gameStyle_Table td.t_yellow {
+        color: #ff8800;
+    }
+
+    .containerResult .gameStyle_Table td.t_red {
+        color: #f00;
+    }
+
+    .containerResult .gameStyle_Table td.t_green {
+        color: #00c103;
+    }
+
+/*----------------聊天室--------------*/
+.chatroom {
+    background-color: #fff;
+}
+
+.btn_CR_close {
+    background-image: url(../../images/btn_close.svg);
+}
+
+.btn_CR_openAll:before {
+    background-image: url(../../images/btn_arrow.svg);
+}
+
+.CR_openAll_text:before {
+    border-color: transparent transparent #ff8d07 transparent;
+}
+
+.CR_openAll_textBox {
+    background-color: #ff8d07;
+    color: #fff;
+}
+
+.talk_T {
+    color: #888;
+}
+
+.talk_LV1 .talk_name {
+    color: #836634;
+}
+
+    .talk_LV1 .talk_name:active {
+        color: #563800;
+    }
+
+.talk_LV2 .talk_name {
+    color: #e5ac48;
+}
+
+    .talk_LV2 .talk_name:active {
+        color: #ce8300;
+    }
+
+.talk_LV3 .talk_name {
+    color: #afafaf;
+}
+
+    .talk_LV3 .talk_name:active {
+        color: #777;
+    }
+
+.talk_LV4 .talk_name {
+    color: #8c56d0;
+}
+
+    .talk_LV4 .talk_name:active {
+        color: #4f00b5;
+    }
+
+.talk_LV5 .talk_name {
+    color: #d85352;
+}
+
+    .talk_LV5 .talk_name:active {
+        color: #c30100;
+    }
+
+.talk_AD .talk_name {
+    color: #31aa00;
+}
+
+.talk_MC .talk_name {
+    color: #f668b2;
+}
+
+    .talk_MC .talk_name:active {
+        color: #dc4f98;
+    }
+
+.talk_In {
+    color: #000;
+}
+
+.talkMsg_like {
+    background-color: rgba(247, 223, 255, 0.7);
+    color: #ff00fb;
+}
+
+.talkMsg_gift {
+    background-color: #ffdbdb;
+    color: #000;
+}
+
+.talkMsg_like [class*="icon_ranking"]:before {
+    filter: none;
+    -webkit-filter: none;
+}
+
+.talkMsg_name {
+    color: #c40000;
+}
+
+.takeName {
+    color: #0074b7;
+}
+
+    .takeName:active {
+        color: #00507e;
+    }
+
+.talk_MC .takeName:active, .talk_AD .takeName:active, .talk_USER .takeName:active {
+    color: #00507e;
+}
+
+.talk_InForm {
+    background-color: #f0f0f0;
+}
+
+    .talk_InForm:active {
+        background-color: #eaeaea;
+    }
+
+.CR_removePrompt {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.btn_CR_slideDown:before {
+    background-color: #037eff;
+    opacity: 0.5;
+}
+
+.btn_CR_slideDown:active:before {
+    background-color: #037eff;
+    opacity: 1;
+}
+
+.CR_loading:before {
+    background-image: url(../images/icon_loading2.png);
+    opacity: 0.4;
+}
+
+/*聊天室下方輸入*/
+.chatroom_btm > ul {
+    background-color: #666;
+}
+
+.btn_chatroom:before {
+    opacity: 0.5;
+}
+
+/*贈禮按鈕*/
+.btn_gift:before {
+    -webkit-filter: brightness(1.05);
+    filter: brightness(1.05);
+    opacity: 1;
+}
+
+.btn_gift:active:before, .btn_gift.on:before {
+    -webkit-filter: brightness(1.3);
+    filter: brightness(1.3);
+}
+
+.btn_gift.off:before {
+    opacity: 0.5;
+}
+
+/*快捷訊息*/
+.btn_quickMsg:before {
+    opacity: 0.5;
+}
+
+.btn_quickMsg:active:before {
+    opacity: 0.7;
+}
+
+.btn_quickMsg.on:before, .btn_quickMsg.on:active:before {
+    background-position: center top;
+    opacity: 1;
+}
+
+.quickMsg_scroll {
+    background-color: rgba(42,79,107,0.95);
+}
+
+    .quickMsg_scroll li {
+        border-bottom: 1px solid #547894
+    }
+
+        .quickMsg_scroll li:active {
+            color: #fff;
+            background-color: rgba(0,107,214,0.8);
+        }
+
+/*秀單*/
+.showFormBox {
+    background-color: #d8d8d8;
+}
+
+.showFormBox_T:after {
+    background-color: #aaa;
+}
+
+/*(表情符號+貼圖表)設定*/
+.faceIconBox_T li.on {
+    background-color: #6da9e5;
+}
+
+/**/
+.btn_CRB_submit:before {
+    background-image: url(../images/icon_send_20200729.svg);
+    background-position: center !important;
+    background-size: 100%;
+    opacity: 0.5;
+}
+
+.btn_CRB_submit.on:before {
+    opacity: 1;
+}
+
+.btn_CRB_submit.on:active:before {
+    opacity: 0.7;
+}
+
+.CRB_prompt {
+    background-color: #30679e;
+    color: #fff;
+    box-shadow: none;
+}
+
+    .CRB_prompt:before {
+        border-color: #30679e transparent transparent transparent;
+    }
+
+/*聊天室下方輸入-禁言狀態*/
+.chatroom_btm.off .CRB_keyIn_Box {
+    background-color: #30679e;
+}
+
+.chatroom_btm.off .btn_showForm {
+    background-image: url(../images/btn_showForm.svg);
+    opacity: 0.4;
+}
+
+.chatroom_btm.off .btn_faceIcon {
+    background-image: url(../images/btn_faceIcon.svg);
+    opacity: 0.4;
+}
+
+    .chatroom_btm.off .btn_showForm:active,
+    .chatroom_btm.off .btn_showForm.on,
+    .chatroom_btm.off .btn_faceIcon:active,
+    .chatroom_btm.off .btn_faceIcon.on {
+        opacity: 0.4;
+    }
+
+/*半開/全開-聊天室*/
+.chatroomOpen.chatroom {
+    border-top-color: #bbb;
+}
+
+.chatroomOpenAll.off .btn_CR_close {
+    background-image: url(../../images/btn_close_w.svg);
+}
+
+/*贈禮列表*/
+.giftBox {
+    background-color: #e2e2e2;
+}
+
+.btn_giftBox_close {
+    background-image: url(../../images/btn_close.svg);
+}
+
+.giftList_name {
+    color: #000;
+}
+
+.giftList_point {
+    color: #f66;
+}
+
+.giftBox_footer {
+    border-top-color: #bbb;
+}
+
+.GBF_ID_giftPoint {
+    color: #e86e8c;
+}
+
+.GBF_ID_point {
+    color: #f79400;
+}
+
+/*贈禮列表(彈跳訊息)*/
+.giftPopup {
+    background-color: rgba(0,0,0,0.9);
+}
+
+/*-----------全屏聊天室-設定-----------*/
+.fullchatroom .giftBox {
+    border-top: 0;
+}
+
+/*-------------------------------規則--rule.css--------------------------------*/
+.containerRule {
+    background-color: #ededed;
+}
+
+/*ruleTable*/
+.ruleTable, .ruleTable_s {
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    position: relative;
+}
+
+    .ruleTable:after, .ruleTable_s:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #ccc;
+        z-index: 2;
+    }
+
+/*左*/
+.ruleTable_L_In {
+    background-color: #fff;
+}
+
+    .ruleTable_L_In:after, .ruleTable_R table:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #e3e3e3;
+        z-index: 2;
+    }
+
+.RTL_T {
+    background-color: #e8e8e8;
+    color: #444;
+}
+
+.RTL_line:after {
+    background-color: #d8d8d8;
+}
+
+.RTL_box ul {
+    border-right-color: #f3f3f3;
+    border-bottom-color: #eee;
+}
+
+.RTL_box li {
+    color: #000;
+}
+
+.ruleTable_R td:last-child ul:before {
+    display: none;
+}
+
+.RTL_time {
+    color: #888;
+}
+
+.RTL_point li {
+    background-color: #ccc;
+}
+
+/*右*/
+.ruleTable_R th {
+    background-color: #e8e8e8;
+    color: #444;
+}
+
+.ruleTable_R td {
+    color: #30679e;
+    background-color: #fff;
+    font-weight: bold;
+}
+
+    .ruleTable_R td ul:after {
+        background-color: #eee;
+    }
+
+    .ruleTable_R td ul:before {
+        background-color: #f3f3f3;
+    }
+
+    .ruleTable_R td li:after {
+        background-color: #f3f3f3;
+    }
+
+.ruleTable_R .L50 {
+    color: #000;
+    font-weight: normal;
+}
+
+.ruleGameStyle {
+    border: 1px solid #ccc;
+}
+
+    .ruleGameStyle th {
+        background-color: #e8e8e8;
+        border-right-color: #ddd;
+        color: #000;
+    }
+
+    .ruleGameStyle td {
+        background-color: #fff;
+        color: #30679e;
+        border-right-color: #f3f3f3;
+        border-bottom-color: #f3f3f3;
+        font-weight: bold;
+    }
+
+    .ruleGameStyle .L50, .ruleGameStyle .T50 {
+        color: #000;
+        font-weight: normal;
+    }
+
+.RGS_name {
+    background-color: #6da9e5;
+}
+
+/*------------------------------公告專區--rule.css---------------------------------*/
+.containerANC {
+    background-color: #e4e4e4;
+}
+
+/*------------------------------收藏夾--favorite.css-------------------------------*/
+.containerFAV .leagueL_all, .containerFAV .leagueR {
+    background-color: #d0d0d0;
+    margin-bottom: 0;
+}
+
+.containerFAV > div:last-child .leagueL:last-child, .containerFAV > div:last-child .leagueR table:last-child {
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.containerFAV > div:last-child .leagueL.on:last-child, .containerFAV > div:last-child .leagueR table.on:last-child {
+    border-bottom: 0;
+}
+
+.FAV_T_olympic, .FAV_R_olympic th {
+    background-color: #bb3b3c;
+}
+
+.FAV_T_worldCup, .FAV_R_worldCup th {
+    background-color: #3ca925;
+}
+
+.FAV_T_UEFA, .FAV_R_UEFA th {
+    background-color: #568ec7;
+}
+
+.FAV_R_fives, .FAV_R_fives th {
+    background-color: #dc5e5e;
+}
+
+.FAV_R_champion, .FAV_R_champion th {
+    background-color: #b1ae1b;
+}
+
+.FAV_R_soccer, .FAV_R_soccer th {
+    background-color: #208750;
+}
+
+.FAV_R_basketball, .FAV_R_basketball th {
+    background-color: #d37245;
+}
+
+.FAV_R_baseball, .FAV_R_baseball th {
+    background-color: #bb9b50;
+}
+
+.FAV_R_tennis, .FAV_R_tennis th {
+    background-color: #7d9364;
+}
+
+.FAV_R_hockey, .FAV_R_hockey th {
+    background-color: #75aaa8;
+}
+
+.FAV_R_football, .FAV_R_football th {
+    background-color: #b25332;
+}
+
+.FAV_R_volleyball, .FAV_R_volleyball th {
+    background-color: #e0bf36;
+}
+
+.FAV_R_badminton, .FAV_R_badminton th {
+    background-color: #dc7d90;
+}
+
+.FAV_R_handball, .FAV_R_handball th {
+    background-color: #ad9e60;
+}
+
+.FAV_R_waterpolo, .FAV_R_waterpolo th {
+    background-color: #489ab7;
+}
+
+.FAV_R_pingpong, .FAV_R_pingpong th {
+    background-color: #c6914b;
+}
+
+.FAV_R_billiard, .FAV_R_billiard th {
+    background-color: #a370ab;
+}
+
+.FAV_R_pcgame, .FAV_R_pcgame th {
+    background-color: #7082b1;
+}
+
+.FAV_R_boxing, .FAV_R_boxing th {
+    background-color: #b93939;
+}
+
+.FAV_T_other, .FAV_R_other th {
+    background-color: #6e889c;
+}
+
+/*優勝冠軍*/
+.containerWinner > div {
+    background-color: #d0d0d0;
+    margin-bottom: 0;
+}
+
+    .containerWinner > div:last-child {
+        position: relative;
+    }
+
+        .containerWinner > div:last-child:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #e3e3e3;
+            z-index: 1;
+        }
+
+.containerWinner .leagueIn {
+    background-color: #fff;
+}
+
+    .containerWinner .leagueIn:after {
+        background-color: #e3e3e3;
+    }
+
+    .containerWinner .leagueIn li {
+        border-color: #f3f3f3;
+    }
+
+/*------------------------------經典界面--jz_main.css-------------------------------*/
+/*表頭*/
+.jz_header, .jz_menu {
+    border-bottom-color: #8bbcee;
+}
+
+    .jz_menu a {
+        color: #fff;
+    }
+
+.jz_header_RD {
+    border-bottom: 1px solid #8bbcee;
+}
+
+.jz_tableHeader {
+    background-color: #6da9e5;
+}
+
+    .jz_tableHeader li {
+        border-right-color: #8bbcee;
+    }
+
+        .jz_tableHeader li:before, .jz_tableHeader li:after {
+            background-color: #6da9e5;
+        }
+
+/*選單*/
+.jz_menu a:not(.btn_favorite):not(.btn_noArrow).on:after {
+    background-image: url(../../images/btn_arrow_w.svg);
+}
+
+/*主要內容*/
+.jz_container {
+    background-color: #fff !important;
+}
+
+    /*賽果表格*/
+    .jz_container .leagueTitle {
+        background-color: #e8e8e8;
+    }
+
+    .jz_container .btn_arrow {
+        background-color: #e8e8e8;
+    }
+
+        .jz_container .btn_arrow:after {
+            background-color: #d8d8d8;
+        }
+
+    .jz_container .leagueR th {
+        background-color: #e8e8e8;
+    }
+
+    .jz_container .league, .jz_container .leagueL {
+        background-color: #fff;
+    }
+
+    .jz_container .leagueGame {
+        border-bottom-color: #dfdfdf;
+        border-right: 1px solid #ececec;
+    }
+
+    .jz_container .leagueMore li {
+        background-color: #fff;
+        border-left: 1px solid #ececec;
+        border-bottom-color: #dfdfdf;
+    }
+
+    .jz_container .leagueR td ul:before,
+    .jz_container .leagueR td li:after {
+        background-color: #ececec;
+    }
+
+    .jz_container .leagueR td ul:after {
+        background-color: #dfdfdf;
+    }
+
+    .jz_container .leagueL.on:after,
+    .jz_container .leagueR table.on:after {
+        background-color: #dfdfdf;
+    }
+
+    /*賽事表格*/
+    .jz_container .t_color {
+        color: #f00;
+    }
+
+    .jz_container .btn_li {
+        font-weight: bold !important;
+    }
+
+        .jz_container .btn_li.oddsUp {
+            color: #ff0000;
+        }
+
+        .jz_container .btn_li.oddsDown {
+            color: #00cc00;
+        }
+
+        .jz_container .btn_li.on .oddsUp, .jz_container .btn_li.on.oddsUp {
+            color: #e20000;
+        }
+
+        .jz_container .btn_li.on .oddsDown, .jz_container .btn_li.on.oddsDown {
+            color: #00a500;
+        }
+
+    .jz_container .jz_league.on:after {
+        background-color: #dfdfdf;
+    }
+
+.jz_league .leagueTitle {
+    background-color: #f3f3f3;
+    border-top: 1px solid #fff;
+    border-bottom-color: #dedede !important;
+}
+
+.jz_league .leagueGame {
+    background-color: #fff;
+    color: #aaa;
+    border: 0;
+}
+
+.jz_league th {
+    background-color: #d5ebff;
+}
+
+.jz_league th, .jz_league td {
+    border-right-color: #dfdfdf;
+    border-bottom-color: #dfdfdf;
+}
+
+    .jz_league td.on {
+        border-right-color: #ececec;
+        border-bottom-color: #ececec;
+    }
+
+    .jz_league th > ul > li:not(.jz_vs) {
+        color: #444;
+    }
+
+.jz_leagueMore > div {
+    border-color: #2680e0;
+    color: #2680e0;
+}
+
+.jz_leagueMore:active > div {
+    background-color: #2680e0;
+    color: #fff;
+}
+
+/*滾球*/
+.jz_containerRoll th {
+    background-color: #fee;
+}
+
+.jz_containerRoll tr:first-child th {
+    border-top: 1px solid #dfdfdf;
+}
+
+.jz_containerRoll .jz_leagueMore > div {
+    border-color: #f00;
+    color: #f00;
+}
+
+.jz_containerRoll .jz_leagueMore:active > div {
+    background-color: #f00;
+    color: #fff;
+}
+
+.jz_containerRoll .jz_live > div img {
+    top: auto;
+    bottom: 0;
+}
+
+/*------------------------------經典界面--jz_more.css-------------------------------*/
+.jz_containerMore .gameStyle_In {
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.jz_containerMore .gameStyle_Table th {
+    border-right-color: #ececec;
+    border-bottom-color: #ececec;
+}
+
+.jz_containerMore .gameStyle_Table td {
+    border-bottom-color: #ececec;
+}
+
+.jz_containerMore .betBox > div + div {
+    border-left-color: #ececec;
+}
+
+/*賽果內頁*/
+.jz_containerResult .gameStyle_Table th {
+    background-color: #e8e8e8;
+}
+
+.jz_containerResult .gameStyle_Table td {
+    border-right-color: #ececec;
+    border-bottom-color: #ececec;
+}
+
+/*------------------------------經典界面--jz_rule.css-------------------------------*/
+/*選單*/
+.jz_menuRule {
+    background-color: #6da9e5;
+}
+
+/*規則表格*/
+.jz_containerRule .RTL_T {
+    background-color: #e8e8e8;
+}
+
+.jz_containerRule .RTL_line:after {
+    background-color: #d8d8d8;
+}
+
+.jz_containerRule .ruleTable_L_In {
+    background-color: #fff;
+}
+
+    .jz_containerRule .ruleTable_L_In:after,
+    .jz_containerRule .ruleTable_R table:after {
+        background-color: #ccc;
+    }
+
+.jz_containerRule .RTL_box ul {
+    border-right: 1px solid #ececec;
+    border-bottom-color: #ccc;
+}
+
+.jz_containerRule .ruleTable_R th {
+    background-color: #e8e8e8;
+}
+
+.jz_containerRule .ruleTable_R td ul:before {
+    background-color: #ececec;
+}
+
+.jz_containerRule .ruleTable_R td ul:after {
+    background-color: #ccc;
+}
+
+.jz_containerRule .ruleTable_R td li:after {
+    background-color: #ececec;
+}
+
+.jz_containerRule .ruleGameStyle th {
+    background-color: #e8e8e8;
+    border-right-color: #ccc;
+}
+
+.jz_containerRule .ruleGameStyle td {
+    background-color: #fff;
+    border-right-color: #e2e2e2;
+    border-bottom-color: #e2e2e2;
+}
+
+/*------------------------------經典界面--jz_favorite.css---------------------------*/
+/*優勝冠軍*/
+.containerWinner.jz_container .leagueTitle {
+    background-color: #f3f3f3;
+    border-top: 1px solid #fff;
+    border-bottom-color: #dedede !important;
+}
+
+.containerWinner.jz_container > div:last-child:after {
+    display: none;
+}
+
+.containerWinner.jz_container .btn_arrow {
+    background-color: transparent;
+}
+
+.containerWinner.jz_container .leagueIn:after {
+    background-color: #dedede;
+}
+
+.containerWinner.jz_container .btn_li.on {
+    border-color: #dfdfdf;
+}

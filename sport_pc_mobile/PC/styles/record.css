@@ -1,0 +1,798 @@
+﻿/*------------------------------投注記錄------------------------------*/
+/*上方固定*/
+.RT_holdTop {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+    .RT_holdTop + .RT_holdTop {
+        top: 40px;
+    }
+
+.RT_holdBtm {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+}
+
+.recordTable * {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+.recordTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    background-color: #e5e5e5;
+    font-size: 14px;
+}
+
+    .recordTable tr {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    .recordTable th {
+        background-color: #d8d8d8;
+        height: 48px;
+        border-bottom: 1px solid #bbb;
+        box-sizing: border-box;
+        text-align: center;
+        width: 100px;
+    }
+
+    .recordTable td {
+        border-bottom: 1px solid #bbb;
+        border-right: 1px solid #bbb;
+        background-color: #e5e5e5;
+        box-sizing: border-box;
+        text-align: right;
+        padding: 10px 5px;
+        width: 100px;
+    }
+
+    .recordTable tr td:last-child {
+        border-right: 0;
+        padding-right: 10px;
+    }
+
+    .recordTable .t_blue {
+        color: #0077ff;
+    }
+
+    .recordTable .t_green {
+        color: #0a9c00;
+    }
+
+    .recordTable .t_orange {
+        color: #ff8800;
+    }
+
+    .recordTable a {
+        color: #0077ff;
+        text-decoration: underline;
+        display: inline-block;
+    }
+
+        .recordTable a.t_red {
+            color: #f00;
+        }
+
+@media (max-width:534px) {
+    /*解決534pad UC瀏覽器邊緣壓線產生莫名的空白*/
+    .recordTable th, .recordTable td {
+        width: 96px;
+    }
+}
+
+td.RT_num {
+    width: 43px;
+    color: #666;
+    text-align: center;
+}
+
+.RT_info {
+    position: relative;
+    width: 185px !important;
+    padding-left: 5px;
+    padding-right: 0;
+}
+
+td.RT_info, td.RT_infoCx {
+    color: #666;
+    text-align: left;
+    font-size: 13px;
+    vertical-align: top;
+}
+
+td.RT_info {
+    padding-left: 10px;
+}
+
+.RT_infoCx {
+    padding-left: 10px !important;
+    width: 190px !important; /*串關用(N串NxN)*/
+}
+
+.RT_num + .RT_infoCx {
+    vertical-align: middle;
+    width: 147px !important; /*串關用(N串NxN)*/
+}
+
+.btn_RT_arrow {
+    width: 52px;
+    height: 48px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+    .btn_RT_arrow:before {
+        content: '';
+        background: url(../images/btn_arrow.svg) no-repeat center;
+        background-size: 13px;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        opacity: 0.5;
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+    }
+
+    .btn_RT_arrow.on:before {
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+    }
+
+.RT_name {
+    width: auto !important;
+}
+
+td.RT_name {
+    text-align: left;
+    padding: 10px 15px;
+    font-size: 13px;
+    position: relative;
+}
+
+td.RT_bet {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.RT_total .RT_bet {
+    color: #ffe900;
+}
+
+td.RT_total_T {
+    width: auto;
+}
+
+.RT_w80 {
+    width: 80px !important;
+}
+
+.RT_w110 {
+    width: 110px !important;
+}
+
+td.RT_noList {
+    text-align: center;
+    height: 120px;
+    color: #666;
+}
+
+td.RT_textC {
+    text-align: center;
+}
+
+th.RT_CxNum, td.RT_CxNum { /*串關用(共XX組)*/
+    width: 180px;
+    text-align: center;
+}
+
+.RT_total td {
+    background-color: #404040;
+    color: #fff;
+    border-bottom: 0;
+    border-right: 1px solid #636363;
+}
+
+    .RT_total td:first-child {
+        padding-right: 25px;
+    }
+
+.RT_total .t_green {
+    color: #20b616;
+}
+
+.RT_name .RT_rowGroup {
+    width: calc(100% + 30px);
+    margin: 0 -15px;
+}
+
+    .RT_name .RT_rowGroup:first-child {
+        margin: -10px -15px 0 -15px;
+    }
+
+    .RT_name .RT_rowGroup:last-child {
+        margin: 0 -15px -10px -15px;
+    }
+
+.RT_rowGroup {
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid #bbb;
+    text-align: left;
+}
+
+    .RT_rowGroup:last-child {
+        border-bottom: 0;
+    }
+
+    .RT_rowGroup li {
+        display: table-cell;
+        border-right: 1px solid #bbb;
+        padding: 10px 15px;
+        vertical-align: middle;
+        position: relative;
+    }
+
+        .RT_rowGroup li:last-child {
+            border-right: 0;
+        }
+
+.RT_rowGroup_T {
+    width: 1px;
+    min-width: 25px;
+    padding: 0 !important;
+    text-align: center;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.RT_row {
+    display: table;
+    line-height: 20px;
+}
+
+.RT_rowT {
+    display: table-cell;
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+.RT_rowIn {
+    display: table-cell;
+}
+
+.RT_info .RT_rowIn span,
+.RT_infoCx .RT_rowIn span {
+    display: inline-block;
+}
+
+.btn_RT_i, .btn_RT_iR, .btn_RT_iG, .btn_RT_wait {
+    position: relative;
+    display: inline-block;
+    margin-top: 2px;
+}
+
+.RT_i_T, .RT_iR_T, .RT_iG_T, .RT_wait_T {
+    padding-left: 18px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.RT_i_T {
+    color: #fa3535;
+}
+
+.RT_iR_T {
+    color: #f00;
+}
+
+.RT_iG_T {
+    color: #065f00;
+}
+
+.RT_wait_T {
+    color: #005aff;
+}
+
+    .RT_i_T:before, .RT_iR_T:before, .RT_iG_T:before, .RT_wait_T:before {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        left: 0;
+        top: 1px;
+    }
+
+.RT_i_T:before {
+    background: url(../images/icon_bet_i.svg) no-repeat center;
+    background-size: 100%;
+}
+
+.RT_iR_T:before {
+    background: url(../images/icon_bet_iR.svg) no-repeat center;
+    background-size: 100%;
+}
+
+.RT_iG_T:before {
+    background: url(../images/icon_bet_iG.svg) no-repeat center;
+    background-size: 100%;
+}
+
+.RT_wait_T:before {
+    background: url(../images/icon_bet_situation.svg) no-repeat center;
+    background-size: 100%;
+}
+
+.RT_i_T:after, .RT_iR_T:after, .RT_iG_T:after, .RT_wait_T:after { /*加大感應範圍*/
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -10px;
+    bottom: -5px;
+}
+
+.RT_i_In, .RT_iR_In, .RT_iG_In, .RT_wait_In {
+    position: absolute;
+    top: 0;
+    left: -10px;
+    cursor: default;
+    pointer-events: none;
+    display: none;
+    z-index: 7;
+}
+
+.RT_i_InBox, .RT_iR_InBox, .RT_iG_InBox, .RT_wait_InBox {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    max-width: 350px;
+    text-align: left;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    background-color: #f0f0f0;
+    color: #000;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    line-height: 20px;
+    margin-right: -350px;
+    display: none;
+}
+
+.RT_iR_InBox {
+    color: #000;
+}
+
+.RT_iG_InBox {
+    color: #087b00;
+}
+
+.RT_i_In:before, .RT_iR_In:before, .RT_iG_In:before, .RT_wait_In:before,
+.RT_i_In:after, .RT_iR_In:after, .RT_iG_In:after, .RT_wait_In:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 11px 9px 0 9px;
+    position: absolute;
+    left: 9px;
+    top: -10px;
+    z-index: 1;
+}
+
+.RT_i_In:before, .RT_iR_In:before, .RT_iG_In:before, .RT_wait_In:before {
+    border-color: #ccc transparent transparent transparent;
+    top: -9px;
+}
+
+.RT_i_In:after, .RT_iR_In:after, .RT_iG_In:after, .RT_wait_In:after {
+    border-color: #f0f0f0 transparent transparent transparent;
+}
+
+.icon_RT_no, .icon_RT_ok {
+    position: relative;
+    line-height: 20px;
+    padding-left: 18px;
+    margin-top: 2px;
+}
+
+.icon_RT_no {
+    color: #f00;
+}
+
+.icon_RT_ok {
+    color: #148800;
+}
+
+    .icon_RT_no:before, .icon_RT_ok:before {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        left: 0;
+        top: 1px;
+    }
+
+.icon_RT_no:before {
+    background: url(../images/icon_bet_refuse.svg) no-repeat center;
+    background-size: 100%;
+}
+
+.icon_RT_ok:before {
+    background: url(../images/icon_bet_check.svg) no-repeat center;
+    background-size: 100%;
+}
+
+/*贈禮紀錄*/
+.RT_giftTable {
+}
+
+    .RT_giftTable td {
+        text-align: center;
+    }
+
+td.RT_giftInfo {
+    text-align: left;
+    padding-left: 20px;
+}
+
+td.RT_giftMc {
+    color: #dc53ab;
+}
+
+td.RT_giftNum {
+    color: #0077ff;
+}
+
+td.RT_giftPoint {
+    color: #f00;
+    line-height: 20px;
+}
+
+    td.RT_giftPoint .t_pink {
+        color: #dc53ab;
+    }
+
+/*過關輸贏狀態*/
+.RT_win, .RT_lose {
+    position: absolute;
+    right: 5px;
+    bottom: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    padding: 0 4px;
+    line-height: 18px;
+    min-width: 40px;
+    box-sizing: border-box;
+}
+
+.RT_win {
+    color: #20b616;
+    border-color: #20b616;
+}
+
+.RT_lose {
+    color: #f00;
+    border-color: #f00;
+}
+
+/*串關內頁-基礎建立在.recordTable 另做微調*/
+li.RT_textC {
+    width: 100px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+@media (max-width:534px) {
+    /*解決534pad UC瀏覽器邊緣壓線產生莫名的空白*/
+    li.RT_textC {
+        width: 96px !important;
+    }
+}
+
+/*串關頁碼(下拉)*/
+.pageNum_slide {
+    margin-left: 15px;
+    height: 100%;
+    display: inline-block;
+}
+
+    .pageNum_slide .btn_OW_setMenu {
+        min-width: 56px;
+        margin-left: 0;
+    }
+
+    .pageNum_slide .OSM_InBox {
+        min-width: 56px;
+    }
+
+        .pageNum_slide .OSM_InBox a {
+            padding: 0 10px;
+        }
+
+/*球類分類項目*/
+.classify_T td {
+    background-color: #ccc;
+    border-bottom: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+    height: 48px;
+}
+
+.classify_In {
+    display: none;
+}
+
+.btn_classifyName {
+    text-align: left !important;
+    width: auto !important;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    .btn_classifyName:before {
+        content: '';
+        background: url(../images/btn_arrow.svg) no-repeat center;
+        background-size: 13px;
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        opacity: 0.5;
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        vertical-align: middle;
+        margin: 0 18px 0 13px;
+    }
+
+    .btn_classifyName.on:before {
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+    }
+
+/*已結算注單*/
+.RT_total + .classify_T {
+    margin-top: 10px;
+}
+
+    .RT_total + .classify_T tr:first-child td {
+        border-top: 1px solid #aaa;
+    }
+
+/*已結算注單-比賽類型下拉*/
+.btn_OW_gameMenu {
+    min-width: 95px;
+    margin-left: 0;
+}
+
+    .btn_OW_gameMenu .OSM_InBox {
+        min-width: 95px;
+    }
+
+/*暫無注單*/
+.record_noBet {
+    position: fixed;
+    top: 53%;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    font-size: 18px;
+    text-align: center;
+}
+
+    .record_noBet img {
+        width: 65px;
+        height: 65px;
+        display: block;
+        margin: 0 auto 5px;
+        opacity: 0.5;
+    }
+
+/*刪除線*/
+.deleteLine {
+    text-decoration: line-through;
+}
+
+/*投注紀錄-兌現按鈕*/
+th.RT_cash, td.RT_cash {
+    padding-right: 5px !important;
+}
+
+td.RT_cash {
+    position: relative;
+    text-align: center;
+}
+
+    td.RT_cash *:not(.RT_cashText) {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+.RT_cashText {
+    color: #ff8800;
+    font-weight: bold;
+}
+
+td.RT_cash.cashChange .RT_cashText {
+    padding: 0 2px;
+    background-color: #41b590;
+    color: #fff;
+}
+
+td.RT_cash.cashLoad .RT_cashText {
+    display: none;
+}
+
+td.RT_cash.cashOk .RT_cashText {
+    color: #148800;
+}
+
+td.RT_cash.cashNo .RT_cashText {
+    display: none;
+}
+
+[class*="btn_RT_cash"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    font-size: 13px;
+    height: 25px;
+    line-height: 25px;
+    position: absolute;
+    bottom: 5px;
+    width: calc(100% - 10px);
+}
+
+.btn_RT_cash {
+    background-color: #336699;
+    color: #fff;
+}
+
+    .btn_RT_cash:hover {
+        background-color: #3e79b3;
+    }
+
+.RT_cashBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 5px;
+    width: calc(100% - 10px);
+}
+
+    .RT_cashBox button {
+        position: relative;
+        bottom: 0;
+        width: auto;
+        padding: 0 2px;
+        white-space: nowrap;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+
+        .RT_cashBox button + button {
+            margin-left: 5px;
+        }
+
+.btn_RT_cashCancel {
+    background-color: #888;
+    color: #fff;
+}
+
+    .btn_RT_cashCancel:hover {
+        background-color: #999;
+    }
+
+.btn_RT_cashConfirm {
+    background-color: #eaca48;
+    color: #000;
+}
+
+    .btn_RT_cashConfirm:hover {
+        background-color: #ffdc4e;
+    }
+
+.btn_RT_cashChange {
+    background-color: #41b590;
+    color: #fff;
+}
+
+    .btn_RT_cashChange:hover {
+        background-color: #44d2a5;
+    }
+
+.btn_RT_cashBack {
+    background-color: #a72120;
+    color: #fff;
+}
+
+    .btn_RT_cashBack:hover {
+        background-color: #b72b2a;
+    }
+
+.RT_cashLoad {
+    color: #0077ff;
+    font-size: 13px;
+}
+
+    .RT_cashLoad:before {
+        content: '';
+        background: url(../images/icon_loading2_blue.png) no-repeat center;
+        background-size: 100%;
+        width: 17px;
+        height: 17px;
+        display: inline-block;
+        vertical-align: middle;
+        margin: -1px 5px 0 0;
+        animation: RT_cashLoad 0.5s linear infinite;
+        -webkit-animation: RT_cashLoad 0.5s linear infinite;
+    }
+
+@keyframes RT_cashLoad {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes RT_cashLoad {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.RT_cashOk {
+    position: absolute;
+    width: calc(100% - 10px);
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #148800;
+    font-size: 13px;
+    margin-top: 4px;
+    line-height: 120%;
+}
+
+.RT_cashNo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff0000;
+    line-height: 120%;
+}
+
+.RT_cashStop {
+    color: #555;
+}

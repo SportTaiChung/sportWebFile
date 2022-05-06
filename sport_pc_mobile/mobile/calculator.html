@@ -1,0 +1,447 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="browsermode" content="application" />
+	<title>UP-Sport</title>
+    <link href="styles/main.css" rel="stylesheet" />
+	<!--色系-->
+    <link href="green/styles/green.css" rel="stylesheet" />
+</head>
+<body>
+    <!--表頭-->
+    <div class="header">
+        <a class="btn_back" onclick="history.back()"></a>
+        <div class="header_T">過關計算器</div>
+        <div class="icon_money">$ 99,999,999.0</div>
+    </div>
+    <!--內容-->
+    <div class="calculator">
+        <table class="calcTable_T">
+            <tr>
+                <th>關數</th>
+                <th>賠率</th>
+                <th>分盤</th>
+            </tr>
+        </table>
+        <div class="calcTable_In">
+            <table class="calcTable">
+                <tr class="calcList">
+                    <td>1</td>
+                    <td>
+                        <div class="calcOdds keyboard num">9999999<div class="btn_clear"></div></div>
+                    </td>
+                    <td class="calcPassCount">
+                        <span class="CPC_text">分盤</span>
+                        <select class="calcPassCount_select">
+                            <option value="CPC_selWin">全赢</option>
+                            <option value="CPC_selLose">全輸 </option>
+                            <option value="CPC_selFlat">平</option>
+                            <option value="CPC_selPlus" selected="selected">+</option>
+                            <option value="CPC_selMinus">&minus;</option>
+                        </select>
+                        <div class="calcPassCount_ratio keyboard"></div>
+                        <span class="CPC_text">%</span>
+                    </td>
+                </tr>
+                
+                <tr class="numInputArea">
+                    <td class="numInputAreaL">
+                        <a class="number1"></a>
+                        <a class="number2"></a>
+                        <a class="number3"></a>
+                        <a class="number4"></a>
+                        <a class="number5"></a>
+                        <a class="numClear"></a>
+                        <a class="number6"></a>
+                        <a class="number7"></a>
+                        <a class="number8"></a>
+                        <a class="number9"></a>
+                        <a class="number0"></a>
+                        <a class="numPoint"></a>
+                    </td>
+                </tr>
+                
+                <tr class="calcList">
+                    <td>2</td>
+                    <td>
+                        <div class="calcOdds keyboard num">0<div class="btn_clear"></div></div>
+                    </td>
+                    <td class="calcPassCount">
+                        <span class="CPC_text">分盤</span>
+                        <select class="calcPassCount_select">
+                            <option value="CPC_selWin">全赢</option>
+                            <option value="CPC_selLose">全輸 </option>
+                            <option value="CPC_selFlat">平</option>
+                            <option value="CPC_selPlus">+</option>
+                            <option value="CPC_selMinus">&minus;</option>
+                        </select>
+                        <div class="calcPassCount_ratio keyboard off">100</div>
+                        <span class="CPC_text">%</span>
+                    </td>
+                </tr>
+                <!--警語-->
+                <tr class="error_t" style=" display:none">
+                    <td>
+                        <div>賠率需大於0</div>
+                    </td>
+                </tr>
+                <tr class="numInputArea">
+                    <td class="numInputAreaL">
+                        <a class="number1"></a>
+                        <a class="number2"></a>
+                        <a class="number3"></a>
+                        <a class="number4"></a>
+                        <a class="number5"></a>
+                        <a class="numClear"></a>
+                        <a class="number6"></a>
+                        <a class="number7"></a>
+                        <a class="number8"></a>
+                        <a class="number9"></a>
+                        <a class="number0"></a>
+                        <a class="numPoint"></a>
+                    </td>
+                </tr>
+                <tr class="calcList">
+                    <td>3</td>
+                    <td>
+                        <div class="calcOdds keyboard num">0<div class="btn_clear"></div></div>
+                    </td>
+                    <td class="calcPassCount">
+                        <span class="CPC_text">分盤</span>
+                        <select class="calcPassCount_select">
+                            <option value="CPC_selWin">全赢</option>
+                            <option value="CPC_selLose">全輸 </option>
+                            <option value="CPC_selFlat">平</option>
+                            <option value="CPC_selPlus" selected="selected">+</option>
+                            <option value="CPC_selMinus">&minus;</option>
+                        </select>
+                        <div class="calcPassCount_ratio keyboard error"></div>
+                        <span class="CPC_text">%</span>
+                    </td>
+                </tr>
+                <!--警語-->
+                <tr class="error_t" style=" display:none">
+                    <td>
+                        <div>賠率需大於0</div>
+                        <div>百分比(%)不能為空</div>
+                    </td>
+                </tr>
+                <tr class="numInputArea">
+                    <td class="numInputAreaL">
+                        <a class="number1"></a>
+                        <a class="number2"></a>
+                        <a class="number3"></a>
+                        <a class="number4"></a>
+                        <a class="number5"></a>
+                        <a class="numClear"></a>
+                        <a class="number6"></a>
+                        <a class="number7"></a>
+                        <a class="number8"></a>
+                        <a class="number9"></a>
+                        <a class="number0"></a>
+                        <a class="numPoint"></a>
+                    </td>
+                </tr>
+                <tr class="calcList">
+                    <td>4</td>
+                    <td>
+                        <div class="calcOdds keyboard"><div class="btn_clear"></div></div>
+                    </td>
+                    <td class="calcPassCount">
+                        <span class="CPC_text">分盤</span>
+                        <select class="calcPassCount_select">
+                            <option value="CPC_selWin">全赢</option>
+                            <option value="CPC_selLose">全輸 </option>
+                            <option value="CPC_selFlat">平</option>
+                            <option value="CPC_selPlus">+</option>
+                            <option value="CPC_selMinus">&minus;</option>
+                        </select>
+                        <div class="calcPassCount_ratio keyboard off">100</div>
+                        <span class="CPC_text">%</span>
+                    </td>
+                </tr>
+                <tr class="numInputArea">
+                    <td class="numInputAreaL">
+                        <a class="number1"></a>
+                        <a class="number2"></a>
+                        <a class="number3"></a>
+                        <a class="number4"></a>
+                        <a class="number5"></a>
+                        <a class="numClear"></a>
+                        <a class="number6"></a>
+                        <a class="number7"></a>
+                        <a class="number8"></a>
+                        <a class="number9"></a>
+                        <a class="number0"></a>
+                        <a class="numPoint"></a>
+                    </td>
+                </tr>
+                <tr class="calcList">
+                    <td>5</td>
+                    <td>
+                        <div class="calcOdds keyboard"><div class="btn_clear"></div></div>
+                    </td>
+                    <td class="calcPassCount">
+                        <span class="CPC_text">分盤</span>
+                        <select class="calcPassCount_select">
+                            <option value="CPC_selWin">全赢</option>
+                            <option value="CPC_selLose">全輸 </option>
+                            <option value="CPC_selFlat">平</option>
+                            <option value="CPC_selPlus">+</option>
+                            <option value="CPC_selMinus">&minus;</option>
+                        </select>
+                        <div class="calcPassCount_ratio keyboard off">100</div>
+                        <span class="CPC_text">%</span>
+                    </td>
+                </tr>
+                <tr class="numInputArea">
+                    <td class="numInputAreaL">
+                        <a class="number1"></a>
+                        <a class="number2"></a>
+                        <a class="number3"></a>
+                        <a class="number4"></a>
+                        <a class="number5"></a>
+                        <a class="numClear"></a>
+                        <a class="number6"></a>
+                        <a class="number7"></a>
+                        <a class="number8"></a>
+                        <a class="number9"></a>
+                        <a class="number0"></a>
+                        <a class="numPoint"></a>
+                    </td>
+                </tr>
+                <tr class="calcList">
+                    <td>6</td>
+                    <td>
+                        <div class="calcOdds keyboard"><div class="btn_clear"></div></div>
+                    </td>
+                    <td class="calcPassCount">
+                        <span class="CPC_text">分盤</span>
+                        <select class="calcPassCount_select">
+                            <option value="CPC_selWin">全赢</option>
+                            <option value="CPC_selLose">全輸 </option>
+                            <option value="CPC_selFlat">平</option>
+                            <option value="CPC_selPlus">+</option>
+                            <option value="CPC_selMinus">&minus;</option>
+                        </select>
+                        <div class="calcPassCount_ratio keyboard off">100</div>
+                        <span class="CPC_text">%</span>
+                    </td>
+                </tr>
+                <tr class="numInputArea">
+                    <td class="numInputAreaL">
+                        <a class="number1"></a>
+                        <a class="number2"></a>
+                        <a class="number3"></a>
+                        <a class="number4"></a>
+                        <a class="number5"></a>
+                        <a class="numClear"></a>
+                        <a class="number6"></a>
+                        <a class="number7"></a>
+                        <a class="number8"></a>
+                        <a class="number9"></a>
+                        <a class="number0"></a>
+                        <a class="numPoint"></a>
+                    </td>
+                </tr>
+                <tr class="calcList">
+                    <td>7</td>
+                    <td>
+                        <div class="calcOdds keyboard"><div class="btn_clear"></div></div>
+                    </td>
+                    <td class="calcPassCount">
+                        <span class="CPC_text">分盤</span>
+                        <select class="calcPassCount_select">
+                            <option value="CPC_selWin">全赢</option>
+                            <option value="CPC_selLose">全輸 </option>
+                            <option value="CPC_selFlat">平</option>
+                            <option value="CPC_selPlus">+</option>
+                            <option value="CPC_selMinus">&minus;</option>
+                        </select>
+                        <div class="calcPassCount_ratio keyboard off">100</div>
+                        <span class="CPC_text">%</span>
+                    </td>
+                </tr>
+                <tr class="numInputArea">
+                    <td class="numInputAreaL">
+                        <a class="number1"></a>
+                        <a class="number2"></a>
+                        <a class="number3"></a>
+                        <a class="number4"></a>
+                        <a class="number5"></a>
+                        <a class="numClear"></a>
+                        <a class="number6"></a>
+                        <a class="number7"></a>
+                        <a class="number8"></a>
+                        <a class="number9"></a>
+                        <a class="number0"></a>
+                        <a class="numPoint"></a>
+                    </td>
+                </tr>
+                <tr class="calcList">
+                    <td>8</td>
+                    <td>
+                        <div class="calcOdds keyboard"><div class="btn_clear"></div></div>
+                    </td>
+                    <td class="calcPassCount">
+                        <span class="CPC_text">分盤</span>
+                        <select class="calcPassCount_select">
+                            <option value="CPC_selWin">全赢</option>
+                            <option value="CPC_selLose">全輸 </option>
+                            <option value="CPC_selFlat">平</option>
+                            <option value="CPC_selPlus">+</option>
+                            <option value="CPC_selMinus">&minus;</option>
+                        </select>
+                        <div class="calcPassCount_ratio keyboard off">100</div>
+                        <span class="CPC_text">%</span>
+                    </td>
+                </tr>
+                <tr class="numInputArea">
+                    <td class="numInputAreaL">
+                        <a class="number1"></a>
+                        <a class="number2"></a>
+                        <a class="number3"></a>
+                        <a class="number4"></a>
+                        <a class="number5"></a>
+                        <a class="numClear"></a>
+                        <a class="number6"></a>
+                        <a class="number7"></a>
+                        <a class="number8"></a>
+                        <a class="number9"></a>
+                        <a class="number0"></a>
+                        <a class="numPoint"></a>
+                    </td>
+                </tr>
+                <tr class="calcList">
+                    <td>9</td>
+                    <td>
+                        <div class="calcOdds keyboard"><div class="btn_clear"></div></div>
+                    </td>
+                    <td class="calcPassCount">
+                        <span class="CPC_text">分盤</span>
+                        <select class="calcPassCount_select">
+                            <option value="CPC_selWin">全赢</option>
+                            <option value="CPC_selLose">全輸 </option>
+                            <option value="CPC_selFlat">平</option>
+                            <option value="CPC_selPlus">+</option>
+                            <option value="CPC_selMinus">&minus;</option>
+                        </select>
+                        <div class="calcPassCount_ratio keyboard off">100</div>
+                        <span class="CPC_text">%</span>
+                    </td>
+                </tr>
+                <tr class="numInputArea">
+                    <td class="numInputAreaL">
+                        <a class="number1"></a>
+                        <a class="number2"></a>
+                        <a class="number3"></a>
+                        <a class="number4"></a>
+                        <a class="number5"></a>
+                        <a class="numClear"></a>
+                        <a class="number6"></a>
+                        <a class="number7"></a>
+                        <a class="number8"></a>
+                        <a class="number9"></a>
+                        <a class="number0"></a>
+                        <a class="numPoint"></a>
+                    </td>
+                </tr>
+                <tr class="calcList">
+                    <td>10</td>
+                    <td>
+                        <div class="calcOdds keyboard"><div class="btn_clear"></div></div>
+                    </td>
+                    <td class="calcPassCount">
+                        <span class="CPC_text">分盤</span>
+                        <select class="calcPassCount_select">
+                            <option value="CPC_selWin">全赢</option>
+                            <option value="CPC_selLose">全輸 </option>
+                            <option value="CPC_selFlat">平</option>
+                            <option value="CPC_selPlus">+</option>
+                            <option value="CPC_selMinus">&minus;</option>
+                        </select>
+                        <div class="calcPassCount_ratio keyboard off">100</div>
+                        <span class="CPC_text">%</span>
+                    </td>
+                </tr>
+                <tr class="numInputArea">
+                    <td class="numInputAreaL">
+                        <a class="number1"></a>
+                        <a class="number2"></a>
+                        <a class="number3"></a>
+                        <a class="number4"></a>
+                        <a class="number5"></a>
+                        <a class="numClear"></a>
+                        <a class="number6"></a>
+                        <a class="number7"></a>
+                        <a class="number8"></a>
+                        <a class="number9"></a>
+                        <a class="number0"></a>
+                        <a class="numPoint"></a>
+                    </td>
+                </tr>
+            </table>
+            <div class="calc_totalBet">
+                <div class="calc_totalBetL">
+                    下注金額<div class="calcKeyNum keyboard num">9999999<div class="btn_clear"></div></div>
+                    <span class="error_t">請輸入金額</span>
+                </div>
+                <div class="calc_totalBetR">
+                    可赢金額<div class="calcKeyNum off">999999999</div>
+                </div>
+                <div class="numInputArea">
+                    <div class="numInputAreaL">
+                        <a class="number1"></a>
+                        <a class="number2"></a>
+                        <a class="number3"></a>
+                        <a class="number4"></a>
+                        <a class="number5"></a>
+                        <a class="numClear"></a>
+                        <a class="number6"></a>
+                        <a class="number7"></a>
+                        <a class="number8"></a>
+                        <a class="number9"></a>
+                        <a class="number0"></a>
+                        <a class="numPoint"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="formula">
+                <div class="formula_T">
+                    計算過程
+                    <div class="btn_formulaPrompt">
+                        <div class="formulaPromptBox">過關計算方式：<br />投注金額 X (1+分洞%數X賠率) X (1+分洞%數X賠率) ... -投注金額</div>
+                    </div>
+                </div>
+                <div class="formula_In">1000*(1+0.9)(1+0.9)(1-0.5)(1+0.9)-1000 = 2429.5</div>
+            </div>
+            <div class="calc_button">
+                <input type="button" value="清 除" class="btn_calc_clear" />
+                <input type="button" value="計 算" class="btn_calc_run" />
+            </div>
+        </div>
+        <div class="calcPrompt">
+            <div class="calcPrompt_T">操作说明</div>
+            <div class="calcPrompt_In">
+                <ul class="calcPromptList t_blue">
+                    <li class="CP_listT">注</li>
+                    <li>中洞需自行輸 入分盤</li>
+                </ul>
+                <ul class="calcPromptList">
+                    <li class="CP_listT">例</li>
+                    <li>洋基 1+80 紅襪，比賽結束 2:1，下注洋基：選擇 ( + ) 填入 80，下注紅襪：選擇 ( - ) 填入 80</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="scripts/jquery1.11.0.min.js"></script>
+    <script src="scripts/preventPullRefresh.js"></script>
+    <script src="scripts/ArtDemo.js"></script>
+</body>
+</html>

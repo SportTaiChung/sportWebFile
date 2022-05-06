@@ -1,0 +1,706 @@
+﻿/*賽果設定*/
+.GR_setUp {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    background-color: #336699;
+    color: #fff;
+    border-top: 1px solid #5082b3;
+    width: 100%;
+}
+
+.GR_setUp_L {
+    float: left;
+    height: 100%;
+}
+
+.GR_setUp_R {
+    float: right;
+    height: 100%;
+}
+
+    .GR_setUp_L li, .GR_setUp_R li {
+        float: left;
+        height: 100%;
+        position: relative;
+    }
+
+        .GR_setUp_L li:before, .GR_setUp_R li:before {
+            content: '';
+            position: absolute;
+            background-color: #5082b3;
+            width: 1px;
+            height: 25px;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+        }
+
+        .GR_setUp_L li:before {
+            right: 0;
+        }
+
+        .GR_setUp_R li:before {
+            left: 0;
+        }
+
+        .GR_setUp_L li:last-child:before {
+            display: none;
+        }
+
+.GR_date {
+    width: 170px;
+}
+
+.btn_date_prev, .btn_date_next {
+    position: relative;
+    width: 35px;
+    height: 100%;
+    float: left;
+    cursor: pointer;
+}
+
+    .btn_date_prev:before,
+    .btn_date_next:before {
+        content: '';
+        background: url(../images/btn_arrow_blue.svg) no-repeat center;
+        background-size: 13px;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+    }
+
+    .btn_date_prev:before {
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+    }
+
+    .btn_date_prev:hover:before {
+        background-image: url(../images/btn_arrow_w.svg);
+        transform: rotate(-180deg);
+        -webkit-transform: rotate(-180deg);
+    }
+
+    .btn_date_next:hover:before {
+        background-image: url(../images/btn_arrow_w.svg);
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+    }
+
+.btn_date_sel {
+    float: left;
+    width: 100px;
+    white-space: nowrap;
+    text-align: center;
+    cursor: pointer;
+}
+
+.DT_T {
+}
+
+.DT_In {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    z-index: 1;
+    display: none;
+}
+
+    .DT_In:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 9px 11px 9px;
+        border-color: transparent transparent #ddd transparent;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: -10px;
+        z-index: 1;
+    }
+
+.DT_InBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-width: 100px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    display: none;
+}
+
+    .DT_InBox a {
+        display: block;
+        color: #000;
+        text-decoration: none;
+        padding: 0 15px;
+        background-color: #ddd;
+        border-bottom: 1px solid #ccc;
+    }
+
+        .DT_InBox a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .DT_InBox a.on {
+            background-color: #f0f0f0;
+            color: #006ede;
+            font-weight: bold;
+        }
+
+.btn_update_sel {
+    float: left;
+    padding: 0 40px 0 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    color: #99ccff;
+}
+
+    .btn_update_sel:hover, .btn_update_sel.on {
+        color: #fff;
+    }
+
+    .btn_update_sel:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 5px 0 5px;
+        border-color: #aed0ff transparent transparent transparent;
+        top: 0;
+        bottom: 0;
+        right: 16px;
+        margin: auto 0;
+    }
+
+    .btn_update_sel.on:after {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+.UD_T {
+}
+
+.UD_In {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    left: 0;
+    display: none;
+}
+
+    .UD_In:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 9px 11px 9px;
+        border-color: transparent transparent #ddd transparent;
+        position: absolute;
+        right: 12px;
+        top: -10px;
+        z-index: 1;
+    }
+
+.UD_InBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-width: 100px;
+    text-align: left;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    display: none;
+}
+
+    .UD_InBox a {
+        display: block;
+        color: #000;
+        text-decoration: none;
+        padding: 0 15px;
+        background-color: #ddd;
+        border-bottom: 1px solid #ccc;
+    }
+
+        .UD_InBox a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .UD_InBox a.on {
+            background-color: #f0f0f0;
+            color: #006ede;
+            font-weight: bold;
+        }
+
+.UD_reciprocal {
+    color: #ffea01;
+    float: left;
+    width: 20px;
+    height: 100%;
+    text-align: center;
+    margin-left: 10px;
+    display: none;
+}
+
+.btn_update {
+    width: 42px;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+    .btn_update:before {
+        content: '';
+        background: url(../images/btn_update.svg) no-repeat center top;
+        background-size: 100%;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .btn_update:hover:before {
+        background-position: center bottom;
+    }
+
+.btn_OW_alliance {
+    float: left;
+    width: 115px;
+    height: 100%;
+    text-align: center;
+    cursor: pointer;
+    color: #99ccff;
+}
+
+    .btn_OW_alliance:hover {
+        color: #fff;
+    }
+
+    .btn_OW_alliance.on, .btn_OW_alliance.on:hover {
+        color: #ffea01;
+    }
+
+/*賽果結構*/
+.GR_struc {
+    height: calc(100% - 106px);
+}
+
+.GR_strucL {
+    float: left;
+    width: 170px;
+    height: 100%;
+    box-sizing: border-box;
+    border-right: 1px solid #333;
+    background-color: #373737;
+}
+
+.GR_strucR {
+    float: right;
+    width: calc(100% - 170px);
+    height: 100%;
+    position: relative;
+    background-color: #585858;
+}
+
+/*左側menu*/
+.GR_menuT {
+    background-color: #404040;
+    color: #bbb;
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid #333;
+    width: 100%;
+    text-align: center;
+}
+
+.GR_menuIn_scroll {
+    width: 100%;
+    height: calc(100% - 36px);
+    overflow-y: auto;
+    color: #fff;
+}
+
+    .GR_menuIn_scroll li {
+        height: 35px;
+        line-height: 35px;
+        background-color: #474747;
+        position: relative;
+        padding-left: 45px;
+        border-bottom: 1px solid #333;
+        cursor: pointer;
+        position: relative;
+    }
+
+        .GR_menuIn_scroll li:hover, .GR_menuIn_scroll li.on {
+            background-color: #545454;
+        }
+
+    .GR_menuIn_scroll img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: calc(100% - 45px);
+        margin: auto;
+        width: auto;
+        height: 100%;
+        max-height: 18px;
+    }
+
+/*賽果列表*/
+/*標題*/
+.GR_listTitle {
+    width: 100%;
+    table-layout: fixed;
+    color: #bbb;
+    border-bottom: 1px solid #333;
+    background-color: #404040;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+    .GR_listTitle td {
+        height: 35px;
+        line-height: 35px;
+        padding: 0;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+.GRLT_name {
+    width: 300px;
+    cursor: pointer;
+}
+
+.GRLT_more {
+    width: 70px;
+}
+
+.btn_GRL_all {
+    float: left;
+    width: 45px;
+    height: 100%;
+    position: relative;
+}
+
+    .btn_GRL_all:after {
+        content: '';
+        background: url(../images/btn_arrow_w.svg) no-repeat center;
+        background-size: 13px;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        opacity: 0.5;
+    }
+
+.GRLT_name:hover .btn_GRL_all:after {
+    opacity: 1;
+}
+
+.btn_GRL_all.off:after {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+/*捲軸範圍*/
+.GR_listIn_scroll {
+    width: 100%;
+    height: calc(100% - 36px);
+    overflow-y: auto;
+    color: #fff;
+}
+
+/*遊戲列表*/
+.btn_GRL_T {
+    background-color: #696969;
+    color: #fff;
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+    .btn_GRL_T li {
+        display: table-cell;
+        height: 35px;
+        line-height: 17px;
+        vertical-align: middle;
+        text-align: left;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+.icon_GRL {
+    width: 45px;
+    text-align: center;
+}
+
+    .icon_GRL:after {
+        content: '';
+        background: url(../images/btn_arrow_w.svg) no-repeat center;
+        background-size: 13px;
+        width: 15px;
+        height: 15px;
+        display: block;
+        margin: auto;
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        opacity: 0.5;
+    }
+
+.btn_GRL_T.off {
+    border-bottom: 1px solid #4f4f4f;
+}
+
+    .btn_GRL_T.off .icon_GRL:after {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+
+.GRL_In {
+    position: relative;
+}
+
+    .GRL_In:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #666;
+    }
+
+.GR_BoxT {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+    .GR_BoxT tr {
+        background-color: #585858;
+    }
+
+        .GR_BoxT tr:hover {
+            background-color: #5f5f5f;
+        }
+
+    .GR_BoxT td {
+        text-align: center;
+        line-height: 18px;
+        border-left: 1px solid #5f5f5f;
+        border-bottom: 1px solid #666;
+        padding: 3px 0;
+    }
+
+    .GR_BoxT tr:hover td {
+        border-left-color: #6a6a6a;
+    }
+
+td.GR_BoxT_date {
+    width: 45px;
+    color: #bbb;
+    border-left: 0;
+}
+
+td.GR_BoxT_name {
+    width: 255px;
+    text-align: left;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+    td.GR_BoxT_name .t_gray {
+        color: #aaa;
+    }
+
+.GRBox_row {
+    padding: 3px 0;
+}
+
+.GRBox_nameBox {
+    line-height: 0;
+    position: relative;
+}
+
+.GRBox_nameT {
+    max-width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 18px;
+    height: 18px;
+    vertical-align: middle;
+}
+
+.GRBox_nameShow {
+    position: absolute;
+    background-color: #f0f0f0;
+    color: #000;
+    border-radius: 3px;
+    line-height: 16px;
+    bottom: 22px;
+    left: -5px;
+    padding: 3px 5px;
+    z-index: 1;
+    box-shadow: rgba(0,0,0,0.5) 0px 0px 10px;
+    max-width: 350px;
+    word-break: break-all;
+    word-wrap: break-word;
+    margin-right: -300px;
+    display: none;
+    pointer-events: none;
+}
+
+    .GRBox_nameShow:before {
+        content: '';
+        border-style: solid;
+        border-color: #f0f0f0 transparent transparent transparent;
+        border-width: 6px 5px 0 5px;
+        position: absolute;
+        left: 8px;
+        bottom: -5px;
+    }
+
+/*針對chrome修正-強制斷行*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .GRBox_nameShow {
+        word-break: break-word;
+    }
+}
+
+td.GR_BoxT_info {
+    width: 70px;
+}
+
+    td.GR_BoxT_info.on {
+        background-color: #336799;
+    }
+
+.GR_infoNum {
+    border-radius: 30px;
+    display: table;
+    margin: 3px auto;
+    position: relative;
+    padding-right: 14px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+    .GR_infoNum:after {
+        content: '';
+        background: url(../images/btn_arrow_w.svg) no-repeat center;
+        background-size: 9px;
+        width: 9px;
+        height: 9px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+    }
+
+.GR_BoxT_info.on .GR_infoNum:after {
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+}
+
+/*細目*/
+.GR_BoxIn {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    display: none;
+}
+
+    .GR_BoxIn tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .GR_BoxIn th {
+        background-color: #4c4c4c;
+        border-top: 1px solid #565656;
+        height: 30px;
+        font-weight: normal;
+    }
+
+    .GR_BoxIn td {
+        padding: 0;
+        border-left: 1px solid #565656;
+        border-top: 1px solid #565656;
+        height: 30px;
+        padding-left: 10px;
+        background-color: #505050;
+    }
+
+        .GR_BoxIn td:first-child {
+            border-left: 0;
+        }
+
+    .GR_BoxIn tr:first-child th, .GR_BoxIn tr:first-child td {
+        border-top: 0;
+    }
+
+    .GR_BoxIn tr:last-child th, .GR_BoxIn tr:last-child td {
+        border-bottom: 1px solid #5f5f5f;
+    }
+
+    .GR_BoxIn .t_yellow {
+        color: #ffdf1b;
+        display: inline-block;
+    }
+
+/*暫無賽果*/
+.noResult {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+}
+
+    .noResult img {
+        width: 75px;
+        height: 75px;
+        display: block;
+        margin: 0 auto;
+        opacity: 0.3;
+    }

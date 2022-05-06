@@ -1,0 +1,2847 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>UP-Sport</title>
+    <link href="./styles/main.css" rel="stylesheet" />
+    <link href="./styles/favorite.css" rel="stylesheet" />
+	
+	
+ 
+</head>
+<body>
+    <!--表頭-->
+    <div class="header">
+        <a class="btn_back" onclick="history.back()"></a>
+        <a class="btn_header on" onclick="location.href='#';">今日</a>
+        <a class="btn_roll" onclick="location.href='#';">滾球</a>
+        <a class="btn_header" id="btn_advanceDay">早盤</a>
+        <div class="icon_money">$ 99,999,999.0</div>
+    </div>
+    <div class="menu">
+        <div class="btn_dateMenu">
+            <div class="icon_dateMenu">15</div>
+        </div>
+        <a class="btn_favorite" onclick="location.href='#';"><img src="images/icon_sportMenu_star.svg" />收藏夾</a>
+        <div class="menu_scroll">
+            <a class="on" onclick="location.href='worldCup.html';"><img src="green/images/icon_sportMenu_worldCup.svg">世界杯</a>
+            <a onclick="location.href='UEFA.html';"><img src="green/images/icon_sportMenu_UEFA.svg">歐洲杯</a>
+            <a onclick="location.href='fives.html';"><img src="green/images/icon_sportMenu_fives.svg">五大聯賽</a>
+            <a onclick="location.href='champion.html';"><img src="green/images/icon_sportMenu_champion.svg">冠軍聯賽</a>
+            <a onclick="location.href='soccer.html';"><img src="green/images/icon_sportMenu_soccer.svg">足球</a>
+            <a onclick="location.href='index.html';"><img src="green/images/icon_sportMenu_basketball.svg">籃球</a>
+            <a onclick="location.href='baseball.html';"><img src="green/images/icon_sportMenu_baseball.svg">棒球</a>
+            <a onclick="location.href='tennis.html';"><img src="green/images/icon_sportMenu_tennis.svg">網球</a>
+            <a onclick="location.href='hockey.html';"><img src="green/images/icon_sportMenu_hockey.svg">冰球</a>
+            <a onclick="location.href='football.html';"><img src="green/images/icon_sportMenu_football.svg">美足</a>
+            <a onclick="location.href='volleyball.html';"><img src="green/images/icon_sportMenu_volleyball.svg">排球</a>
+            <a onclick="location.href='badminton.html';"><img src="green/images/icon_sportMenu_badminton.svg">羽毛球</a>
+            <a onclick="location.href='handball.html';"><img src="green/images/icon_sportMenu_handball.svg">手球</a>
+            <a onclick="location.href='waterpolo.html';"><img src="green/images/icon_sportMenu_waterpolo.svg">水球</a>
+            <a onclick="location.href='pingpong.html';"><img src="green/images/icon_sportMenu_pingpong.svg">乒乓球</a>
+            <a onclick="location.href='billiard.html';"><img src="green/images/icon_sportMenu_billiard.svg">撞球</a>
+            <a onclick="location.href='pcgame.html';"><img src="green/images/icon_sportMenu_pcgame_20210630.svg">電競</a>
+            <a onclick="location.href='boxing.html';"><img src="images/icon_sportMenu_boxing.svg">拳擊</a>
+        </div>
+            
+        </div>
+
+    <!--內容-->
+    <div class="container">
+        <div class="NAV_T_worldCup">
+            <ul class="NAV_scroll" id="NAV_1" style="display:flex;">
+                <li>足球 - 全場 / 上半</li>
+            </ul>
+            <ul class="NAV_scroll" id="NAV_2">
+                <li>足球 - 角球</li>
+                <li>全場</li>
+            </ul>
+            <ul class="NAV_scroll" id="NAV_3">
+                <li>足球 - 特定15分 - 進球</li>
+                <li>00:00 - 14:59</li>
+            </ul>
+            <ul class="NAV_scroll" id="NAV_4">
+                <li>足球 - 波膽</li>
+                <li>全場</li>
+            </ul>
+            <ul class="NAV_scroll" id="NAV_5">
+                <li>足球 - 入球數</li>
+                <li>全場</li>
+            </ul>
+            <ul class="NAV_scroll" id="NAV_6">
+                <li>足球 - 半全場</li>
+            </ul>
+        </div>
+        <div class="setPlayIn" id="setPlayIn_1" style="display:block;">
+            <div class="leagueL_all">
+                <div class="leagueL">
+                    <div class="leagueTitle">世界盃 A組</div>
+                    <div class="btn_arrow"></div>
+                    <div class="leagueAll">
+                        <ul class="leagueGame height3">
+                            <li class="leagueContent">
+                                <div>巴西</div>
+                                <div>阿根廷</div>
+                                <div>和局</div>
+                                <div class="leagueStatus">10-30 16:00</div>
+                            </li>
+                            <li class="livePlay">
+                                <a class="icon_court_soccer_gray"></a>
+                                <img src="images/icon_live_mc_20210817.svg" alt="美女轉播">
+                                <img src="images/icon_live_running.svg" alt="開放滚球盤">
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                        <ul class="leagueGame height2">
+                            <li class="leagueContent">
+                                <div>墨西哥</div>
+                                <div>祕魯</div>
+                            </li>
+                            <li class="livePlay">
+                                <a class="icon_court_soccer_gray"></a>
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="scroll_point">
+                        <div class="height3">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="height2">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="leagueMore">
+                        <li class="height3" onclick="location.href='noMore.html';">0+</li>
+                        <li class="height2"></li>
+                    </ul>
+                </div>
+                <div class="leagueL">
+                    <div class="leagueTitle">世界杯 B組</div>
+                    <div class="btn_arrow"></div>
+                    <div class="leagueAll">
+                        <ul class="leagueGame height3">
+                            <li class="leagueContent">
+                                <div>德國</div>
+                                <div>法國</div>
+                                <div>和局</div>
+                                <div class="leagueStatus">10-30 16:00</div>
+                            </li>
+                            <li class="livePlay">
+                                <img src="images/icon_live_mc_20210817.svg" alt="美女轉播">
+                                <img src="images/icon_live_data.svg" alt="賽事數據">
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                        <ul class="leagueGame height2">
+                            <li class="leagueContent">
+                                <div>西班牙</div>
+                                <div>葡萄牙</div>
+                                <div class="leagueStatus">10-30 16:00</div>
+                            </li>
+                            <li class="livePlay">
+                                <img src="images/icon_live_data.svg" alt="賽事數據">
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="scroll_point">
+                        <div class="height3">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="height2">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="leagueMore">
+                        <li class="height3" onclick="location.href='soccerMore.html';">20+</li>
+                        <li class="height2" onclick="location.href='soccerMore.html';">20+</li>
+                    </ul>
+                </div>
+                <div class="leagueL">
+                    <div class="leagueTitle">世界盃 C組</div>
+                    <div class="btn_arrow"></div>
+                    <div class="leagueAll">
+                        <ul class="leagueGame height3">
+                            <li class="leagueContent">
+                                <div>烏克蘭</div>
+                                <div>俄羅斯</div>
+                                <div>和局</div>
+                                <div class="leagueStatus">10-30 16:00</div>
+                            </li>
+                            <li class="livePlay">
+                                <img src="images/icon_live_running.svg" alt="開放滚球盤">
+                                <img src="images/icon_live_tv.svg" alt="開放滚球及現場轉播">
+                                <img src="images/icon_live_data.svg" alt="賽事數據">
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                        <ul class="leagueGame height2">
+                            <li class="leagueContent">
+                                <div>日本</div>
+                                <div>韓國</div>
+                            </li>
+                            <li class="livePlay">
+                                <img src="images/icon_live_data.svg" alt="賽事數據">
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                        <ul class="leagueGame height2">
+                            <li class="leagueContent">
+                                <div>英格蘭</div>
+                                <div>冰島</div>
+                            </li>
+                            <li class="livePlay">
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                        <ul class="leagueGame height2">
+                            <li class="leagueContent">
+                                <div>義大利</div>
+                                <div>土耳其</div>
+                            </li>
+                            <li class="livePlay">
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="scroll_point">
+                        <div class="height3">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="height2">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="height2">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="height2">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="leagueMore">
+                        <li class="height3" onclick="location.href='soccerMore.html';">20+</li>
+                        <li class="height2"></li>
+                        <li class="height2"></li>
+                        <li class="height2"></li>
+                    </ul>
+                </div>
+                <div class="leagueL">
+                    <div class="leagueTitle">世界盃 D組</div>
+                    <div class="btn_arrow"></div>
+                    <div class="leagueAll">
+                        <ul class="leagueGame height3">
+                            <li class="leagueContent">
+                                <div>保加利亞</div>
+                                <div>薩爾維亞</div>
+                                <div>和局</div>
+                                <div class="leagueStatus">10-30 16:00</div>
+                            </li>
+                            <li class="livePlay">
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                        <ul class="leagueGame height2">
+                            <li class="leagueContent">
+                                <div>海地</div>
+                                <div>象牙海岸</div>
+                                <div class="leagueStatus">10-30 16:00</div>
+                            </li>
+                            <li class="livePlay">
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="scroll_point">
+                        <div class="height3">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="height2">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="leagueMore">
+                        <li class="height3" onclick="location.href='soccerMore.html';">20+</li>
+                        <li class="height2" onclick="location.href='soccerMore.html';">20+</li>
+                    </ul>
+                </div>
+                <div class="leagueL">
+                    <div class="leagueTitle">世界盃 E組</div>
+                    <div class="btn_arrow"></div>
+                    <div class="leagueAll">
+                        <ul class="leagueGame height3">
+                            <li class="leagueContent">
+                                <div>荷蘭</div>
+                                <div>伊朗</div>
+                                <div>和局</div>
+                                <div class="leagueStatus">10-30 16:00</div>
+                            </li>
+                            <li class="livePlay">
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                        <ul class="leagueGame height2">
+                            <li class="leagueContent">
+                                <div>克羅埃西亞</div>
+                                <div>比利時</div>
+                                <div class="leagueStatus">10-30 16:00</div>
+                            </li>
+                            <li class="livePlay">
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="scroll_point">
+                        <div class="height3">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="height2">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="leagueMore">
+                        <li class="height3" onclick="location.href='soccerMore.html';">20+</li>
+                        <li class="height2" onclick="location.href='soccerMore.html';">20+</li>
+                    </ul>
+                </div>
+                <div class="leagueL">
+                    <div class="leagueTitle">世界盃 F組</div>
+                    <div class="btn_arrow"></div>
+                    <div class="leagueAll">
+                        <ul class="leagueGame height3">
+                            <li class="leagueContent">
+                                <div>瑞士</div>
+                                <div>澳洲</div>
+                                <div>和局</div>
+                                <div class="leagueStatus">10-30 16:00</div>
+                            </li>
+                            <li class="livePlay">
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                        <ul class="leagueGame height2">
+                            <li class="leagueContent">
+                                <div>丹麥</div>
+                                <div>卡達</div>
+                                <div class="leagueStatus">10-30 16:00</div>
+                            </li>
+                            <li class="livePlay">
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="scroll_point">
+                        <div class="height3">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="height2">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="leagueMore">
+                        <li class="height3" onclick="location.href='soccerMore.html';">20+</li>
+                        <li class="height2" onclick="location.href='soccerMore.html';">20+</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="leagueR">
+                <table class="width6">
+                    <tr>
+                        <th>全場讓球</th>
+                        <th>全場大小</th>
+                        <th>全場獨赢</th>
+                        <th>上半讓球</th>
+                        <th>上半大小</th>
+                        <th>上半獨赢</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <table class="width6">
+                    <tr>
+                        <th>全場讓球</th>
+                        <th>全場大小</th>
+                        <th>全場獨赢</th>
+                        <th>上半讓球</th>
+                        <th>上半大小</th>
+                        <th>上半獨赢</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                                <li class="btn_li">3.250</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                                <li class="btn_li">3.250</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <table class="width6">
+                    <tr>
+                        <th>全場讓球</th>
+                        <th>全場大小</th>
+                        <th>全場獨赢</th>
+                        <th>上半讓球</th>
+                        <th>上半大小</th>
+                        <th>上半獨赢</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                                <li class="btn_li">3.250</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                                <li class="btn_li">3.250</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <table class="width6">
+                    <tr>
+                        <th>全場讓球</th>
+                        <th>全場大小</th>
+                        <th>全場獨赢</th>
+                        <th>上半讓球</th>
+                        <th>上半大小</th>
+                        <th>上半獨赢</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                                <li class="btn_li">3.250</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                                <li class="btn_li">3.250</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <table class="width6">
+                    <tr>
+                        <th>全場讓球</th>
+                        <th>全場大小</th>
+                        <th>全場獨赢</th>
+                        <th>上半讓球</th>
+                        <th>上半大小</th>
+                        <th>上半獨赢</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                                <li class="btn_li">3.250</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                                <li class="btn_li">3.250</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <table class="width6">
+                    <tr>
+                        <th>全場讓球</th>
+                        <th>全場大小</th>
+                        <th>全場獨赢</th>
+                        <th>上半讓球</th>
+                        <th>上半大小</th>
+                        <th>上半獨赢</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                                <li class="btn_li">3.250</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                                <li class="btn_li">3.250</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="setPlayIn" id="setPlayIn_2">
+            <div class="leagueL_all">
+                <div class="leagueL">
+                    <div class="leagueTitle">法國甲級聯賽</div>
+                    <div class="btn_arrow"></div>
+                    <div class="leagueAll">
+                        <ul class="leagueGame height3">
+                            <li class="leagueContent">
+                                <div>聖巴黎日耳曼</div>
+                                <div>摩納哥</div>
+                                <div>和局</div>
+                                <div class="leagueStatus">10-30 16:00</div>
+                            </li>
+                            <li class="livePlay">
+                                <a class="icon_court_soccer_gray"></a>
+                                <img src="images/icon_live_mc_20210817.svg" alt="美女轉播">
+                                <img src="images/icon_live_running.svg" alt="開放滚球盤">
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                        <ul class="leagueGame height2">
+                            <li class="leagueContent">
+                                <div>巴賽羅納</div>
+                                <div>摩納哥</div>
+                            </li>
+                            <li class="livePlay">
+                                <a class="icon_court_soccer_gray"></a>
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="scroll_point">
+                        <div class="height3">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="height2">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="leagueMore">
+                        <li class="height3" onclick="location.href='soccerMore.html';">20+</li>
+                        <li class="height2"></li>
+                    </ul>
+                </div>
+                <div class="leagueL">
+                    <div class="leagueTitle">歐洲冠軍杯</div>
+                    <div class="btn_arrow"></div>
+                    <div class="leagueAll">
+                        <ul class="leagueGame height3">
+                            <li class="leagueContent">
+                                <div>多特蒙德-女</div>
+                                <div>巴黎聖日耳曼-女</div>
+                                <div>和局</div>
+                                <div class="leagueStatus">10-30 16:00</div>
+                            </li>
+                            <li class="livePlay">
+                                <img src="images/icon_live_mc_20210817.svg" alt="美女轉播">
+                                <img src="images/icon_live_data.svg" alt="賽事數據">
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                        <ul class="leagueGame height2">
+                            <li class="leagueContent">
+                                <div>多特蒙德-后備</div>
+                                <div>巴黎聖日耳曼-后備</div>
+                                <div class="leagueStatus">10-30 16:00</div>
+                            </li>
+                            <li class="livePlay">
+                                <img src="images/icon_live_data.svg" alt="賽事數據">
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="scroll_point">
+                        <div class="height3">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="height2">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="leagueMore">
+                        <li class="height3" onclick="location.href='soccerMore.html';">20+</li>
+                        <li class="height2" onclick="location.href='soccerMore.html';">20+</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="leagueR">
+                <table class="width4">
+                    <tr>
+                        <th>讓球</th>
+                        <th>大小</th>
+                        <th>獨赢</th>
+                        <th>单双</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                                <li class="btn_li">3.250</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">单</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">双</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">单</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">双</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <table class="width4">
+                    <tr>
+                        <th>讓球</th>
+                        <th>大小</th>
+                        <th>獨赢</th>
+                        <th>单双</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                                <li class="btn_li">3.250</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">单</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">双</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">单</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">双</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="setPlayIn" id="setPlayIn_3">
+            <div class="leagueL_all">
+                <div class="leagueL">
+                    <div class="leagueTitle">法國甲級聯賽</div>
+                    <div class="btn_arrow"></div>
+                    <div class="leagueAll">
+                        <ul class="leagueGame height3">
+                            <li class="leagueContent">
+                                <div>聖巴黎日耳曼</div>
+                                <div>摩納哥</div>
+                                <div>和局</div>
+                                <div class="leagueStatus">10-30 16:00</div>
+                            </li>
+                            <li class="livePlay">
+                                <a class="icon_court_soccer_gray"></a>
+                                <img src="images/icon_live_mc_20210817.svg" alt="美女轉播">
+                                <img src="images/icon_live_running.svg" alt="開放滚球盤">
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                        <ul class="leagueGame height2">
+                            <li class="leagueContent">
+                                <div>巴賽羅納</div>
+                                <div>摩納哥</div>
+                            </li>
+                            <li class="livePlay">
+                                <a class="icon_court_soccer_gray"></a>
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="scroll_point">
+                        <div class="height3">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="height2">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="leagueMore">
+                        <li class="height3" onclick="location.href='soccerMore.html';">20+</li>
+                        <li class="height2"></li>
+                    </ul>
+                </div>
+                <div class="leagueL">
+                    <div class="leagueTitle">歐洲冠軍杯</div>
+                    <div class="btn_arrow"></div>
+                    <div class="leagueAll">
+                        <ul class="leagueGame height3">
+                            <li class="leagueContent">
+                                <div>多特蒙德-女</div>
+                                <div>巴黎聖日耳曼-女</div>
+                                <div>和局</div>
+                                <div class="leagueStatus">10-30 16:00</div>
+                            </li>
+                            <li class="livePlay">
+                                <img src="images/icon_live_mc_20210817.svg" alt="美女轉播">
+                                <img src="images/icon_live_data.svg" alt="賽事數據">
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                        <ul class="leagueGame height2">
+                            <li class="leagueContent">
+                                <div>多特蒙德-后備</div>
+                                <div>巴黎聖日耳曼-后備</div>
+                                <div class="leagueStatus">10-30 16:00</div>
+                            </li>
+                            <li class="livePlay">
+                                <img src="images/icon_live_data.svg" alt="賽事數據">
+                                <a class="btn_star"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="scroll_point">
+                        <div class="height3">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="height2">
+                            <ul>
+                                <li class="on"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="leagueMore">
+                        <li class="height3" onclick="location.href='soccerMore.html';">20+</li>
+                        <li class="height2" onclick="location.href='soccerMore.html';">20+</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="leagueR">
+                <table class="width3">
+                    <tr>
+                        <th>讓球</th>
+                        <th>大小</th>
+                        <th>獨赢</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                                <li class="btn_li">3.250</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <table class="width3">
+                    <tr>
+                        <th>讓球</th>
+                        <th>大小</th>
+                        <th>獨赢</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                                <li class="btn_li">3.250</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">0.5/0.5</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50"></div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">
+                                    <div class="L50">5.5/6</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                                <li class="btn_li">
+                                    <div class="L50">小</div>
+                                    <div class="R50">0.960</div>
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="btn_li">0.570</li>
+                                <li class="btn_li">2.950</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+
+<!--快速投-->   
+    
+<div id="fastBet_step01" class="betList innerMiniCart">
+        <div class="betListT">
+            <ul class="betMenu">
+                <li class="on">單項<span id="betSingleNum">1</span></li>
+                <li>過關<span id="betPassNum">1</span></li>
+            </ul>
+            <div class="betMoney">$ 99,999,999.0</div>
+            <div class="btn_closeFast"></div>
+        </div>
+        <div class="betListIn">
+            <ul class="betT">
+                <li class="betTxt">
+                    <div class="betTxt_T"><span class="t_red">(0:0)</span> <span class="t_blue">隊伍A</span> <div class="t_inlineBox"><span class="t_red">+2.5</span> @ <span class="t_red odd">0.55</span></div></div>
+                    <div class="btn_closeBet"></div>
+                </li>
+               <li>賽種 - [玩法]</li>
+               <li>賽事</li>
+                    <li>隊伍A<span class="t_orange">(主)</span> v 隊伍B</li>
+            </ul>
+            <div class="betB">
+                <div class="keyboard">100 - 999999<div class="btn_clear"></div></div>
+                <div class="keyboard off">可贏金額<div class="btn_clear"></div></div>
+                <input type="button" value="確認下注" class="btn_confirm">
+                <input type="button" value="接受變化下注" class="btn_confirm bg_green" style="display: none;">
+                <div class="betLimit_t">本場上限：999999</div>
+                <div class="numInputPlus">
+                    <a>+10</a>
+                    <a>+100</a>
+                    <a>+500</a>
+                    <a>+1000</a>
+                    <a class="t_chipCustom">999999</a>
+                </div>
+                <div class="numInputArea">
+                    <div class="numInputAreaL">
+                        <a class="number1"></a>
+                        <a class="number2"></a>
+                        <a class="number3"></a>
+                        <a class="number4"></a>
+                        <a class="number5"></a>
+                        <a class="numClear"></a>
+                        <a class="number6"></a>
+                        <a class="number7"></a>
+                        <a class="number8"></a>
+                        <a class="number9"></a>
+                        <a class="number0"></a>
+                    </div>
+                </div>
+            </div>
+     
+            <div class="gameBetClose_t">盤口關閉中，請重新下注</div>
+        
+            <div class="betListPass"><div class="btn_closePass"></div><div class="betListPass_t">過關投注請至少選擇2場賽事</div></div>
+        </div>
+    </div>
+
+
+
+
+
+
+<div id="fastBet_step02" class="betList innerMiniCart">
+        <div class="betListT">
+            投注清單
+        </div>
+        <div class="betListIn">
+            <ul class="betT">
+                <li class="betTxt">
+                    <div class="betTxt_T"><span class="t_red">(0:0)</span> 
+                    <span class="t_blue">投注標的</span> <div class="t_inlineBox"><span class="t_red">+0/0.5</span> @ <span class="t_red odd">2.499</span></div></div>
+                </li>
+                <li>賽種 - [玩法]</li>
+                <li>賽事</li>
+                    <li>隊伍A<span class="t_orange">(主)</span> v 隊伍B</li>
+                <li>
+                    <div class="L48">投注：<span>10</span></div>
+                    <div class="R48">可赢：<span class="odd">10.30</span></div>
+                </li>
+            </ul>
+            <div class="betB">
+                <input type="button" value="取 消" class="L48 btn_cancelFB">
+                <input type="button" value="確認下注" class="R48 btn_confirm" style="display: block;">
+                <input type="button" value="接受變化並下注" class="R48 btn_confirm bg_green" style="display: none;">
+            </div>
+           
+            <div class="gameBetClose_t">盤口關閉中，請移除再下注</div>
+        </div>
+    </div>
+
+
+
+
+
+<div id="fastBet_step03" class="betList innerMiniCart off" style="display: none;">
+        <div class="betListT" style="background-color: rgb(67, 177, 0);">
+            投注清單
+
+        </div>
+        <div class="betListIn">
+            <ul class="betT">
+                <li class="betTxt">
+                    <div class="betTxt_T"><span class="t_red">(0:0)</span> 
+                    <span class="t_blue">投注標的</span> <div class="t_inlineBox"><span class="t_red">+0/0.5</span> @ <span class="t_red odd">2.499</span></div></div>
+                </li>
+                <li>賽種 - [玩法]</li>
+                <li>賽事</li>
+                    <li>隊伍A<span class="t_orange">(主)</span> v 隊伍B</li>
+                <li>
+                    <div class="L48">投注：<span>10</span></div>
+                    <div class="R48">可赢：<span class="odd">10.30</span></div>
+                </li>
+                <li>
+                    <div class="betEvent">投注失敗，本場剩餘可投注金額：500</div>
+                </li>
+            </ul>
+            <div class="betB">
+                <input type="button" value="保留投注項目" class="L48 btn_cancelFB">
+                <input type="button" value="關 閉" class="R48 btn_confirm bg_blue">
+            </div>
+          
+            <div class="gameBetClose_t">盤口關閉中，請移除再下注</div>
+        </div>
+    </div>
+
+
+
+
+<div id="fastBet_step04" class="betList innerMiniCart">
+        <div class="betListT">
+            投注清單
+        </div>
+        <div class="betListIn">
+            <ul class="betT">
+                <li class="betTxt">
+                    <div class="betTxt_T"><span class="t_red">(0:0)</span> <span class="t_blue">投注標的</span> <div class="t_inlineBox"><span class="t_red">+0/0.5</span> @ <span class="t_red odd">2.499</span></div></div>
+                </li>
+                <li>賽種 - [玩法]</li>
+                <li>賽事</li>
+                    <li>隊伍A<span class="t_orange">(主)</span> v 隊伍B</li>
+                <li>
+                    <div class="L48">投注：<span>10</span></div>
+                    <div class="R48">可赢：<span class="odd">10.30</span></div>
+                </li>
+                <li class="img_check" style="display: list-item;">已確認</li>
+             
+            </ul>
+            <div class="betB">
+                <input type="button" value="保留投注項目" class="L48 btn_cancelFB">
+                <input type="button" value="關 閉" class="R48 btn_confirm bg_blue">
+            </div>
+           
+            <div class="gameBetClose_t">盤口關閉中，請移除再下注</div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	
+	
+	
+	
+    <!--頁腳/多項投注-->
+    <div class="footer">
+        <a id="fastTransfer" class="openBtn"><span class="icon_transfer"></span>快速轉帳</a>
+        <a id="openLeague" class="openBtn"><span class="icon_league"></span>其他聯盟</a>
+        <a id="open02" class="openBtn"><span class="icon_present">0</span><font class="clickBet">點此投注</font><font class="clickBet_odds">9.99</font></a>
+        <a id="openRecord" class="openBtn" href="record.html"><span class="icon_record"><span class="record_numR">0</span></span>投注紀錄</a>
+        <a id="open03" class="openBtn"><span class="icon_more point"></span>更　多</a>
+    </div>
+    <!--更多-->
+    <div class="more">
+        <!--更多內容-->
+        <div id="moreBox" class="moreBox">
+            <ul class="moreT">
+                <li class="icon_level">
+                    <img src="images/icon_level1.svg" />
+                </li>
+                <li class="moreID">UZP79979<span class="t_blue">UP測試員</span></li>
+                <li class="btn_announcement point" onclick="location.href='#"></li>
+            </ul>
+            <div class="moreB">
+                <ul class="moreBT">
+                    
+                    <li>
+                        <div class="icon_live"></div>
+                        <div>現場轉播</div>
+                        <div class="moreBT_info">維護中</div>
+                    </li>
+                    <li onclick="location.href='liveScore.html';">
+                        <div class="icon_score"></div>
+                        <div>即時比分</div>
+                    </li>
+                    <li onclick="location.href='calculator.html';">
+                        <div class="icon_count"></div>
+                        <div>過關計算器</div>
+                    </li>
+                    <li onclick="location.href='gameResult.html';">
+                        <div class="icon_result"></div>
+                        <div>賽果</div>
+                    </li>
+                    <li onclick="location.href='rule.html';">
+                        <div class="icon_rule"></div>
+                        <div>規則</div>
+                    </li>
+                    <li id="openFunSet">
+                        <div class="icon_funSet"></div>
+                        <div>功能設定</div>
+                    </li>
+                </ul>
+                <ul class="moreBB">
+                  
+                    <li>
+                        <div class="moreBB_T">
+                            <div class="icon_exterior"></div>
+                            <div>色調</div>
+                        </div>
+                        <div class="moreBB_In">
+                            <div class="moreBB_radio" id="btn">深色</div>
+                            <div class="moreBB_radio on" id="btn2">淺色</div>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!--設定-->
+        <div id="funSetBox" class="funSetBox">
+            <ul class="moreT">
+                <li class="btn_funSet_close"></li>
+                <li>功能設定</li>
+                <li class="btn_funSet_prompt"></li>
+            </ul>
+            <div class="moreB">
+                <ul class="moreBB">
+                     <li>
+                        <div class="moreBB_T">默認類型</div>
+                        <div class="moreBB_In">
+                            <div class="moreBB_radio" id="funSel_today">今日</div>
+                            <div class="moreBB_radio on">滚球</div>
+                            <div class="moreBB_radio" id="funSel_default">系統默認</div>
+                        </div>
+                    </li>
+                    <li id="funSel_ball">
+                        <div class="moreBB_T">默認球類</div>
+                        <div class="moreBB_In">
+                            <div class="moreBB_radio on">足球</div>
+                            <div class="moreBB_radio">籃球</div>
+                            <div class="moreBB_radio">棒球</div>
+                            <div class="moreBB_radio">冰球</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="moreBB_T">默認排序</div>
+                        <div class="moreBB_In">
+                            <div class="moreBB_radio on">熱門</div>
+                            <div class="moreBB_radio">時間</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="moreBB_T">選擇兩項以上 (含兩項)</div>
+                        <div class="moreBB_In">
+                            <div class="moreBB_radio on">顯示單項投注</div>
+                            <div class="moreBB_radio">顯示過關投注</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="moreBB_T">自訂金額</div>
+                        <div class="moreBB_In">
+                            <div class="chipBox">
+                                <div class="btn_chip">+1</div>
+                                <div class="btn_chip">+5</div>
+                                <div class="btn_chip on">+10</div>
+                                <div class="btn_chip on">+100</div>
+                                <div class="btn_chip on">+500</div>
+                                <div class="btn_chip">+1000</div>
+                                <div class="btn_chip on">+2000</div>
+                                <div class="btn_chip">+5000</div>
+                                <div class="btn_chip">+10000</div>
+                            </div>
+                            <div class="chip_prompt">最多設置4個</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--彈窗-->
+    <div class="mask"></div>
+    <div class="mask_footer"></div>
+    <div class="popup_scroll">
+        <div class="popup" id="bet02">
+            <div class="popupT">
+                <ul class="popupBet">
+                    <li class="on">單項<span id="singleNum">0</span></li>
+                    <li>過關<span id="passNum">0</span></li>
+                </ul>
+                <div class="popupMoney">$ 99,999,999.0</div>
+                <div class="btn_closeArrow btn_closeP"></div>
+            </div>
+            <div id="betSingle" class="popupIn">
+                <ul class="popupC">
+                    <li class="popupC_T">
+                        <div class="popupC_T_text"><span class="t_red">(0:0)</span> <span class="t_blue">投注標的</span> <div class="t_inlineBox">@ <span class="t_red">賠率</span></div></div>
+                        <div class="btn_close"></div>
+                    </li>
+                    <li>賽種 - [玩法]</li>
+                    <li>賽事</li>
+                    <li>隊伍A<span class="t_orange">(主)</span> v 隊伍B</li>
+                    <li class="betSingle">
+                        <div class="keyboard">100 - 999999<div class="btn_clear"></div></div>
+                        <div class="keyboard num t_blue">可赢金額 999999<div class="btn_clear"></div></div>
+                        <div class="betLimit_t">本場上限：999999</div>
+                        <div class="error_t">警語</div>
+                        <div class="numInputPlus">
+                            <a>+10</a>
+                            <a>+100</a>
+                            <a>+500</a>
+                            <a>+1000</a>
+                            <a class="t_chipCustom">999999</a>
+                        </div>
+                        <div class="numInputArea">
+                            <div class="numInputAreaL">
+                                <a class="number1"></a>
+                                <a class="number2"></a>
+                                <a class="number3"></a>
+                                <a class="number4"></a>
+                                <a class="number5"></a>
+                                <a class="numClear"></a>
+                                <a class="number6"></a>
+                                <a class="number7"></a>
+                                <a class="number8"></a>
+                                <a class="number9"></a>
+                                <a class="number0"></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="gameBetClose_t">盤口關閉中，請重新下注</li>
+                </ul>
+                <ul class="popupC gameBetClose">
+                    <li class="popupC_T">
+                        <div class="popupC_T_text"><span class="t_red">(0:0)</span> <span class="t_blue">投注標的</span> <div class="t_inlineBox">@ <span class="t_red">賠率</span></div></div>
+                        <div class="btn_close"></div>
+                    </li>
+                    <li>賽種 - [玩法]</li>
+                    <li>賽事</li>
+                    <li>隊伍A<span class="t_orange">(主)</span> v 隊伍B</li>
+                    <li class="betSingle">
+                        <div class="keyboard">100 - 999999<div class="btn_clear"></div></div>
+                        <div class="keyboard num t_blue">可赢金額 999999<div class="btn_clear"></div></div>
+                        <div class="betLimit_t">本場上限：999999</div>
+                        <div class="error_t" style="display: none;">警語</div>
+                        <div class="numInputPlus">
+                            <a>+10</a>
+                            <a>+100</a>
+                            <a>+500</a>
+                            <a>+1000</a>
+                            <a class="t_chipCustom">999999</a>
+                        </div>
+                        <div class="numInputArea">
+                            <div class="numInputAreaL">
+                                <a class="number1"></a>
+                                <a class="number2"></a>
+                                <a class="number3"></a>
+                                <a class="number4"></a>
+                                <a class="number5"></a>
+                                <a class="numClear"></a>
+                                <a class="number6"></a>
+                                <a class="number7"></a>
+                                <a class="number8"></a>
+                                <a class="number9"></a>
+                                <a class="number0"></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="gameBetClose_t">盤口關閉中，請重新下注</li>
+                </ul>
+                
+                
+                
+                <ul class="popupB">
+                    <li class="betTxtOut">
+                        <div class="betTxtL">單　　注</div>
+                        <div class="keyboard num">99,999,999.0<div class="btn_clear"></div><div class="multiply">x1</div></div>
+                        <div class="numInputPlus">
+                            <a>+10</a>
+                            <a>+100</a>
+                            <a>+500</a>
+                            <a>+1000</a>
+                        </div>
+                        <div class="numInputArea">
+                            <div class="numInputAreaL">
+                                <a class="number1"></a>
+                                <a class="number2"></a>
+                                <a class="number3"></a>
+                                <a class="number4"></a>
+                                <a class="number5"></a>
+                                <a class="numClear"></a>
+                                <a class="number6"></a>
+                                <a class="number7"></a>
+                                <a class="number8"></a>
+                                <a class="number9"></a>
+                                <a class="number0"></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="betTxtOut">
+                        <div class="betTxtL">可赢金額</div>
+                        <div class="keyboard off num t_blue">99,999,999.0<div class="btn_clear"></div><div class="multiply bg_grayL">x1</div></div>
+                        <div class="numInputPlus">
+                            <a>+10</a>
+                            <a>+100</a>
+                            <a>+500</a>
+                            <a>+1000</a>
+                        </div>
+                        <div class="numInputArea">
+                            <div class="numInputAreaL">
+                                <a class="number1"></a>
+                                <a class="number2"></a>
+                                <a class="number3"></a>
+                                <a class="number4"></a>
+                                <a class="number5"></a>
+                                <a class="numClear"></a>
+                                <a class="number6"></a>
+                                <a class="number7"></a>
+                                <a class="number8"></a>
+                                <a class="number9"></a>
+                                <a class="number0"></a>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="popupEvent_allbox" id="popupEvent01">
+                        <div class="popupEvent">警語欄</div>
+                    </li>
+                    <li>
+                        <div class="L48">所有投注：<span>99,999,999.0</span></div>
+                        <div class="R48">可赢金額：<span class="t_blue odd">99,999,999.0</span></div>
+                    </li>
+                    <li>
+                        <input type="button" value="全部清除" class="L48 bg_gray" />
+                        <input type="button" value="確認下注" class="R48 bg_yellow " onclick=" $(this).hide().next().show().closest('#betSingle').find('.odd').addClass('bg_green').closest('#betSingle').closest('#betSingle').find('.keyboard').removeClass('error').closest('#betSingle');$('#popupEvent01,#popupEvent03').hide(); $('#popupEvent02').show();" />
+                        <input type="button" value="接受變化下注" class="R48 bg_green openBtn" id="open04" style="display: none;" />
+                    </li>
+                </ul>
+                
+            </div>
+            
+        </div>
+        <div class="popup" id="bet04">
+            <div class="popupT">投注清單</div>
+            <div class="popupIn">
+                <ul class="popupC">
+                    <li class="popupC_T">
+                        <div class="popupC_T_text"><span class="t_blue">投注標的</span> <div class="t_inlineBox">@ <span class="t_red">1.499</span></div></div>
+                    </li>
+                    <li>賽種 - [玩法]</li>
+                    <li>賽事</li>
+                    <li>隊伍A<span class="t_orange">(主)</span> v 隊伍B</li>
+                    <li>
+                        <div class="L48">投注：<span>99,999,999.0</span></div>
+                        <div class="R48">可赢：<span>99,999,999.0</span></div>
+                    </li>
+                    <li class="btn_status_iG" style="display: list-item;">兑現成功<div class="statusInfo" style="">07-30 00:30</div></li>
+                    <li class="img_check" style="display: list-item;">已確認</li>
+                    <li class="btn_status" style="display: list-item;">等待中
+                        <div class="statusInfo" style="">您的注單正在處理中</div>
+                    </li>
+                    <li class="img_refuse" style="display: list-item;">投注拒绝</li>
+                </ul>
+                
+                <ul class="popupC off" >
+                    <li class="popupC_T">
+                        <div class="popupC_T_text"><span class="t_blue">投注標的</span> <div class="t_inlineBox"><span class="t_red">11-50</span> @ <span class="t_red">2.499</span></div></div>
+                    </li>
+                    <li>賽種 - [玩法]</li>
+                    <li>賽事</li>
+                    <li>隊伍A<span class="t_orange">(主)</span> v 隊伍B</li>
+                    <li>
+                        <div class="L48">投注：<span>100</span></div>
+                        <div class="R48">可赢：<span>250.55</span></div>
+                    </li>
+                    <li class="popupEvent_box">
+                        <div class="popupEvent">投注失敗，本場剩餘可投注金額：500</div>
+                    </li>
+                </ul>
+                
+                
+                
+                
+                
+                <ul class="popupB">
+                    <li>
+                        <div class="L48">所有投注：<span>99,999,999.0</span></div>
+                        <div class="R48">可赢金額：<span class="t_blue odd">99,999,999.0</span></div>
+                    </li>
+                    <li class="popupEvent_allbox" id="popupEvent01">
+                        <div class="popupEvent">警語欄</div>
+                    </li>
+                    <li>
+                        <input type="button" value="取 消" class="L48 bg_gray btn_closeP" />
+                        <input type="button" value="確認下注" class="R48 btn_sure" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+       
+        
+        
+    </div>
+     <!--聯盟-->
+    <div class="allianceSel">
+        <ul class="alliance_T">
+            <li class="btn_AL_allSel">
+                <div class="icon_AL_checkbox"></div>
+            </li>
+            <li class="btn_AL_hot on">
+                <div class="icon_AL_radio"></div>
+                熱門排序
+            </li>
+            <li class="btn_AL_A-Z">
+                <div class="icon_AL_radio"></div>
+                字母排序
+            </li>
+        </ul>
+        <div class="alliance_In">
+            <ul class="alliance_A-Z">
+                <li>
+                    <div class="icon_abc">A</div>
+                    A
+                </li>
+                <li>
+                    <div class="icon_abc">B</div>
+                    B
+                </li>
+                <li>
+                    <div class="icon_abc">C</div>
+                    C
+                </li>
+                <li>
+                    <div class="icon_abc">D</div>
+                    D
+                </li>
+                <li>
+                    <div class="icon_abc">E</div>
+                    E
+                </li>
+                <li>
+                    <div class="icon_abc">F</div>
+                    F
+                </li>
+                <li class="on">
+                    <div class="icon_abc">G</div>
+                    G
+                </li>
+                <li>
+                    <div class="icon_abc">H</div>
+                    H
+                </li>
+                <li>
+                    <div class="icon_abc">I</div>
+                    I
+                </li>
+                <li>
+                    <div class="icon_abc">J</div>
+                    J
+                </li>
+                <li>
+                    <div class="icon_abc">K</div>
+                    K
+                </li>
+                <li>
+                    <div class="icon_abc">L</div>
+                    L
+                </li>
+                <li>
+                    <div class="icon_abc">M</div>
+                    M
+                </li>
+                <li>
+                    <div class="icon_abc">N</div>
+                    N
+                </li>
+                <li>
+                    <div class="icon_abc">O</div>
+                    O
+                </li>
+                <li>
+                    <div class="icon_abc">P</div>
+                    P
+                </li>
+                <li>
+                    <div class="icon_abc">Q</div>
+                    Q
+                </li>
+                <li>
+                    <div class="icon_abc">R</div>
+                    R
+                </li>
+                <li>
+                    <div class="icon_abc">S</div>
+                    S
+                </li>
+                <li>
+                    <div class="icon_abc">T</div>
+                    T
+                </li>
+                <li>
+                    <div class="icon_abc">U</div>
+                    U
+                </li>
+                <li>
+                    <div class="icon_abc">V</div>
+                    V
+                </li>
+                <li>
+                    <div class="icon_abc">W</div>
+                    W
+                </li>
+                <li>
+                    <div class="icon_abc">X</div>
+                    X
+                </li>
+                <li>
+                    <div class="icon_abc">Y</div>
+                    Y
+                </li>
+                <li>
+                    <div class="icon_abc">Z</div>
+                    Z
+                </li>
+            </ul>
+            <ul class="alliance_scroll">
+                <li class="on">
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事A</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事B</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事C</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事D</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事E</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事F</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事G</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事H</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事I</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事J</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事K</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事L</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事M</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事N</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事O</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事P</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事Q</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事R</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事S</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事T</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事U</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事V</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事W</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事X</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事Y</div>
+                </li>
+                <li >
+                    <div class="icon_AL_checkbox"></div>
+                    <div class="AL_name_scroll">賽事Z</div>
+                </li>
+               
+                
+            </ul>
+        </div>
+        <div class="icon_arrowDown"></div>
+        <div class="alliance_btn">
+            <input type="button" value="取 消" class="btn_AL_clear" />
+            <input type="button" value="提 交" class="btn_AL_confirm" />
+        </div>
+    </div>
+    <!--早盤日期-->
+    <div class="popList popDate" id="popDate">
+        <div class="popListBox_T">
+            <div class="popListBox_T_text">
+                選擇日期
+                <div class="btn_popListBox_close"></div>
+            </div>
+        </div>
+        <div class="popListBox_scroll">
+            <div class="popLB_list popLB_listAll on">全部</div>
+            <div class="popLB_list">03-26　星期二</div>
+            <div class="popLB_list">03-27　星期三</div>
+            <div class="popLB_list">03-28　星期四</div>
+            <div class="popLB_list">03-29　星期五</div>
+            <div class="popLB_list">03-30　星期六</div>
+            <div class="popLB_list">04-01　星期日</div>
+            <div class="popLB_list">04-02　星期一</div>
+        </div>
+    </div>
+    <!--選擇玩法-->
+    <div class="popList setPlay" id="setPlay">
+        <div class="popListBox_T">
+            <div class="popListBox_T_text">
+                選擇玩法
+                <div class="btn_popListBox_close"></div>
+            </div>
+        </div>
+        <div class="popListBox_scroll" id="setPlay_1" style="display:block;">
+            <div class="popLB_list on">全場 / 上半<span class="popLB_Num">999</span></div>
+            <div class="popLB_list">下半<span class="popLB_Num">9</span></div>
+            <div class="popLB_list">單節<span class="popLB_Num">9</span></div>
+            <div class="popLB_list">單隊總得分<span class="popLB_Num">9</span></div>
+        </div>
+        <div class="popListBox_scroll" id="setPlay_3">
+            <div class="popLB_list on">第1節<span class="popLB_Num">9</span></div>
+            <div class="popLB_list">第2節<span class="popLB_Num">9</span></div>
+            <div class="popLB_list">第3節<span class="popLB_Num">9</span></div>
+            <div class="popLB_list">第4節<span class="popLB_Num">9</span></div>
+        </div>
+        <div class="popListBox_scroll" id="setPlay_4">
+            <div class="popLB_list on">全場<span class="popLB_Num">9</span></div>
+            <div class="popLB_list">上半<span class="popLB_Num">9</span></div>
+            <div class="popLB_list">下半<span class="popLB_Num">9</span></div>
+            <div class="popLB_list">第1節<span class="popLB_Num">9</span></div>
+            <div class="popLB_list">第2節<span class="popLB_Num">9</span></div>
+            <div class="popLB_list">第3節<span class="popLB_Num">9</span></div>
+            <div class="popLB_list">第4節<span class="popLB_Num">9</span></div>
+        </div>
+    </div>
+    <!--系统信息-->
+    <div class="popList popMsg" id="popSysMsg">
+        <div class="popListBox_T">
+            <div class="popListBox_T_text">
+                系统訊息
+                <div class="btn_popListBox_close"></div>
+            </div>
+        </div>
+        <div class="popListBox_In">
+            <div class="popListBox_In_text">交易繁忙...請重新投注...</div>
+        </div>
+    </div>
+    
+    <!--收藏成功-->
+    <div class="popFavMsg"><div class="popFavMsg_In">收藏成功！</div></div>
+    <script src="scripts/jquery1.11.0.min.js"></script>
+    <script src="scripts/preventPullRefresh.js"></script>
+    <script src="scripts/ArtDemo.js"></script>
+    <!--色系-->
+    <link id="link" href="./green/styles/green.css" rel="stylesheet" />
+	
+	
+</body>
+</html>

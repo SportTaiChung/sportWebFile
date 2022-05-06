@@ -1,0 +1,421 @@
+﻿/*收藏夾頁面*/
+.containerFAV {
+}
+
+    .containerFAV > div {
+        clear: both;
+    }
+
+    .containerFAV .leagueL_all, .containerFAV .leagueR {
+        background-color: #404040;
+        margin-bottom: 1px;
+    }
+
+        .containerFAV .leagueL:last-child, .containerFAV .leagueR table:last-child {
+            margin-bottom: 0;
+        }
+
+[class*="FAV_T_"] {
+    color: #fff;
+    height: 30px;
+    line-height: 31px;
+    cursor: pointer;
+    padding: 0 30px 0 40px;
+    font-size: 0.8em;
+    position: relative;
+    z-index: 3;
+}
+
+    [class*="FAV_T_"]:before, [class*="FAV_T_"]:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0.3;
+    }
+
+    [class*="FAV_T_"]:before {
+        background: url(../images/btn_arrow_w.svg) no-repeat center;
+        background-size: auto 50%;
+        width: 30px;
+    }
+
+    [class*="FAV_T_"].on:before {
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+    }
+
+    [class*="FAV_T_"]:after {
+        margin: auto 0;
+        width: 1px;
+        height: 20px;
+        background-color: #fff;
+    }
+
+    [class*="FAV_T_"] > div {
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+.FAV_T_olympic {
+    background: #bb3b3c url(../images/icon_league_olympic.svg) no-repeat 9px 50%;
+    background-size: 22px auto;
+}
+
+.FAV_R_olympic th {
+    background-color: #bb3b3c;
+}
+
+.FAV_T_worldCup {
+    background: #3ca925 url(../images/icon_league_worldCup.svg) no-repeat 11px 50%;
+    background-size: 18px auto;
+}
+
+.FAV_R_worldCup th {
+    background-color: #3ca925;
+}
+
+.FAV_T_UEFA {
+    background: #568ec7 url(../images/icon_league_UEFA.svg) no-repeat 11px 50%;
+    background-size: 18px auto;
+}
+
+.FAV_R_UEFA th {
+    background-color: #568ec7;
+}
+
+.FAV_T_fives {
+    background: #dc5e5e url(../images/icon_league_fives.svg) no-repeat 11px 50%;
+    background-size: 18px auto;
+}
+
+.FAV_R_fives th {
+    background-color: #dc5e5e;
+}
+
+.FAV_T_champion {
+    background: #b1ae1b url(../images/icon_league_champion.svg) no-repeat 11px 50%;
+    background-size: 18px auto;
+}
+
+.FAV_R_champion th {
+    background-color: #b1ae1b;
+}
+
+.FAV_T_soccer {
+    background: #208750 url(../images/icon_league_soccer.svg) no-repeat 11px 50%;
+    background-size: 18px auto;
+}
+
+.FAV_R_soccer th {
+    background-color: #208750;
+}
+
+.FAV_T_basketball {
+    background: #d37245 url(../images/icon_league_basketball.svg) no-repeat 11px 50%;
+    background-size: 18px auto;
+}
+
+.FAV_R_basketball th {
+    background-color: #d37245;
+}
+
+.FAV_T_baseball {
+    background: #bb9b50 url(../images/icon_league_baseball.svg) no-repeat 11px 50%;
+    background-size: 18px auto;
+}
+
+.FAV_R_baseball th {
+    background-color: #bb9b50;
+}
+
+.FAV_T_tennis {
+    background: #7d9364 url(../images/icon_league_tennis.svg) no-repeat 11px 50%;
+    background-size: 18px auto;
+}
+
+.FAV_R_tennis th {
+    background-color: #7d9364;
+}
+
+.FAV_T_hockey {
+    background: #75aaa8 url(../images/icon_league_hockey.svg) no-repeat 11px 50%;
+    background-size: 18px auto;
+}
+
+.FAV_R_hockey th {
+    background-color: #75aaa8;
+}
+
+.FAV_T_football {
+    background: #b25332 url(../images/icon_league_football.svg) no-repeat 11px 50%;
+    background-size: 18px auto;
+}
+
+.FAV_R_football th {
+    background-color: #b25332;
+}
+
+.FAV_T_volleyball {
+    background: #e0bf36 url(../images/icon_league_volleyball.svg) no-repeat 11px 50%;
+    background-size: 18px auto;
+}
+
+.FAV_R_volleyball th {
+    background-color: #e0bf36;
+}
+
+.FAV_T_badminton {
+    background: #dc7d90 url(../images/icon_league_badminton.svg) no-repeat 11px 50%;
+    background-size: 18px auto;
+}
+
+.FAV_R_badminton th {
+    background-color: #dc7d90;
+}
+
+.FAV_T_handball {
+    background: #ad9e60 url(../images/icon_league_handball.svg) no-repeat 11px 50%;
+    background-size: 18px auto;
+}
+
+.FAV_R_handball th {
+    background-color: #ad9e60;
+}
+
+.FAV_T_waterpolo {
+    background: #489ab7 url(../images/icon_league_waterpolo.svg) no-repeat 11px 50%;
+    background-size: 18px auto;
+}
+
+.FAV_R_waterpolo th {
+    background-color: #489ab7;
+}
+
+.FAV_T_pingpong {
+    background: #c6914b url(../images/icon_league_pingpong.svg) no-repeat 11px 50%;
+    background-size: 18px auto;
+}
+
+.FAV_R_pingpong th {
+    background-color: #c6914b;
+}
+
+.FAV_T_billiard {
+    background: #a370ab url(../images/icon_league_billiard.svg) no-repeat 11px 50%;
+    background-size: 18px auto;
+}
+
+.FAV_R_billiard th {
+    background-color: #a370ab;
+}
+
+.FAV_T_pcgame {
+    background: #7082b1 url(../images/icon_league_pcgame.svg) no-repeat 11px 50%;
+    background-size: 18px auto;
+}
+
+.FAV_R_pcgame th {
+    background-color: #7082b1;
+}
+
+.FAV_T_boxing {
+    background: #b93939 url(../images/icon_league_boxing.svg) no-repeat 11px 50%;
+    background-size: 18px auto;
+}
+
+.FAV_R_boxing th {
+    background-color: #b93939;
+}
+
+.FAV_T_other {
+    background: #6e889c url(../images/icon_league_other.svg) no-repeat 11px 50%;
+    background-size: 18px auto;
+}
+
+.FAV_R_other th {
+    background-color: #6e889c;
+}
+
+[class*="FAV_R_"] {
+    margin-bottom: 0 !important;
+}
+
+    [class*="FAV_R_"] th {
+        color: #fff !important;
+    }
+
+@media (min-width: 350px) {
+    [class*="FAV_T_"] {
+        padding: 0 35px 0 43px;
+        background-position: 12px 50%;
+    }
+
+        [class*="FAV_T_"]:before {
+            width: 35px;
+        }
+
+    .FAV_T_olympic {
+        background-position: 10px 50%;
+    }
+}
+
+@media (min-width: 375px) {
+    [class*="FAV_T_"] {
+        padding-left: 45px;
+        background-position: 13px 50%;
+    }
+
+    .FAV_T_olympic {
+        background-position: 11px 50%;
+    }
+}
+
+@media (min-width: 400px) {
+    [class*="FAV_T_"] {
+        padding-left: 48px;
+        background-position: 15px 50%;
+    }
+
+    .FAV_T_olympic {
+        background-position: 13px 50%;
+    }
+}
+
+@media (min-width: 530px) {
+    [class*="FAV_T_"] {
+        height: 32px;
+        line-height: 33px;
+        padding-left: 53px;
+        background-size: 20px auto;
+        background-position: 17px 50%;
+    }
+
+    .FAV_T_olympic {
+        background-size: 24px auto;
+        background-position: 15px 50%;
+    }
+}
+
+@media (min-width: 600px) {
+    [class*="FAV_T_"] {
+        height: 33px;
+        line-height: 34px;
+        padding-left: 56px;
+        background-size: 19px auto;
+    }
+
+    .FAV_T_olympic {
+        background-size: 23px auto;
+    }
+}
+
+@media (min-width: 768px) {
+    [class*="FAV_T_"] {
+        font-size: 1em;
+        height: 36px;
+        line-height: 37px;
+        padding: 0 42px 0 68px;
+        background-position: 23px 50%;
+        background-size: 22px auto;
+    }
+
+        [class*="FAV_T_"]:before {
+            width: 42px;
+        }
+
+    .FAV_T_olympic {
+        background-size: 28px auto;
+        background-position: 20px 50%;
+    }
+}
+
+/*優勝冠軍*/
+.containerWinner {
+}
+
+    .containerWinner [class*="FAV_T_"]:after {
+        display: none;
+    }
+
+    .containerWinner > div {
+        background-color: #8f8f8f;
+        margin-bottom: 1px;
+    }
+
+    .containerWinner .league:nth-last-child(2) {
+        margin-bottom: 0;
+    }
+
+    .containerWinner .leagueIn {
+        table-layout: fixed;
+        width: calc(100% + 2px);
+        margin: 0 -1px;
+        background-color: #585858;
+        font-size: 0.72em;
+        position: relative;
+        display: none;
+    }
+
+        .containerWinner .leagueIn:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #666;
+        }
+
+        .containerWinner .leagueIn li {
+            float: left;
+            width: 50%;
+            height: 35px;
+            line-height: 35px;
+            border-right: 1px solid #5f5f5f;
+            border-bottom: 1px solid #5f5f5f;
+            padding: 0 5px;
+            box-sizing: border-box;
+        }
+
+        .containerWinner .leagueIn .L50, .containerWinner .leagueIn .R50 {
+            float: left;
+            width: auto;
+            text-align: left;
+        }
+
+        .containerWinner .leagueIn .L50 {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            max-width: calc(100% - 45px);
+        }
+
+        .containerWinner .leagueIn .R50 {
+            margin-left: 5px;
+        }
+
+@media (min-width: 350px) {
+    .containerWinner .leagueIn li {
+        padding: 0 7px;
+    }
+}
+
+@media (min-width: 768px) {
+    .containerWinner .leagueIn {
+        font-size: 0.95em;
+    }
+
+        .containerWinner .leagueIn li {
+            height: 40px;
+            line-height: 40px;
+            padding: 0 10px;
+        }
+
+        .containerWinner .leagueIn .L50 {
+            max-width: calc(100% - 55px);
+        }
+}

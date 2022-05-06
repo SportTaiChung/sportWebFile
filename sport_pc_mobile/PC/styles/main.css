@@ -1,0 +1,6222 @@
+@font-face {
+    font-family: ReviseText;
+    unicode-range: U+78A7, U+7B75, U+7db0; /* ASCII (碧筵綰) */
+    font-style: normal;
+    font-weight: bold;
+    /*思源黑體400*/
+    src: url(../font/NotoSansTC-Regular.woff) format('woff');
+    font-display: auto; /*載入完成，文字才顯示*/
+}
+
+@font-face {
+    font-family: ReviseText;
+    unicode-range: U+78A7, U+7B75, U+7db0; /* ASCII (碧筵綰) */
+    font-style: normal;
+    font-weight: normal;
+    src: local(Microsoft JhengHei);
+}
+
+@font-face {
+    font-family: ReviseText;
+    unicode-range: U+5173, U+6D45; /* ASCII (关浅) */
+    src: url(../font/NotoSansSC-Light.woff) format('woff');
+    font-display: auto;
+}
+
+@font-face {
+    font-family: ReviseText;
+    unicode-range: U+5173, U+6D45; /* ASCII (关浅) */
+    font-weight: bold;
+    src: url(../font/NotoSansSC-Regular.woff) format('woff');
+    font-display: auto;
+}
+
+html, body {
+    height: 100%;
+    touch-action: manipulation; /*禁止按鈕双擊縮放*/
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial,ReviseText,Microsoft JhengHei,Microsoft YaHei,sans-serif;
+    font-size: 13px;
+}
+
+    body:before {
+        content: '碧筵綰关浅';
+        font-weight: bold;
+        font-size: 0;
+        position: fixed;
+        z-index: -999;
+    }
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+a {
+    border: 0;
+    /*取消a標籤的虛線*/
+    outline: none; /* for Firefox */
+    hlbr: expression(this.onFocus=this.blur()); /* for IE */
+    cursor: pointer;
+}
+
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+input, select, textarea, button {
+    font-family: Arial,ReviseText,Microsoft JhengHei,Microsoft YaHei,sans-serif;
+    -moz-appearance: none; /* Firefox */
+    -webkit-appearance: none; /* Safari 和 Chrome */
+    outline: none;
+    border: 0;
+    padding: 0;
+    font-size: 14px;
+    margin: 0;
+}
+
+    select::-ms-expand {
+        display: none; /*IE*/
+    }
+
+input, textarea {
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+select {
+    color: #000;
+    background: #fff url(../images/icon_select_20211006.svg) no-repeat calc(100% - 8px) 50%;
+    background-size: 10px auto;
+}
+
+    select:active, select.on {
+        background-image: url(../images/icon_select_on_20211006.svg);
+    }
+
+    select.noActive:active, select.noActive.on:active {
+        background-image: url(../images/icon_select_20211006.svg);
+    }
+
+input[type="button"], input[type="submit"], input[type="reset"], button {
+    cursor: pointer;
+}
+
+    input[type="button"]:disabled, input[type="submit"]:disabled, input[type="reset"]:disabled, button:disabled {
+        cursor: default;
+        background-color: #bbb;
+        color: #fff;
+        opacity: 1;
+        border: 0;
+    }
+
+/*針對IE自帶input text (刪除 clear button)*/
+::-ms-clear {
+    display: none;
+}
+
+input[type="text"] {
+    border: 1px solid transparent;
+}
+
+    input[type="text"].focus {
+        border-color: #2682d5;
+    }
+
+    input[type="text"].error {
+        border-color: #f00;
+    }
+
+.error_t {
+    color: #f00;
+}
+
+/*文字顏色*/
+.t_yellow {
+    color: #ffea01;
+}
+
+.t_orange {
+    color: #d36200;
+}
+
+.t_lightBlue {
+    color: #81f0ca;
+}
+
+.t_blue {
+    color: #005aff;
+}
+
+.t_red {
+    color: #f00;
+}
+
+.t_gray {
+    color: #666;
+}
+
+.t_green {
+    color: #20b616;
+}
+
+.t_white {
+    color: #fff;
+}
+
+.t_pink {
+    color: #ff7b7b;
+}
+
+.t_size12 {
+    font-size: 12px;
+}
+
+.t_inlineBox {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/*連結*/
+.btn_link {
+    cursor: pointer;
+}
+
+    .btn_link:hover {
+        opacity: 0.5;
+    }
+
+/*捲軸style修改*/
+.scrollbar-macosx {
+    -webkit-overflow-scrolling: touch;
+    z-index: 0;
+}
+
+    .scrollbar-macosx > .scroll-element div.scroll-bar {
+        background-color: #fff;
+    }
+
+    .scrollbar-macosx:hover > .scroll-element .scroll-bar,
+    .scrollbar-macosx > .scroll-element.scroll-draggable .scroll-bar {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)" !important;
+        filter: alpha(opacity=20) !important;
+        opacity: 0.2 !important;
+    }
+
+    .scrollbar-macosx > .scroll-element.scroll-y .scroll-bar {
+        left: -3px !important;
+        width: 3px !important;
+    }
+
+/*離捲軸底邊距離*/
+.scroll-content:after {
+    content: '';
+    display: table;
+    width: 100%;
+    height: 30px;
+}
+
+/*移除x軸*/
+.scrollbar-macosx.scroll-wrapper > .scroll-content,
+div.scroll-wrapper > .scroll-content {
+    overflow-x: hidden !important;
+}
+
+/*-------------------------共用主結構---------------------------*/
+.mainStruc {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.MS_header, .MS_setUp, .MS_content {
+    min-width: 1200px; /*螢幕最小1200px*/
+}
+
+.MS_header {
+    height: 70px;
+    border-bottom: 1px solid #a14d0d;
+    background-color: #c66820;
+}
+
+.MS_setUp {
+    height: 35px;
+    line-height: 35px;
+    background-color: #532400;
+    color: #fff;
+}
+
+.MS_content {
+    width: 100%;
+    height: calc(100% - 106px);
+}
+
+/*-------------------------header---------------------------*/
+.headerBox {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.headerBox_L, .headerBox_C, .headerBox_R {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.headerBox_L, .headerBox_R {
+    width: 1%;
+}
+
+.headerBox_R {
+    min-width: 380px;
+    text-align: right;
+}
+
+.logoName {
+    min-width: 200px;
+    text-align: center;
+    color: #fdbf8f;
+    font-size: 20px;
+    line-height: 23px;
+    font-weight: bold;
+    white-space: nowrap;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+    .logoName img {
+        width: auto;
+        height: 32px;
+        vertical-align: bottom;
+        margin-right: 5px;
+    }
+
+.navTop {
+    display: table;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.btn_navTop {
+    display: table-cell;
+    height: 100%;
+    line-height: 70px;
+    vertical-align: middle;
+    position: relative;
+    white-space: nowrap;
+    padding: 0 21px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: all ease 0.2s;
+    transition: all ease 0.2s;
+}
+
+    .btn_navTop:after {
+        content: '';
+        height: 3px;
+        background-color: transparent;
+        position: absolute;
+        bottom: 16px;
+        left: 30px;
+        right: 30px;
+        border-radius: 10px;
+        -webkit-transition: all ease 0.2s;
+        transition: all ease 0.2s;
+    }
+
+    .btn_navTop:hover:after {
+        background-color: #eee;
+        left: 16px;
+        right: 16px;
+    }
+
+    .btn_navTop.t_yellow {
+        color: #ffea01;
+    }
+
+    .btn_navTop.off, .btn_navTop.off:hover {
+        color: #bbb;
+        cursor: default;
+    }
+
+        .btn_navTop.off:before {
+            content: '';
+            background: url(../images/icon_event.svg) no-repeat center;
+            background-size: 100% auto;
+            width: 17px;
+            height: 17px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto 0;
+        }
+
+        .btn_navTop.off:after {
+            display: none;
+        }
+
+.navTop_info {
+    position: absolute;
+    top: calc(50% + 20px);
+    left: -8px;
+    margin-right: -148px;
+    display: none;
+}
+
+    .navTop_info:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 9px 11px 9px;
+        border-color: transparent transparent #f0f0f0 transparent;
+        position: absolute;
+        left: 8px;
+        top: -10px;
+        z-index: 1;
+    }
+
+.navTop_infoBox {
+    background-color: #f0f0f0;
+    white-space: normal;
+    max-width: 250px;
+    padding: 5px 10px;
+    line-height: 20px;
+    color: #000;
+    display: none;
+}
+
+.IDInfo {
+    float: right;
+    margin-right: 8px;
+    line-height: 30px;
+}
+
+    .IDInfo li {
+        padding-left: 15px;
+        float: left;
+    }
+
+li.IDName {
+    position: relative;
+    padding-left: 0;
+}
+
+.btn_level, .btn_IDNum {
+    display: inline-block;
+    position: relative;
+}
+
+.IDInfo_prompt {
+    position: absolute;
+    background-color: #f0f0f0;
+    color: #000;
+    border-radius: 3px;
+    padding: 2px 7px;
+    line-height: 17px;
+    white-space: nowrap;
+    top: 27px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    display: none;
+}
+
+.btn_level img {
+    width: 18px;
+    height: 18px;
+    display: block;
+    display: inline-block;
+    margin-top: -3px;
+    padding: 0 5px;
+    vertical-align: middle;
+}
+
+.IDInfo_T {
+    margin-right: 5px;
+    color: #fff;
+}
+
+li.btn_IDPoint {
+    cursor: pointer;
+}
+
+    li.btn_IDPoint:hover {
+        color: #81f0ca;
+    }
+
+li.btn_giftPoint, li.btn_transfer, li.btn_tutorials, li.btn_service, li.btn_announcement {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.btn_giftPoint {
+    margin-left: 10px;
+}
+
+.btn_transfer, .btn_tutorials, .btn_service, .btn_announcement {
+    margin-left: 5px
+}
+
+    .btn_giftPoint:before, .btn_transfer:before, .btn_tutorials:before, .btn_service:before, .btn_announcement:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 23px;
+        height: 23px;
+        margin: auto;
+    }
+
+.btn_giftPoint:before {
+    background: url(../images/icon_gift.svg) no-repeat center;
+    background-size: 21px;
+}
+
+.btn_giftPoint:hover:before, .btn_giftPoint.on:before {
+    filter: brightness(3);
+    -webkit-filter: brightness(3);
+}
+
+.btn_transfer:before {
+    background: url(../images/btn_transfer.svg) no-repeat top;
+    background-size: 100% 200%;
+}
+
+.btn_tutorials:before {
+    background: url(../images/btn_tutorials2.svg) no-repeat top;
+    background-size: 100% 200%;
+}
+
+.btn_service:before {
+    background: url(../images/btn_service.svg) no-repeat top;
+    background-size: 100% 200%;
+}
+
+.btn_announcement:before {
+    background: url(../images/btn_announcement2.svg) no-repeat top;
+    background-size: 100% 200%;
+}
+
+li.btn_transfer:hover:before, li.btn_tutorials:hover:before, li.btn_service:hover:before, li.btn_announcement:hover:before {
+    background-position: bottom;
+}
+
+.GP_In {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    z-index: 3;
+    display: none;
+}
+
+    .GP_In:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 9px 11px 9px;
+        border-color: transparent transparent #f0f0f0 transparent;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -10px;
+        margin: 0 auto;
+        z-index: 1;
+        cursor: default;
+    }
+
+.GP_InBox {
+    color: #000;
+    background-color: #f0f0f0;
+    line-height: initial;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    padding: 8px 15px;
+    min-width: 212px;
+    max-width: 250px;
+    box-sizing: border-box;
+    cursor: default;
+    display: none;
+}
+
+.GP_InBox_T {
+    white-space: nowrap;
+    text-align: center;
+    color: #ff4b4b;
+    background-color: #ddd;
+    border-radius: 100px;
+    padding: 3px 10px;
+    min-height: 25px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.GP_InBox_In {
+    margin-top: 5px;
+    text-align: left;
+}
+
+.btn_transfer .IDInfo_prompt, .btn_tutorials .IDInfo_prompt, .btn_service .IDInfo_prompt {
+    top: 30px;
+    left: auto;
+    right: 50%;
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+}
+
+.btn_announcement .IDInfo_prompt {
+    top: 30px;
+    left: auto;
+    right: -8px;
+    transform: none;
+    -webkit-transform: none;
+}
+
+.btn_announcement.point:after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #f00;
+    position: absolute;
+    top: 2px;
+    right: 1px;
+    border-radius: 50%;
+}
+
+/*-------------------------上方設定---------------------------*/
+/*時間*/
+.currentTime {
+    width: 135px;
+    text-align: center;
+    float: left;
+    height: 100%;
+}
+
+.currentTime_date, .currentTime_time {
+    margin: 0 5px;
+}
+
+/*皮膚*/
+.skin {
+    float: left;
+    width: 65px;
+    height: 100%;
+}
+
+.btn_sun, .btn_moon {
+    float: left;
+    width: 30px;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn_sun {
+    margin: 0 5px 0 -5px;
+}
+
+    .btn_sun:before, .btn_moon:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 20px;
+        height: 20px;
+        opacity: 0.4;
+    }
+
+    .btn_sun:before {
+        background: url(../images/btn_sun.svg) no-repeat center top;
+        background-size: 100% 200%;
+    }
+
+.btn_moon:before {
+    background: url(../images/btn_moon.svg) no-repeat center top;
+    background-size: 100% 200%;
+}
+
+.btn_sun.on:before, .btn_moon.on:before {
+    background-position: center bottom;
+    opacity: 1;
+}
+
+.skin_prompt {
+    position: absolute;
+    background-color: #f0f0f0;
+    color: #000;
+    border-radius: 3px;
+    padding: 2px 7px;
+    line-height: 17px;
+    white-space: nowrap;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    z-index: 10;
+    pointer-events: none;
+    display: none;
+}
+
+/**/
+.setUpMenu {
+    display: table;
+    float: right;
+    height: 100%;
+}
+
+    .setUpMenu > li {
+        float: left;
+        position: relative;
+        height: 100%;
+        min-width: 93px;
+        text-align: center;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+        .setUpMenu > li:before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            bottom: 6px;
+            left: -1px;
+            width: 1px;
+            background-color:#c66820;
+        }
+
+        .setUpMenu > li:first-child:before {
+            display: none;
+        }
+
+.btn_autoOdds {
+    cursor: pointer;
+    padding-right: 44px !important;
+}
+
+    .btn_autoOdds.on {
+        color: #fff;
+    }
+
+.icon_autoOdds_checkbox {
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid #c66820;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    margin: auto 0;
+}
+
+.btn_autoOdds.on .icon_autoOdds_checkbox {
+    background: url(../images/icon_check.svg) no-repeat center;
+    background-size: 14px;
+}
+
+.btn_alliance {
+    cursor: pointer;
+}
+
+    .btn_alliance:hover {
+        color: #fff;
+    }
+
+    .btn_alliance.on, .btn_alliance.on:hover {
+        color: #ffea01;
+    }
+
+li.btn_setUpMenu_list {
+    padding: 0 28px 0 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+    li.btn_setUpMenu_list:hover, li.btn_setUpMenu_list.on {
+        color: #fff;
+    }
+
+.btn_setUpMenu_list:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    border-color: #fdbf8f transparent transparent transparent;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    margin: auto 0;
+}
+
+.btn_setUpMenu_list.on:after {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.SUM_T {
+}
+
+.SUM_In {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 12;
+    left: -80px;
+    display: none;
+}
+
+    .SUM_In:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 9px 11px 9px;
+        border-color: transparent transparent #ddd transparent;
+        position: absolute;
+        right: 6px;
+        top: -10px;
+        z-index: 1;
+    }
+
+.SUM_InBox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 120px;
+    text-align: left;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    display: none;
+}
+
+    .SUM_InBox a {
+        display: block;
+        color: #000;
+        text-decoration: none;
+        padding: 0 15px;
+        background-color: #ddd;
+        border-bottom: 1px solid #ccc;
+    }
+
+        .SUM_InBox a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .SUM_InBox a.on {
+            background-color: #f0f0f0;
+            color: #006ede;
+            font-weight: bold;
+        }
+
+/*早盤(提前/未開賽的遊戲)*/
+.advanceDay {
+    display: none;
+}
+
+    .advanceDay .SUM_InBox {
+        text-align: center;
+    }
+
+.bg_fastBet {
+    width: 301px;
+    box-sizing: border-box;
+}
+
+.fastBet {
+    display: table;
+    height: 100%;
+    float: right;
+}
+
+    .fastBet > li {
+        display: table-cell;
+        vertical-align: middle;
+        white-space: normal;
+        height: 100%;
+        padding-left: 11px;
+    }
+
+        .fastBet > li:first-child {
+            padding: 0;
+        }
+
+.FB_input {
+    border-radius: 3px;
+    background-color: #333;
+    color: #fff;
+    width: 110px;
+    height: 25px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    display: block;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+    .FB_input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #dbdbdb;
+        font-size: 14px;
+        -webkit-transform: translateY(1px);
+        transform: translateY(0px);
+    }
+
+    .FB_input::-moz-placeholder { /* Firefox 19+ */
+        color: #dbdbdb;
+        opacity: 1;
+        font-size: 14px;
+    }
+
+    .FB_input:-ms-input-placeholder { /* IE 10+ */
+        color: #dbdbdb;
+        font-size: 14px;
+    }
+
+    .FB_input:-moz-placeholder { /* Firefox 18- */
+        color: #dbdbdb;
+        opacity: 1;
+        font-size: 14px;
+    }
+
+.FB_inputBox {
+    position: relative;
+}
+
+.FBI_prompt {
+    position: absolute;
+    bottom: -6px;
+    left: -50px;
+    right: -50px;
+    height: 1px;
+    z-index: 1;
+    display: none;
+}
+
+    .FBI_prompt:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 9px 11px 9px;
+        border-color: transparent transparent #f0f0f0 transparent;
+        position: absolute;
+        left: 11px;
+        right: 0;
+        top: -10px;
+        margin: 0 auto;
+        z-index: 1;
+    }
+
+.FBI_promptIn {
+    position: relative;
+    background: url(../images/icon_event.svg) no-repeat 7px 9px;
+    background-size: auto 18px;
+    top: 0;
+    left: 5px;
+    display: table;
+    margin: 0 auto;
+    text-align: left;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    background-color: #f0f0f0;
+    min-width: 110px;
+    max-width: 250px;
+    color: #f00;
+    padding: 8px 8px 8px 31px;
+    box-sizing: border-box;
+    line-height: 20px;
+    /*display: none;*/
+}
+
+@media (max-width:768px) {
+    .FB_input::-webkit-input-placeholder { /* mobile */
+        font-size: 14px;
+        line-height: 20px;
+        color: #dbdbdb;
+        -webkit-transform: scale(0.96) translateY(-1px);
+        transform: scale(0.96) translateY(-1px);
+        -webkit-transform-origin: 0% 50%;
+        transform-origin: 0% 50%;
+    }
+}
+
+.btn_FB_switch {
+    background-color: #953b3b;
+    border-radius: 30px;
+    height: 25px;
+    line-height: 25px;
+    width: 55px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-transition: background-color ease 0.2s;
+    transition: background-color ease 0.2s;
+    padding-left: 23px;
+    text-align: center;
+}
+
+    .btn_FB_switch.on {
+        background-color: #1fbb00;
+        padding-left: 0;
+        padding-right: 23px;
+        font-size: 14px;
+    }
+
+    .btn_FB_switch:after {
+        content: '';
+        width: 23px;
+        height: 23px;
+        position: absolute;
+        left: 1px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        background-color: #fff;
+        border-radius: 50%;
+        -webkit-transition: left ease 0.2s;
+        transition: left ease 0.2s;
+    }
+
+    .btn_FB_switch.on:after {
+        left: 31px;
+    }
+
+.btn_FB_prompt {
+    position: relative;
+}
+
+.icon_FB_prompt {
+    font-family: Arial;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    line-height: 26px;
+    margin: auto;
+    background-color: #2c1300;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.FBP_In {
+    position: absolute;
+    bottom: -6px;
+    right: -5px;
+    z-index: 10;
+    display: none;
+}
+
+    .FBP_In:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 9px 11px 9px;
+        border-color: transparent transparent #f0f0f0 transparent;
+        position: absolute;
+        right: 8px;
+        top: -10px;
+        z-index: 1;
+    }
+
+.FBP_InBox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 140px;
+    text-align: left;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    background-color: #f0f0f0;
+    color: #000;
+    line-height: 20px;
+    display: none;
+}
+
+.FBP_InBoxT {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 20px 4px;
+}
+
+.FBP_InBoxIn {
+    display: table;
+    padding: 8px 20px;
+    margin: 0 auto;
+}
+
+/*--------------------------下方內容-遊戲結構--------------------------*/
+.gameStruc {
+    display: flex;
+    display: -moz-box; /*Firefox*/
+    display: -ms-flexbox; /*IE10*/
+    display: -webkit-box; /*Safari*/
+    display: -webkit-flex; /*Chrome, WebKit*/
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+}
+
+.gameStruc_L, .gameStruc_C, .gameStruc_R {
+    vertical-align: top;
+    height: 100%;
+    padding: 0;
+}
+
+.gameStruc_L {
+    background-color: #373737;
+}
+
+.gameStruc_C {
+    width: 100%;
+}
+
+.gameStruc_R {
+    background-color: #666;
+    position: relative;
+}
+
+/*------------------------------體育Menu-----------------------------*/
+/*依視窗變形*/
+.sportMenu {
+    width: 200px;
+    height: 100%;
+    overflow: hidden;
+}
+
+/*固定-免得文字跟著視窗變形斷行*/
+.sportMenu_in {
+    width: 200px;
+    height: 100%;
+    position: relative;
+}
+
+.SM_T {
+    background-color: #404040;
+    color: #fff;
+    height: 35px;
+    border-bottom: 1px solid #333;
+    width: 100%;
+}
+
+.SM_scroll {
+    position: absolute;
+    top: 36px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-overflow-scrolling: initial !important;
+    z-index: auto;
+}
+
+    .SM_scroll .scroll-y {
+        pointer-events: none;
+    }
+
+.btn_sportMenu_switch {
+    float: right;
+    width: 17%;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+
+    .btn_sportMenu_switch:after {
+        content: '';
+        background: url(../images/btn_arrow_w.svg) no-repeat center;
+        background-size: 16px;
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+        position: absolute;
+        left: 0;
+        right: 8px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        opacity: 0.5;
+    }
+
+    .btn_sportMenu_switch:hover:after {
+        opacity: 1;
+    }
+
+.SM_T_menu {
+    float: left;
+    width: 83%;
+    height: 100%;
+}
+
+.SM_T_menuT {
+    display: none;
+}
+
+.SM_T_menuIn {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+    .SM_T_menuIn li {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-transition: all ease 0.2s;
+        transition: all ease 0.2s;
+    }
+
+        .SM_T_menuIn li:first-child {
+            padding-left: 2px;
+        }
+
+        .SM_T_menuIn li.on {
+            padding-bottom: 8px;
+        }
+
+        .SM_T_menuIn li a {
+            position: relative;
+            display: inline-block;
+            min-width: 28px;
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        .SM_T_menuIn li:not(.on):hover a {
+            color: #fff;
+        }
+
+        .SM_T_menuIn li a:after {
+            content: '';
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            bottom: -8px;
+            background-color: transparent;
+            height: 3px;
+            border-radius: 10px;
+            -webkit-transition: all ease 0.2s;
+            transition: all ease 0.2s;
+        }
+
+        .SM_T_menuIn li.on a {
+            color: #fff;
+        }
+
+            .SM_T_menuIn li.on a:after {
+                left: -5px;
+                right: -5px;
+                background-color: #999;
+            }
+
+            .SM_T_menuIn li.on a.roll:after {
+                background-color: #ffad00;
+            }
+
+/*體育Menu(收合設定)*/
+.sportMenu.ZoomOut {
+    width: 60px;
+}
+
+    .sportMenu.ZoomOut .sportMenu_in {
+        width: 100%;
+    }
+
+    .sportMenu.ZoomOut .SM_T {
+        height: auto;
+    }
+
+    .sportMenu.ZoomOut .SM_scroll {
+        top: 72px;
+    }
+
+        .sportMenu.ZoomOut .SM_scroll .scroll-content {
+            top: 0;
+        }
+
+    .sportMenu.ZoomOut .btn_sportMenu_switch {
+        float: none;
+        width: 100%;
+        height: 35px;
+        border-bottom: 1px solid #333;
+    }
+
+        .sportMenu.ZoomOut .btn_sportMenu_switch:after {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            left: 0;
+            right: 0;
+        }
+
+    .sportMenu.ZoomOut .SM_T_menu {
+        float: none;
+        width: 100%;
+        height: 35px;
+    }
+
+    .sportMenu.ZoomOut .SM_T_menuT {
+        background-color: #343434;
+        width: 100%;
+        line-height: 29px;
+        padding-bottom: 6px;
+        text-align: center;
+        display: block;
+        cursor: pointer;
+    }
+
+        .sportMenu.ZoomOut .SM_T_menuT a {
+            display: inline-block;
+            position: relative;
+            color: #fff;
+            text-decoration: none;
+        }
+
+            .sportMenu.ZoomOut .SM_T_menuT a:after {
+                content: '';
+                position: absolute;
+                left: -5px;
+                right: -5px;
+                bottom: -2px;
+                background-color: #999;
+                height: 3px;
+                border-radius: 10px;
+                -webkit-transition: all ease 0.2s;
+                transition: all ease 0.2s;
+            }
+
+            .sportMenu.ZoomOut .SM_T_menuT a.roll:after {
+                background-color: #ffad00;
+            }
+
+    .sportMenu.ZoomOut .SM_T_menuIn {
+        position: fixed;
+        left: 0; /*JS輔助設定*/
+        margin: -35px 0 0 72px;
+        min-width: 125px;
+        background-color: #ddd;
+        box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+        z-index: 1;
+        width: auto;
+        height: auto;
+        display: none;
+    }
+
+        .sportMenu.ZoomOut .SM_T_menuIn:before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 9px 11px 9px 0;
+            border-color: transparent #ddd transparent transparent;
+            position: absolute;
+            left: -10px;
+            top: 8px;
+        }
+
+        /*此為避免滑鼠滑到空白處，列表消失*/
+        .sportMenu.ZoomOut .SM_T_menuIn:after {
+            content: '';
+            width: 15px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -15px;
+        }
+
+        .sportMenu.ZoomOut .SM_T_menuIn li {
+            color: #000;
+            padding-left: 0;
+            display: block;
+            height: 35px;
+            line-height: 35px;
+            padding: 0 20px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+            -webkit-transition: none;
+            transition: none;
+        }
+
+            .sportMenu.ZoomOut .SM_T_menuIn li:hover {
+                background-color: #f0f0f0;
+            }
+
+            .sportMenu.ZoomOut .SM_T_menuIn li a {
+                color: #000;
+            }
+
+            .sportMenu.ZoomOut .SM_T_menuIn li.on a {
+                color: #006ede;
+            }
+
+                .sportMenu.ZoomOut .SM_T_menuIn li.on a.roll {
+                    color: #ff8800;
+                }
+
+            .sportMenu.ZoomOut .SM_T_menuIn li.on {
+                background-color: #f0f0f0;
+                font-weight: bold;
+            }
+
+                .sportMenu.ZoomOut .SM_T_menuIn li.on a:after {
+                    display: none;
+                }
+
+/*sportMenu列表*/
+.SM_list {
+}
+
+.btn_SM_listT {
+    height: 35px;
+    line-height: 35px;
+    background-color: #474747;
+    position: relative;
+    padding-left: 48px;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+}
+
+    .btn_SM_listT:hover {
+        background-color: #545454;
+    }
+
+.SM_scroll.SM_hoverNo .btn_SM_listT:hover {
+    background-color: #474747;
+}
+
+.SM_list.on .btn_SM_listT {
+    background-color: #545454 !important;
+}
+
+.btn_SM_listT img {
+    position: absolute;
+    top: 0;
+    bottom: 1px;
+    left: 0;
+    right: calc(100% - 48px);
+    margin: auto;
+    width: auto;
+    height: 100%;
+    max-height: 18px;
+}
+
+.SM_listIn {
+    display: none;
+}
+
+.SM_list.on .SM_listIn {
+    display: block;
+}
+
+.SM_listIn li {
+    height: 35px;
+    line-height: 35px;
+    padding-left: 48px;
+    cursor: pointer;
+    position: relative;
+}
+
+    .SM_listIn li:hover {
+        background-color: #3c3c3c;
+    }
+
+    .SM_listIn li.on {
+        color: #9adeff;
+    }
+
+li.SM_listIn_title {
+    color: #777;
+    text-align: center;
+    font-weight: bold;
+    border-bottom-width: 3px !important;
+    display: none;
+    cursor: default;
+}
+
+    li.SM_listIn_title:hover {
+        background-color: transparent !important;
+    }
+
+.SM_listT_counter, .SM_listIn_counter {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #9adeff;
+    width: 48px;
+    text-align: center;
+}
+
+.SM_listIn_counter {
+    color: #999;
+}
+
+.icon_SM_checkboxAll, .icon_SM_checkbox {
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid #454545;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    margin: auto 0;
+}
+
+    .icon_SM_checkboxAll.on, .icon_SM_checkbox.on {
+        background: url(../images/icon_check.svg) no-repeat center;
+        background-size: 14px;
+    }
+
+/*sportMenu列表(收合設定)*/
+.sportMenu.ZoomOut .SM_list {
+    position: relative;
+}
+
+.sportMenu.ZoomOut .btn_SM_listT {
+    font-size: 0;
+    padding-left: 0;
+}
+
+    .sportMenu.ZoomOut .btn_SM_listT img {
+        right: 0;
+    }
+
+.sportMenu.ZoomOut .SM_listT_counter {
+    display: none;
+}
+
+.sportMenu.ZoomOut .SM_listIn {
+    position: fixed;
+    left: 0; /*JS輔助設定*/
+    margin-left: 72px;
+    min-width: 125px;
+    color: #000;
+    background-color: #ddd;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    display: none;
+    z-index: 1;
+}
+
+    .sportMenu.ZoomOut .SM_listIn:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 9px 11px 9px 0;
+        border-color: transparent #ddd transparent transparent;
+        position: absolute;
+        left: -10px;
+        top: 8px;
+    }
+
+    .sportMenu.ZoomOut .SM_listIn.bottom:before {
+        top: auto !important;
+        bottom: 8px;
+    }
+
+    /*此為避免滑鼠滑到空白處，列表消失*/
+    .sportMenu.ZoomOut .SM_listIn:after {
+        content: '';
+        width: 15px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -15px;
+    }
+
+    .sportMenu.ZoomOut .SM_listIn li {
+        padding: 0 20px;
+        border-bottom: 1px solid #ccc;
+    }
+
+        .sportMenu.ZoomOut .SM_listIn li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .sportMenu.ZoomOut .SM_listIn li.on {
+            color: #006ede;
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+
+.sportMenu.ZoomOut .SM_listIn_title {
+    display: block;
+}
+
+.sportMenu.ZoomOut .SM_listIn_counter {
+    display: none;
+}
+
+.sportMenu.ZoomOut .icon_SM_checkboxAll,
+.sportMenu.ZoomOut .icon_SM_checkbox {
+    position: relative;
+    border: 1px solid #777;
+    opacity: 0.5;
+    vertical-align: middle;
+    left: -10px;
+    top: -1px;
+}
+
+    .sportMenu.ZoomOut .icon_SM_checkboxAll.on,
+    .sportMenu.ZoomOut .icon_SM_checkbox.on {
+        background: url(../images/icon_check_black.svg) no-repeat center;
+    }
+
+/*-----------------------------中間遊戲盤面-結構-------------------------------*/
+.gameMain {
+    width: 100%;
+    height: 100%;
+}
+
+.gamePanel {
+    display: table;
+    width: 100%;
+    height: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.gamePanel_L, .gamePanel_R {
+    display: table-cell;
+    vertical-align: top;
+    height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #585858;
+}
+
+.gamePanel_L {
+    width: 100%;
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
+}
+
+.gamePanel_R {
+    padding-left: 0;
+    border-right: 2px solid #333;
+    display: none;
+}
+
+.gamePanelL_In {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+/*-----------------------------右側投注資訊-------------------------------*/
+.betInfo {
+    width: 300px;
+    height: 100%;
+}
+
+    .betInfo.active {
+        -webkit-transition: all ease 0.4s;
+        transition: all ease 0.4s;
+    }
+
+.betInfo_T {
+    display: table;
+    background-color: #404040;
+    width: 100%;
+    height: 35px;
+    border-bottom: 1px solid #333;
+}
+
+.betInfo_In {
+    height: calc(100% - 35px);
+    position: relative;
+}
+
+.betInfo_scroll {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.betInfo_T > li {
+    display: table-cell;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.BIT_list {
+    cursor: pointer;
+}
+
+    .BIT_list a {
+        display: inline-block;
+        position: relative;
+        color: #bbb;
+        box-sizing: border-box;
+        text-decoration: none;
+        -webkit-transition: all ease 0.2s;
+        transition: all ease 0.2s;
+    }
+
+    .BIT_list:hover a {
+        color: #fff;
+    }
+
+    .BIT_list.on a {
+        color: #fff;
+        padding-bottom: 6px;
+    }
+
+    .BIT_list a:after {
+        content: '';
+        height: 3px;
+        display: block;
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        bottom: -4px;
+        background-color: transparent;
+        border-radius: 10px;
+        -webkit-transition: all ease 0.2s;
+        transition: all ease 0.2s;
+    }
+
+    .BIT_list.on a:after {
+        left: -6px;
+        right: -6px;
+        bottom: -1px;
+        background-color: #999;
+    }
+
+.BIT_Num {
+    margin-left: 5px;
+    color: #ffea01;
+}
+
+.btn_count, .btn_funSet {
+    width: 45px;
+    cursor: pointer;
+    position: relative;
+}
+
+    .btn_count:before, .btn_funSet:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+    }
+
+    .btn_count:before {
+        background: url(../images/btn_count.svg) no-repeat center;
+        background-size: 22px;
+    }
+
+    .btn_funSet:before {
+        background: url(../images/btn_funSet.svg) no-repeat center;
+        background-size: 22px;
+    }
+
+    .btn_count:active:before, .btn_count.on:before,
+    .btn_funSet:active:before, .btn_funSet.on:before {
+        opacity: 1;
+    }
+
+.count_prompt, .funSet_prompt {
+    position: absolute;
+    background-color: #f0f0f0;
+    color: #000;
+    border-radius: 3px;
+    padding: 2px 7px;
+    line-height: 17px;
+    white-space: nowrap;
+    top: 34px;
+    z-index: 15;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    pointer-events: none;
+    display: none;
+}
+
+.count_prompt {
+    right: 50%;
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+}
+
+.funSet_prompt {
+    right: 0;
+}
+
+.betInfoBlock, .newbetBlock {
+    height: calc(100% - 36px);
+}
+
+/*次按鈕(單項投注/過關投注/未結算注單/可兌現注單)*/
+.betInfo_SubT {
+    display: table;
+    width: 100%;
+    color: #fff;
+    table-layout: fixed;
+    background-color: #666;
+    border-spacing: 5px;
+    margin-bottom: -5px;
+    position: relative;
+    z-index: 1;
+}
+
+    .betInfo_SubT li {
+        display: table-cell;
+        height: 30px;
+        vertical-align: middle;
+        text-align: center;
+        background-color: #555;
+        cursor: pointer;
+    }
+
+        .betInfo_SubT li:hover {
+            background-color: #5e5e5e;
+        }
+
+        .betInfo_SubT li.on {
+            color: #000;
+            background-color: #bbb;
+        }
+
+        .betInfo_SubT li:first-child span {
+            color: #999;
+            margin-left: 5px;
+        }
+
+        .betInfo_SubT li.on:first-child span {
+            color: #005aff;
+        }
+
+        .betInfo_SubT li:last-child span {
+            color: #ffea01;
+            margin-left: 5px;
+        }
+
+/*投注資訊-列表*/
+.betInfo_List {
+    color: #000;
+    background-color: #bbb;
+    margin: 5px;
+    border-radius: 3px;
+}
+
+.betInfo_List_NG {
+    color: #000;
+    background-color: #d0acac;
+    margin: 5px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+}
+
+.BIL_T {
+    display: table;
+    width: 100%;
+    padding-left: 10px;
+    box-sizing: border-box;
+    font-weight: bold;
+    border-bottom: 1px solid #888;
+}
+
+.betInfo_List_NG .BIL_T {
+    color: #fff;
+    background-color: #d18d8c;
+    border-bottom: 0;
+    border-radius: 3px 3px 0 0
+}
+
+.BIL_T_text {
+    display: table-cell;
+    line-height: 16px;
+    vertical-align: top;
+    padding: 7px 0 6px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.betInfo_List_NG .BIL_T_text span {
+    color: #fff;
+    font-weight: normal;
+}
+
+.btn_BIL_close {
+    display: table-cell;
+    background: url(../images/btn_close.svg) no-repeat center 8px;
+    background-size: 13px;
+    width: 30px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+    .btn_BIL_close:hover {
+        opacity: 1;
+    }
+
+.betInfo_List_NG .btn_BIL_close {
+    background-image: url(../images/btn_close_w.svg);
+}
+
+.BIL_In {
+    padding: 7px 10px;
+}
+
+    .BIL_In > ul > li {
+        line-height: 16px;
+        margin-top: 5px;
+    }
+
+    .BIL_In > ul:first-child > li:first-child {
+        margin-top: 0;
+    }
+
+    .BIL_In .t_green {
+        color: #0a9c00;
+    }
+
+    .BIL_In .btn_link {
+        display: table;
+    }
+
+.BIL_input {
+    margin: 5px 0 3px 0;
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.BIL_keyNum, .BIL_showNum {
+    width: 50%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    border-radius: 3px;
+    height: 30px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+    .BIL_keyNum.off, .BIL_showNum.off {
+        background-color: #eee;
+    }
+
+    .BIL_keyNum:disabled, .BIL_showNum:disabled {
+        color: #545454;
+        background-color: #e0e0e0;
+        opacity: 1;
+    }
+
+.BIL_showNum {
+    margin-left: 7px;
+    color: #005aff !important;
+}
+
+    .BIL_keyNum::-webkit-input-placeholder,
+    .BIL_showNum::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #666;
+        font-size: 14px;
+        font-weight: normal;
+    }
+
+    .BIL_keyNum::-moz-placeholder,
+    .BIL_showNum::-moz-placeholder { /* Firefox 19+ */
+        opacity: 1;
+        font-size: 14px;
+        color: #666;
+        font-weight: normal;
+    }
+
+    .BIL_keyNum:-ms-input-placeholder,
+    .BIL_showNum:-ms-input-placeholder { /* IE 10+ */
+        font-size: 14px;
+        color: #666;
+        font-weight: normal;
+    }
+
+    .BIL_keyNum:-moz-placeholder,
+    .BIL_showNum:-moz-placeholder { /* Firefox 18- */
+        opacity: 1;
+        font-size: 14px;
+        color: #666;
+        font-weight: normal;
+    }
+
+@media (max-width:768px) {
+    .BIL_keyNum::-webkit-input-placeholder,
+    .BIL_showNum::-webkit-input-placeholder { /* mobile */
+        font-size: 14px;
+        line-height: 20px;
+        color: #666;
+        -webkit-transform: scale(0.95) translateY(-1px);
+        transform: scale(0.95) translateY(-1px);
+        -webkit-transform-origin: 0% 50%;
+        transform-origin: 0% 50%;
+        font-weight: normal;
+    }
+}
+
+.betLimit_t {
+    color: #006a8a;
+}
+
+/*盤口關閉*/
+.betInfo_List.off, .betInfo_List_NG.off {
+    position: relative;
+    overflow: hidden;
+}
+
+    .betInfo_List.off:before, .betInfo_List_NG.off:before {
+        content: '';
+        position: absolute;
+        background-color: rgba(0,0,0,0.6);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 5;
+    }
+
+    .betInfo_List.off .gameBetOff, .betInfo_List_NG.off .gameBetOff {
+        display: block;
+    }
+
+.gameBetOff {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    margin-right: -40%;
+    color: #fff;
+    font-size: 15px;
+    z-index: 6;
+    display: none;
+    background: rgba(0,0,0,0.5) url(../images/icon_event.svg) no-repeat 16px 50%;
+    background-size: 17px auto;
+    line-height: 19px;
+    padding: 8px 15px 8px 40px;
+    border-radius: 100px;
+    max-width: 205px;
+}
+
+.betInfo_List.off .btn_BIL_close,
+.betInfo_List_NG.off .btn_BIL_close {
+    position: relative;
+    background-image: url(../images/btn_close_w.svg);
+    z-index: 6;
+    opacity: 1;
+}
+
+    .betInfo_List.off .btn_BIL_close:hover,
+    .betInfo_List_NG.off .btn_BIL_close:hover {
+        opacity: 0.6;
+    }
+
+/*無法串關狀態*/
+.BIL_NG {
+    background-color: #d66764;
+    color: #fff;
+    padding: 3px 20px;
+    border-radius: 100px;
+    margin: 0 10px 10px;
+}
+
+.betInfo_List + .BIL_NG, .betInfo_List_NG + .BIL_NG {
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin: 0 5px 5px;
+}
+
+.BIL_NG_text {
+    display: table;
+    margin: 0 auto;
+    line-height: 19px;
+    padding: 5px 0;
+    box-sizing: border-box;
+}
+
+/*全部投注問題all*/
+.BIL_allNG {
+    background-color: #a72120;
+    color: #fff;
+    padding: 2px 10px 3px;
+    border-bottom: 1px solid #333;
+}
+
+    .BIL_allNG .BIL_NG_text {
+        background: url(../images/icon_event.svg) no-repeat left 50%;
+        background-size: 21px auto;
+        /*height: 29px;*/
+        padding-left: 30px;
+        display: none;
+        border-radius: 0;
+    }
+
+/*複式串關*/
+.betComplex {
+    background-color: #bbb;
+    color: #000;
+    margin: 5px;
+    border-radius: 3px;
+}
+
+.betComplex_T {
+    text-align: center;
+    line-height: 35px;
+    background-color: #d0d0d0;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    padding: 0 33px;
+    border-radius: 3px;
+}
+
+    .betComplex_T.on {
+        border-bottom: 1px solid #888;
+        border-radius: 3px 3px 0 0;
+    }
+
+    .betComplex_T:after {
+        content: '';
+        background: url(../images/btn_arrow.svg) no-repeat center;
+        background-size: 13px;
+        position: absolute;
+        width: 33px;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+        opacity: 0.5;
+    }
+
+    .betComplex_T.on:after {
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+
+    .betComplex_T:hover:after {
+        opacity: 1;
+    }
+
+.betComplex_In {
+    display: none;
+}
+
+.BC_list {
+    padding: 3px 10px 7px;
+    border-bottom: 1px solid #888;
+}
+
+    .BC_list .error_t {
+        padding: 3px 0 0 50px;
+    }
+
+.BC_listT {
+    color: #555;
+    line-height: 22px;
+}
+
+.BC_listIn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.BC_doubleNum {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 50px;
+}
+
+.BC_keyNum, .BC_showNum {
+    flex-grow: 1;
+    flex-shrink: 1;
+    border-radius: 3px;
+    width: 35%;
+    height: 30px;
+    padding: 0 3px 0 4px;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+
+    .BC_keyNum.off, .BC_showNum.off {
+        background-color: #eee;
+    }
+
+    .BC_keyNum:disabled, .BC_showNum:disabled {
+        color: #545454;
+        background-color: #e0e0e0;
+        opacity: 1;
+    }
+
+.BC_showNum {
+    margin-left: 7px;
+    color: #005aff !important;
+}
+
+    .BC_keyNum::-webkit-input-placeholder,
+    .BC_showNum::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #666;
+        font-size: 14px;
+        font-weight: normal;
+    }
+
+    .BC_keyNum::-moz-placeholder,
+    .BC_showNum::-moz-placeholder { /* Firefox 19+ */
+        opacity: 1;
+        font-size: 14px;
+        color: #666;
+        font-weight: normal;
+    }
+
+    .BC_keyNum:-ms-input-placeholder,
+    .BC_showNum:-ms-input-placeholder { /* IE 10+ */
+        font-size: 14px;
+        color: #666;
+        font-weight: normal;
+    }
+
+    .BC_keyNum:-moz-placeholder,
+    .BC_showNum:-moz-placeholder { /* Firefox 18- */
+        opacity: 1;
+        font-size: 14px;
+        color: #666;
+        font-weight: normal;
+    }
+
+@media (max-width:768px) {
+    .BC_keyNum::-webkit-input-placeholder,
+    .BC_showNum::-webkit-input-placeholder { /* mobile */
+        font-size: 14px;
+        line-height: 20px;
+        color: #666;
+        -webkit-transform: scale(0.95) translateY(-1px);
+        transform: scale(0.95) translateY(-1px);
+        -webkit-transform-origin: 0% 50%;
+        transform-origin: 0% 50%;
+        font-weight: normal;
+    }
+}
+
+.BC_total {
+    padding: 0 10px;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 40px;
+}
+
+/*過關組數*/
+.betPass_list {
+    border-radius: 3px;
+    border: 1px solid #bbb;
+    color: #fff;
+    padding: 7px 10px;
+    margin: 5px;
+    line-height: 16px;
+}
+
+    .betPass_list li + li {
+        margin-top: 5px;
+    }
+
+/*目前沒有最新注單*/
+.betInfo_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 36px);
+    padding: 0 15px;
+    box-sizing: border-box;
+    line-height: 23px;
+    color: #fff;
+}
+
+.betInfo_textIn {
+    text-align: center;
+}
+
+.betInfo_text img {
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin: 0 auto 5px;
+    opacity: 0.5;
+}
+
+/*過關提示語(至少2場賽事)+可兌現提示語(無資料狀態)*/
+.betInfo_prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 15px;
+    color: #fff;
+    line-height: 23px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+    .betInfo_prompt img {
+        width: 60px;
+        height: 60px;
+        display: block;
+        margin: 0 auto 5px;
+        opacity: 0.5;
+    }
+
+/**/
+.betPlay {
+    margin-top: -5px;
+}
+
+.betPlay_In {
+    border-bottom: 1px solid #333;
+    padding: 5px 0;
+}
+
+.betPlay_list {
+    display: table;
+    width: 100%;
+    padding: 5px 10px;
+    border-collapse: separate;
+    border-spacing: 0;
+    box-sizing: border-box;
+}
+
+    .betPlay_list ul {
+        display: table-row;
+    }
+
+    .betPlay_list li {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 5px 0;
+    }
+
+    .betPlay_list .error_t {
+        display: table-row;
+        color: #ff8686;
+    }
+
+        .betPlay_list .error_t:before {
+            content: '';
+            display: table-cell;
+        }
+
+.BP_listT, .BP_listT_pass {
+    width: 1px;
+    white-space: nowrap;
+    padding-right: 14px !important;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.BP_listT_pass {
+    width: 75px;
+    line-height: 16px;
+}
+
+.BP_listT:after {
+    content: '：';
+    position: absolute;
+    right: 1px;
+    top: 11px;
+    line-height: 18px;
+}
+
+/*針對IE修正*/
+@media screen and (min-width:0\0) {
+    .BP_listT:after {
+        line-height: 16px;
+    }
+}
+
+.BP_name {
+    display: inline-block;
+}
+
+.BP_listT_double {
+    float: right;
+    color: #ffea01;
+    margin-left: 5px;
+    position: relative;
+}
+
+    .BP_listT_double .t_gray {
+        color: #aaa;
+        margin-left: 3px;
+    }
+
+    .BP_listT_double:after {
+        content: '：';
+        position: absolute;
+        right: -14px;
+        top: 0;
+        color: #fff;
+    }
+
+@media screen and (min-width:0\0) {
+    .BP_listT_double:after {
+        line-height: 12px;
+    }
+}
+
+.BP_bet {
+    float: left;
+    clear: both;
+    white-space: nowrap;
+    font-size: 12px;
+    color: #ff8686;
+}
+
+.BP_listIn {
+    position: relative;
+}
+
+.BP_InputKey, .BP_InputWin {
+    border-radius: 3px;
+    width: 100%;
+    height: 30px;
+    padding: 0 60px 0 5px;
+    box-sizing: border-box;
+    border: 1px solid #bbb;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+    .BP_InputKey::-webkit-input-placeholder,
+    .BP_InputWin::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        font-weight: normal;
+    }
+
+    .BP_InputKey::-moz-placeholder,
+    .BP_InputWin::-moz-placeholder { /* Firefox 19+ */
+        font-weight: normal;
+    }
+
+    .BP_InputKey:-ms-input-placeholder,
+    .BP_InputWin:-ms-input-placeholder { /* IE 10+ */
+        font-weight: normal;
+    }
+
+    .BP_InputKey:-moz-placeholder,
+    .BP_InputWin:-moz-placeholder { /* Firefox 18- */
+        font-weight: normal;
+    }
+
+    .BP_InputKey.off, .BP_InputWin.off {
+        background-color: #e0e0e0;
+    }
+
+    .BP_InputKey:disabled, .BP_InputWin:disabled {
+        color: #545454;
+        background-color: #ccc;
+        opacity: 1;
+    }
+
+.BP_InputWin {
+    color: #005aff !important;
+}
+
+.betComplex ~ .betPlay .BP_InputKey, .betComplex ~ .betPlay .BP_InputWin {
+    padding-right: 5px;
+}
+
+.BP_double {
+    color: #004eff;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    line-height: 30px;
+    padding-right: 8px;
+    width: 45px;
+    text-align: right;
+}
+
+    .BP_double:before {
+        content: '';
+        position: absolute;
+        width: 1px;
+        left: 0;
+        top: 3px;
+        bottom: 3px;
+        background-color: #a3a3a3;
+    }
+
+/*籌碼*/
+.betPlay_chip {
+    display: flex;
+    align-items: center;
+    height: 42px;
+    margin-bottom: 5px;
+    padding: 0 10px 0 3px;
+}
+
+.btn_chipPrev, .btn_chipNext {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 25px;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+    .btn_chipPrev:before, .btn_chipNext:before {
+        content: '';
+        background: url(../images/btn_arrow_w.svg) no-repeat center;
+        background-size: 16px;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        opacity: 0.5;
+    }
+
+    .btn_chipPrev:before {
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+    }
+
+    .btn_chipPrev:hover:before, .btn_chipNext:hover:before {
+        opacity: 1;
+    }
+
+.betPlay_chipBox {
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+.BPC_List {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 33%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+    .BPC_List[class*="icon_chip"]:before {
+        content: '';
+        background: url(../images/icon_chip.png) no-repeat;
+        background-size: auto 100%;
+        width: 57px;
+        height: 37px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        -webkit-transition: all ease 0.1s;
+        transition: all ease 0.1s;
+    }
+
+    .BPC_List:hover[class*="icon_chip"]:before {
+        bottom: 8px;
+    }
+
+    .BPC_List.icon_chip1:before {
+        background-position: 0 center;
+    }
+
+    .BPC_List.icon_chip5:before {
+        background-position: -57px center;
+    }
+
+    .BPC_List.icon_chip10:before {
+        background-position: calc(-57px*2) center;
+    }
+
+    .BPC_List.icon_chip100:before {
+        background-position: calc(-57px*3) center;
+    }
+
+    .BPC_List.icon_chip500:before {
+        background-position: calc(-57px*4) center;
+    }
+
+    .BPC_List.icon_chip1K:before {
+        background-position: calc(-57px*5) center;
+    }
+
+    .BPC_List.icon_chip2K:before {
+        background-position: calc(-57px*6) center;
+    }
+
+    .BPC_List.icon_chip5K:before {
+        background-position: calc(-57px*7) center;
+    }
+
+    .BPC_List.icon_chip10K:before {
+        background-position: calc(-57px*8) center;
+    }
+
+    .BPC_List.icon_chipCustom {
+        font-family: Arial;
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 52px;
+        margin-left: 2px;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 37px;
+        text-align: center;
+        -webkit-transition: all ease 0.09s;
+        transition: all ease 0.09s;
+        color: #fff;
+    }
+
+        .BPC_List.icon_chipCustom:before {
+            background-position: calc(-57px*9) center;
+            z-index: -1;
+        }
+
+    .BPC_List:hover.icon_chipCustom {
+        line-height: 29px;
+    }
+
+.betPlay_btm {
+    padding: 15px 10px;
+}
+
+.betPlay_btmMoney {
+    display: table;
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+.BPBM_L {
+    width: calc(50% - 4px);
+    float: left;
+}
+
+.BPBM_R {
+    width: calc(50% - 4px);
+    float: right;
+}
+
+    .BPBM_L span, .BPBM_R span {
+        font-weight: bold;
+        letter-spacing: -0.5px;
+    }
+
+.betPlay_btm .BIL_allNG {
+    margin: 0 -10px 15px -10px;
+    border-top: 1px solid #333;
+}
+
+.betPlay_btmBotton {
+    text-align: center;
+    font-size: 0;
+}
+
+.btn_betPlay_clear, .btn_betPlay_confirm, .btn_betPlay_confirmOK, .btn_betPlay_change {
+    width: calc(50% - 5px);
+    height: 40px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.btn_betPlay_clear {
+    background-color: #929292;
+    color: #fff;
+    margin-right: 5px;
+}
+
+    .btn_betPlay_clear:hover {
+        background-color: #aaa;
+    }
+
+.btn_betPlay_confirm {
+    background-color: #ffdf1b;
+    margin-left: 5px;
+}
+
+    .btn_betPlay_confirm:hover {
+        background-color: #ffff1b;
+    }
+
+.btn_betPlay_confirmOK {
+    background-color: #3a86de;
+    color: #fff;
+    margin-left: 5px;
+}
+
+    .btn_betPlay_confirmOK:hover {
+        background-color: #3a9dff;
+    }
+
+.btn_betPlay_change {
+    background-color: #41b590;
+    color: #fff;
+    margin-left: 5px;
+}
+
+    .btn_betPlay_change:hover {
+        background-color: #44d2a5;
+    }
+
+/*賠率變化*/
+.t_oddsChange {
+    background-color: #41b590;
+    color: #fff;
+    padding: 1px 2px;
+}
+
+.BPBM_R .t_oddsChange {
+    margin: 1px -1px;
+}
+
+/*投注清單確認*/
+.BIL_inputShow {
+    display: table;
+    width: 100%;
+}
+
+    .BIL_inputShow li:nth-child(odd) {
+        float: left;
+        width: 43%;
+    }
+
+    .BIL_inputShow li:nth-child(even) {
+        float: left;
+        width: 57%;
+    }
+
+.icon_BIL_ok, .icon_BIL_no, .BIL_waitT, .BIL_i_T, .BIL_iR_T, .BIL_iG_T {
+    position: relative;
+    margin-top: 5px;
+    line-height: 17px;
+    padding-left: 18px;
+    box-sizing: border-box;
+}
+
+.icon_BIL_ok, .icon_BIL_no {
+    box-sizing: border-box;
+    cursor: default;
+}
+
+.BIL_waitT, .BIL_i_T, .BIL_iR_T, .BIL_iG_T {
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.icon_BIL_ok {
+    color: #148800;
+}
+
+.icon_BIL_no {
+    color: #f00;
+}
+
+.BIL_waitT {
+    color: #005aff;
+}
+
+.BIL_i_T {
+    color: #fa3535;
+}
+
+.BIL_iR_T {
+    color: #f00;
+}
+
+.BIL_iG_T {
+    color: #065f00;
+}
+
+    .icon_BIL_ok:before, .icon_BIL_no:before, .BIL_waitT:before, .BIL_i_T:before, .BIL_iR_T:before, .BIL_iG_T:before {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        left: 0;
+        top: 0;
+    }
+
+.icon_BIL_ok:before {
+    background: url(../images/icon_bet_check.svg) no-repeat center;
+    background-size: 100%;
+}
+
+.icon_BIL_no:before {
+    background: url(../images/icon_bet_refuse.svg) no-repeat center;
+    background-size: 100%;
+}
+
+.BIL_waitT:before {
+    background: url(../images/icon_bet_situation.svg) no-repeat center;
+    background-size: 100%;
+}
+
+.BIL_i_T:before {
+    background: url(../images/icon_bet_i.svg) no-repeat center;
+    background-size: 100%;
+}
+
+.BIL_iR_T:before {
+    background: url(../images/icon_bet_iR.svg) no-repeat center;
+    background-size: 100%;
+}
+
+.BIL_iG_T:before {
+    background: url(../images/icon_bet_iG.svg) no-repeat center;
+    background-size: 100%;
+}
+
+.btn_BIL_wait, .btn_BIL_i, .btn_BIL_iR, .btn_BIL_iG {
+    position: relative;
+    display: table;
+}
+
+.BIL_waitIn, .BIL_i_In, .BIL_iR_In, .BIL_iG_In {
+    position: absolute;
+    top: -6px;
+    left: -7px;
+    cursor: default;
+    pointer-events: none;
+    display: none;
+}
+
+    .BIL_waitIn:before, .BIL_i_In:before, .BIL_iR_In:before, .BIL_iG_In:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 11px 9px 0 9px;
+        border-color: #f0f0f0 transparent transparent transparent;
+        position: absolute;
+        left: 6px;
+        bottom: -10px;
+        z-index: 1;
+    }
+
+.BIL_waitInBox, .BIL_i_InBox, .BIL_iR_InBox, .BIL_iG_InBox {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 220px;
+    text-align: left;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    background-color: #f0f0f0;
+    color: #000;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    line-height: 20px;
+    margin-right: -220px;
+    display: none;
+}
+
+.BIL_iR_InBox {
+    color: #000;
+}
+
+.BIL_iG_InBox {
+    color: #087b00;
+}
+
+/*列表第一個氣泡框向下展*/
+:not(.NB_Complex_In) > .betInfo_List:first-child .BIL_waitIn,
+:not(.NB_Complex_In) > .betInfo_List:first-child .BIL_i_In,
+:not(.NB_Complex_In) > .betInfo_List:first-child .BIL_iR_In,
+:not(.NB_Complex_In) > .betInfo_List:first-child .BIL_iG_In,
+.NB_Complex:first-child .betInfo_List:first-child .BIL_waitIn,
+.NB_Complex:first-child .betInfo_List:first-child .BIL_i_In,
+.NB_Complex:first-child .betInfo_List:first-child .BIL_iR_In,
+.NB_Complex:first-child .betInfo_List:first-child .BIL_iG_In {
+    top: auto;
+    bottom: -12px;
+    z-index: 1;
+}
+
+    :not(.NB_Complex_In) > .betInfo_List:first-child .BIL_waitIn:before,
+    :not(.NB_Complex_In) > .betInfo_List:first-child .BIL_i_In:before,
+    :not(.NB_Complex_In) > .betInfo_List:first-child .BIL_iR_In:before,
+    :not(.NB_Complex_In) > .betInfo_List:first-child .BIL_iG_In:before,
+    .NB_Complex:first-child .betInfo_List:first-child .BIL_waitIn:before,
+    .NB_Complex:first-child .betInfo_List:first-child .BIL_i_In:before,
+    .NB_Complex:first-child .betInfo_List:first-child .BIL_iR_In:before,
+    .NB_Complex:first-child .betInfo_List:first-child .BIL_iG_In:before {
+        border-width: 0 9px 11px 9px;
+        border-color: transparent transparent #f0f0f0 transparent;
+        top: -10px;
+        bottom: auto;
+    }
+
+:not(.NB_Complex_In) > .betInfo_List:first-child .BIL_waitInBox,
+:not(.NB_Complex_In) > .betInfo_List:first-child .BIL_i_InBox,
+:not(.NB_Complex_In) > .betInfo_List:first-child .BIL_iR_InBox,
+:not(.NB_Complex_In) > .betInfo_List:first-child .BIL_iG_InBox,
+.NB_Complex:first-child .betInfo_List:first-child .BIL_waitInBox,
+.NB_Complex:first-child .betInfo_List:first-child .BIL_i_InBox,
+.NB_Complex:first-child .betInfo_List:first-child .BIL_iR_InBox,
+.NB_Complex:first-child .betInfo_List:first-child .BIL_iG_InBox {
+    top: 0;
+    bottom: auto;
+}
+
+/*loading*/
+.betInfo_mask {
+    position: absolute;
+    top: 36px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 36px);
+    background: rgba(0,0,0,0.45);
+    padding: 0 15px 0 14px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.loading {
+    background: url(../images/icon_loading.svg) no-repeat center;
+    background-size: 100%;
+    width: 45px;
+    height: 45px;
+    margin: 0 auto;
+    animation: loading 1s steps(12) infinite;
+    -webkit-animation: loading 1s steps(12) infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes loading {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+/*-----------------------------------最新注單-------------------------------------*/
+.newbet_scroll {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.BIL_name {
+    margin-right: 8px;
+}
+
+.BIL_score {
+    color: #f00;
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 8px;
+}
+
+.BIL_time {
+    color: #666;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/*過關下拉*/
+.NB_Complex {
+    background-color: #bbb;
+    color: #000;
+    cursor: pointer;
+    border-radius: 3px;
+    margin: 5px;
+}
+
+.NB_Complex_T {
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    padding: 5px 33px 5px 10px;
+}
+
+    .NB_Complex_T:after {
+        content: '';
+        background: url(../images/btn_arrow.svg) no-repeat center;
+        background-size: 13px;
+        position: absolute;
+        width: 33px;
+        height: 100%;
+        top: 0;
+        right: 0;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+        opacity: 0.5;
+    }
+
+.NB_Complex.on .NB_Complex_T:after {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.NB_Complex:hover .NB_Complex_T:after {
+    opacity: 1;
+}
+
+.NBC_list + .NBC_list {
+    margin-top: 1px;
+}
+
+.NB_Complex_In {
+    display: none;
+    padding-bottom: 5px;
+}
+
+    .NB_Complex_In .BIL_T {
+        border-bottom: 1px solid #999;
+    }
+
+    .NB_Complex_In .betInfo_List {
+        background-color: #d2d2d2;
+        border: 1px solid #999;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+        .NB_Complex_In .betInfo_List + .betInfo_List {
+            margin-top: 5px;
+        }
+
+.NBC_list span {
+    display: inline-block;
+}
+
+/*加載更多投注*/
+.btn_NB_load {
+    text-align: center;
+    line-height: 35px;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #333;
+    margin: 5px;
+    border-radius: 3px;
+}
+
+    .btn_NB_load:hover {
+        background-color: #777;
+    }
+
+/*可兌現注單*/
+[class*="btn_BIL_cash"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    font-size: 14px;
+    min-width: 60px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 5px;
+    margin-top: 5px;
+}
+
+.btn_BIL_cash {
+    width: 100%;
+    background-color: #336699;
+    color: #fff;
+}
+
+    .btn_BIL_cash:hover {
+        background-color: #3e79b3;
+    }
+
+    .btn_BIL_cash span {
+        color: #ffdf1b;
+        font-size: 17px;
+        font-weight: bold;
+        margin-left: 13px;
+    }
+
+.BIL_cashBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .BIL_cashBox button + button,
+    .BIL_cashBox div + button,
+    .BIL_cashBox button + div {
+        margin-left: 10px;
+    }
+
+.btn_BIL_cashCancel {
+    background-color: #888;
+    color: #fff;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+    .btn_BIL_cashCancel:hover {
+        background-color: #999;
+    }
+
+.btn_BIL_cashConfirm {
+    background-color: #eaca48;
+    color: #000;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+    .btn_BIL_cashConfirm:hover {
+        background-color: #ffdc4e;
+    }
+
+    .btn_BIL_cashConfirm span {
+        color: #ff0000;
+        font-size: 17px;
+        font-weight: bold;
+        margin-left: 13px;
+    }
+
+.btn_BIL_cashChange {
+    background-color: #41b590;
+    color: #fff;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+    .btn_BIL_cashChange:hover {
+        background-color: #44d2a5;
+    }
+
+    .btn_BIL_cashChange span {
+        font-size: 17px;
+        font-weight: bold;
+        margin-left: 13px;
+    }
+
+.btn_BIL_cashBack {
+    background-color: #a72120;
+    color: #fff;
+}
+
+    .btn_BIL_cashBack:hover {
+        background-color: #b72b2a;
+    }
+
+/*兌現等待/兌現失敗/兌現成功*/
+.BIL_cashLoad, .BIL_cashNo, .BIL_cashOk, .BIL_cashStop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+
+.BIL_cashLoad {
+    background-color: #ccc;
+    color: #005aff;
+}
+
+    .BIL_cashLoad:before {
+        content: '';
+        background: url(../images/icon_loading2_blue.png) no-repeat center;
+        background-size: 100%;
+        width: 17px;
+        height: 17px;
+        display: block;
+        margin: -1px 5px 0 0;
+        animation: cashLoad 0.5s linear infinite;
+        -webkit-animation: cashLoad 0.5s linear infinite;
+    }
+
+@keyframes cashLoad {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes cashLoad {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.BIL_cashNo {
+    background-color: #ccc;
+    color: #fe0000;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+    .BIL_cashNo:before {
+        content: '';
+        background: url(../images/icon_prohibit.svg) no-repeat center;
+        background-size: 100%;
+        width: 17px;
+        height: 17px;
+        display: block;
+        margin: -1px 5px 0 0;
+    }
+
+.BIL_cashOk {
+    background-color: #ccc;
+    color: #148800;
+}
+
+    .BIL_cashOk:before {
+        content: '';
+        background: url(../images/icon_check2_greenDark.svg) no-repeat center;
+        background-size: 100%;
+        width: 17px;
+        height: 17px;
+        display: block;
+        margin: -1px 5px 0 0;
+    }
+
+    .BIL_cashOk span {
+        font-size: 17px;
+        font-weight: bold;
+        margin-left: 13px;
+    }
+
+.BIL_cashStop {
+    background-color: #ccc;
+    color: #333;
+}
+
+/*----------------------------------過關計算器----------------------------------*/
+.calculator {
+    /*目前彈跳視窗設定W385*H645，由於各瀏覽器顯示不太一樣，只設定最大範圍*/
+    width: 100%;
+    max-width: 390px;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: #d8d8d8;
+    position: relative;
+    display: none;
+}
+
+.btn_calculator_close {
+    position: absolute;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    background: url(../images/btn_close_w.svg) no-repeat center;
+    background-size: 13px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+    .btn_calculator_close:hover {
+        opacity: 1;
+    }
+
+.calcT {
+     background-color: #c66820;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.calcTable {
+    width: 100%;
+    margin-bottom: 15px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-bottom: 1px solid #bbb;
+}
+
+    .calcTable tr {
+        display: table;
+        width: 100%;
+        border-top: 1px solid #bbb;
+    }
+
+    .calcTable th {
+        background-color: #b8b8b8;
+        height: 30px;
+        white-space: nowrap;
+        font-size: 14px;
+    }
+
+    .calcTable th, .calcTable td {
+        text-align: center;
+        vertical-align: middle;
+        padding: 0;
+    }
+
+    .calcTable td {
+        height: 46px;
+    }
+
+        .calcTable th:first-child, .calcTable td:first-child {
+            width: 60px;
+        }
+
+        .calcTable td:first-child {
+            line-height: 16px; /*修正ios*/
+        }
+
+        .calcTable th:nth-child(2), .calcTable td:nth-child(2) {
+            width: 109px;
+        }
+
+    .calcTable tr.error_t {
+        border-top: 0;
+        margin-top: -3px;
+    }
+
+        .calcTable tr.error_t td {
+            text-align: left;
+            border-top: 0;
+            height: 1px;
+            padding: 0 15px 5px 60px;
+            line-height: 17px;
+        }
+
+.calcPassCount {
+    white-space: nowrap;
+    font-size: 0;
+}
+
+.CPC_text {
+    margin: 0 10px 0 20px;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.calcPassCount .CPC_text:last-child {
+    margin: 0 15px;
+}
+
+.calcOdds, .calcPassCount_select, .calcPassCount_ratio {
+    border-radius: 3px;
+    height: 30px;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.calcOdds {
+    width: 105px;
+    padding: 0 5px;
+}
+
+.calcPassCount_select {
+    width: 65px;
+    padding: 0 20px 0 7px;
+    color: #0371fe;
+    font-weight: bold;
+    line-height: 28px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+    .calcPassCount_select option {
+        color: #0371fe;
+    }
+
+.calcPassCount_ratio {
+    width: 45px;
+    padding: 0px 5px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+    .calcPassCount_ratio.off, .calcPassCount_ratio:disabled {
+        color: #000;
+        background-color: #bbb;
+        opacity: 1;
+        text-align: center;
+    }
+
+.calc_totalBet {
+    display: table;
+    width: 100%;
+    padding: 0 12px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.calc_totalBetL {
+    width: calc((100% - 12px)/2);
+    float: left;
+    text-align: right;
+}
+
+.calc_totalBetR {
+    width: calc((100% - 12px)/2);
+    float: right;
+    text-align: right;
+}
+
+.calc_totalBet input[type="text"] {
+    width: 115px;
+    height: 30px;
+    border-radius: 3px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    margin-left: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+    .calc_totalBet input[type="text"].off {
+        background-color: #bbb;
+    }
+
+    .calc_totalBet input[type="text"]:disabled {
+        color: #545454;
+        background-color: #bbb;
+        opacity: 1;
+    }
+
+.calc_totalBetR input[type="text"]:disabled {
+    color: #f00 !important;
+}
+
+.calc_totalBetL.error input, .calc_totalBetR.error input {
+    border: 1px solid #f00;
+    position: relative;
+}
+
+.calc_totalBetL.error .error_t, .calc_totalBetR.error .error_t {
+    display: block;
+    float: right;
+    width: 115px;
+    text-align: left;
+    padding-top: 5px;
+    margin-bottom: -7px;
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+.calc_button {
+    display: table;
+    width: 100%;
+    padding: 0 12px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.btn_calc_clear, .btn_calc_run {
+    width: calc((100% - 12px)/2);
+    height: 40px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.btn_calc_clear {
+    background-color: #7e7e7e;
+    color: #fff;
+    float: left;
+}
+
+    .btn_calc_clear:hover {
+        background-color: #aaa;
+    }
+
+.btn_calc_run {
+    background-color: #ffdf1b;
+    float: right;
+}
+
+    .btn_calc_run:hover {
+        background-color: #ffff1b;
+    }
+
+/*過關計算器-操作說明*/
+.btn_calcPrompt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 42px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.icon_calcPrompt {
+    font-family: Arial;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+    color: #fff;
+    background-color:#136146;
+    height: 25px;
+    width: 25px;
+    line-height: 26px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.calcPromptIn {
+    position: absolute;
+    bottom: -6px;
+    left: 2px;
+    right: -300px;
+    z-index: 1;
+    cursor: default;
+    display: none;
+}
+
+    .calcPromptIn:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 9px 11px 9px;
+        border-color: transparent transparent #fff transparent;
+        position: absolute;
+        left: 11px;
+        top: -10px;
+        z-index: 1;
+    }
+
+.calcPromptInBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    background-color: #fff;
+    color: #000;
+    padding-bottom: 12px;
+    color: #666;
+    padding: 0 20px;
+    display: none;
+}
+
+.calcPromptT {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    line-height: 30px;
+    color: #000;
+    margin: 0 -20px;
+    padding: 0 20px;
+}
+
+.calcPromptList {
+    display: table-row;
+}
+
+    .calcPromptList li {
+        display: table-cell;
+        text-align: left;
+        padding-top: 8px;
+        line-height: 17px;
+    }
+
+    .calcPromptList + .calcPromptList li {
+        padding-top: 6px;
+    }
+
+    .calcPromptList:last-child li {
+        padding-bottom: 10px;
+    }
+
+.CP_listT {
+    width: 1px;
+    padding-right: 13px;
+    white-space: nowrap;
+    position: relative;
+}
+
+    .CP_listT:after {
+        content: '：';
+        position: absolute;
+        right: 0;
+    }
+
+/*過關計算器-計算過程*/
+.formula {
+    font-size: 14px;
+    text-align: left;
+    margin: 0 12px 10px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 5px 10px 7px;
+    border: 2px dashed #999;
+    display: none;
+}
+
+.formula_T {
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    margin-bottom: 3px;
+}
+
+.btn_formulaPrompt {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: relative;
+}
+
+    .btn_formulaPrompt:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        background: url(../images/icon_info3.svg) center top;
+        background-size: 100%;
+        width: 16px;
+        height: 16px;
+    }
+
+    .btn_formulaPrompt.on:before {
+        background-position: center bottom;
+    }
+
+    .btn_formulaPrompt:after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 11px 9px 0 9px;
+        border-color: #ffffbd transparent transparent transparent;
+        position: absolute;
+        top: -10px;
+        left: 2px;
+        z-index: 1;
+        opacity: 0;
+        transition: 0.2s opacity;
+        -webkit-transition: 0.2s opacity;
+    }
+
+    .btn_formulaPrompt.on:after {
+        opacity: 1;
+    }
+
+.formulaPromptBox {
+    font-size: 13px;
+    position: absolute;
+    bottom: calc(100% + 9px);
+    left: -20px;
+    margin-right: -180px;
+    max-width: 220px;
+    text-align: left;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    background-color: #ffffbd;
+    color: #000;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    line-height: 20px;
+    white-space: normal;
+    cursor: default;
+    opacity: 0;
+    transition: 0.2s opacity 0.05s;
+    -webkit-transition: 0.2s opacity 0.05s;
+    display: none;
+    z-index: 1;
+}
+
+.btn_formulaPrompt.on .formulaPromptBox {
+    opacity: 1;
+}
+
+/*----------------------------------功能設定----------------------------------*/
+.functionSet {
+    display: table;
+    width: 390px;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: #d8d8d8;
+    position: relative;
+    display: none;
+}
+
+.btn_funSet_close {
+    position: absolute;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    background: url(../images/btn_close_w.svg) no-repeat center;
+    background-size: 13px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+    .btn_funSet_close:hover {
+        opacity: 1;
+    }
+
+.funSetT {
+    background-color: #3fa381;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    line-height: 40px;
+}
+
+/*功能設定-列表*/
+.funSetIn {
+    background-color: #eee;
+    font-size: 14px;
+    text-align: left;
+}
+
+    .funSetIn ul {
+        display: table;
+        width: 100%;
+    }
+
+        .funSetIn ul + ul li {
+            border-top: 1px solid #ccc;
+        }
+
+    .funSetIn li {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 5px 0 10px;
+    }
+
+        .funSetIn li:first-child {
+            width: 140px;
+            text-align: left;
+            padding: 0 30px 0 25px;
+            line-height: 18px;
+            box-sizing: border-box;
+        }
+
+        .funSetIn li:last-child {
+            padding-right: 9px;
+        }
+
+.btn_funSel {
+    min-width: 75px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 0 8px;
+    background-color: #fff;
+    float: left;
+    margin: 5px 5px 0 0;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+    .btn_funSel:hover {
+        background-color: #dbe8f1;
+    }
+
+    .btn_funSel.on {
+        background-color: #bbb;
+    }
+
+.defaultMoney {
+    float: left;
+    width: calc(100% - 5px);
+    height: 30px;
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-right: 5px;
+    text-align: center;
+    display: none;
+}
+
+.btn_chip {
+    float: left;
+    margin: 0 13px 0 9px;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+    .btn_chip:nth-child(3n+3) {
+        margin-right: 0;
+    }
+
+    .btn_chip[class*="icon_chip"]:before {
+        content: '';
+        background: url(../images/icon_chip_20210115.png) no-repeat;
+        background-size: auto auto;
+        width: 57px;
+        height: 37px;
+        display: block;
+        margin: 0 auto;
+        opacity: 0.2;
+    }
+
+    .btn_chip.hover[class*="icon_chip"]:before {
+        opacity: 0.5;
+    }
+
+    .btn_chip.on[class*="icon_chip"]:before {
+        opacity: 1;
+    }
+
+    .btn_chip.icon_chip1:before {
+        background-position: 0 center;
+    }
+
+    .btn_chip.icon_chip5:before {
+        background-position: -57px center;
+    }
+
+    .btn_chip.icon_chip10:before {
+        background-position: calc(-57px*2) center;
+    }
+
+    .btn_chip.icon_chip100:before {
+        background-position: calc(-57px*3) center;
+    }
+
+    .btn_chip.icon_chip500:before {
+        background-position: calc(-57px*4) center;
+    }
+
+    .btn_chip.icon_chip1K:before {
+        background-position: calc(-57px*5) center;
+    }
+
+    .btn_chip.icon_chip2K:before {
+        background-position: calc(-57px*6) center;
+    }
+
+    .btn_chip.icon_chip5K:before {
+        background-position: calc(-57px*7) center;
+    }
+
+    .btn_chip.icon_chip10K:before {
+        background-position: calc(-57px*8) center;
+    }
+
+.funSet_button {
+    border-top: 1px solid #ccc;
+    display: table;
+    width: 100%;
+    padding: 10px 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.btn_funSet_run {
+    width: 180px;
+    height: 40px;
+    border-radius: 3px;
+    background-color: #ffdf1b;
+    font-weight: bold;
+}
+
+    .btn_funSet_run:hover {
+        background-color: #ffff1b;
+    }
+
+/*功能設定-操作說明*/
+.btn_funSetPrompt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 42px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.icon_funSetPrompt {
+    font-family: Arial;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #136146;
+    height: 25px;
+    width: 25px;
+    line-height: 26px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.funSetPromptIn {
+    position: absolute;
+    bottom: -6px;
+    left: 2px;
+    right: -300px;
+    z-index: 1;
+    cursor: default;
+    display: none;
+}
+
+    .funSetPromptIn:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 9px 11px 9px;
+        border-color: transparent transparent #fff transparent;
+        position: absolute;
+        left: 11px;
+        top: -10px;
+        z-index: 1;
+    }
+
+.funSetPromptInBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    background-color: #fff;
+    color: #000;
+    padding-bottom: 12px;
+    color: #666;
+    padding: 0 20px;
+    display: none;
+}
+
+.FS_PromptT {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    line-height: 30px;
+    color: #000;
+    margin: 0 -20px;
+    padding: 0 20px;
+}
+
+.FS_PromptIn {
+    text-align: left;
+    padding: 15px 0 20px;
+}
+
+    .FS_PromptIn li {
+    }
+
+.FSP_listT {
+    font-weight: bold;
+    color: #336699;
+}
+
+li + .FSP_listT {
+    margin-top: 15px;
+}
+
+/*----------------------------------快速轉帳----------------------------------*/
+.fastTransfer {
+    position: relative;
+    width: 450px;
+    margin: 0 auto;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    color: #000;
+    display: none;
+}
+
+.btn_fastTransfer_close {
+    position: absolute;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    background: url(../images/btn_close_w.svg) no-repeat center;
+    background-size: 13px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+    .btn_fastTransfer_close:hover {
+        opacity: 1;
+    }
+
+.fastTransfer_T {
+    background-color: #336699;
+    text-align: center;
+    color: #fff;
+    font-size: 19px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.fastTransfer_In {
+    padding: 25px 30px;
+    box-sizing: border-box;
+    background-color: #d8d8d8;
+    position: relative;
+}
+
+.FT_form {
+    text-align: left;
+}
+
+    .FT_form li {
+        display: table;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+.FT_Form_T, .FT_Form_In, .FT_Form_btn {
+    display: table-cell;
+    vertical-align: middle;
+    height: 45px;
+    position: relative;
+}
+
+.FT_Form_T {
+    font-size: 18px;
+    width: 100px;
+}
+
+    .FT_Form_T.t_blue {
+        color: #2f8be6;
+    }
+
+.FT_Form_btn {
+    width: 1%;
+    white-space: nowrap;
+    padding-left: 10px;
+}
+
+.FT_pointNum {
+    background-color: #fff;
+    color: #05931d;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 3px;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 45px 0 15px;
+    box-sizing: border-box;
+}
+
+.btn_FT_Refresh {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    height: 100%;
+    cursor: pointer;
+}
+
+    .btn_FT_Refresh:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 22px;
+        height: 22px;
+        margin: auto;
+        background: url(../images/btn_FT_Refresh.svg) no-repeat center top;
+        background-size: 100% auto;
+    }
+
+    .btn_FT_Refresh:hover:before {
+        background-position: center bottom;
+    }
+
+.FT_keyboard {
+    font-size: 28px;
+    font-weight: bold;
+    border-radius: 3px;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+    .FT_keyboard.off {
+        background-color: #bbb;
+    }
+
+    .FT_keyboard:disabled {
+        color: #545454;
+        background-color: #bbb;
+        opacity: 1;
+    }
+
+    .FT_keyboard::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #aaa;
+        font-size: 18px;
+        -webkit-transform: translateY(-1px);
+        transform: translateY(-2px);
+        font-weight: normal;
+    }
+
+    .FT_keyboard::-moz-placeholder { /* Firefox 19+ */
+        color: #aaa;
+        opacity: 1;
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 46px;
+    }
+
+    .FT_keyboard:-ms-input-placeholder { /* IE 10+ */
+        color: #aaa !important;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    .FT_keyboard::-ms-input-placeholder { /* IE 10+ */
+        color: #aaa !important;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    .FT_keyboard:-moz-placeholder { /* Firefox 18- */
+        color: #aaa;
+        opacity: 1;
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 46px;
+    }
+
+@supports (-webkit-overflow-scrolling: touch) {
+    @media (min-width:0px) {
+        .FT_keyboard {
+            line-height: initial;
+        }
+
+            .FT_keyboard::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                font-size: 18px;
+                -webkit-transform: translateY(3px);
+                transform: translateY(3px);
+            }
+    }
+}
+
+.btn_FT_transferAll {
+    font-size: 18px;
+    border-radius: 3px;
+    background-color: #00b2b9;
+    color: #fff;
+    width: 70px;
+    height: 45px;
+    vertical-align: middle;
+}
+
+    .btn_FT_transferAll:hover {
+        background-color: #3bccd1;
+    }
+
+.FT_footBtn {
+    display: table;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.btn_FT_reset, .btn_FT_submit {
+    font-size: 17px;
+    width: 48.5%;
+    width: calc(50% - 5px);
+    height: 45px;
+    border-radius: 3px;
+}
+
+.btn_FT_reset {
+    float: left;
+    color: #2f8be6;
+    border: 1px solid #2f8be6;
+    background-color: transparent;
+}
+
+    .btn_FT_reset:hover {
+        background-color: rgba(50,171,255,0.1);
+    }
+
+.btn_FT_submit {
+    float: right;
+    color: #fff;
+    background-color: #2f8be6;
+}
+
+    .btn_FT_submit:hover {
+        background-color: #3a9dff;
+    }
+
+/*-------------------------------暫無賽事頁面---------------------------------*/
+.gamePanelIn {
+    width: 100%;
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #666;
+}
+
+.noGmae {
+    font-size: 18px;
+    text-align: center;
+}
+
+    .noGmae img {
+        width: 80px;
+        height: 80px;
+        display: block;
+        margin: 0 auto 10px;
+        opacity: 0.5;
+    }
+
+/*---------------------------------系統信息-----------------------------------*/
+.mask {
+    position: absolute;
+    min-width: 1200px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.2);
+    z-index: 30;
+    display: none;
+}
+
+.popUp_sysMsg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    margin: 0 -35% -35% 0;
+    min-width: 260px;
+    max-width: 400px;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    background-color: #d8d8d8;
+    color: #000;
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+    z-index: 31;
+    display: none;
+}
+
+.popSM_T {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #286fc1;
+    color: #fff;
+    font-size: 15px;
+    min-height: 40px;
+    padding: 5px 40px;
+    box-sizing: border-box;
+}
+
+.popSM_In {
+    padding: 15px 20px;
+    line-height: 20px;
+    font-size: 14px;
+    display: table;
+    width: 100%;
+    height: 95px;
+    box-sizing: border-box;
+}
+
+.popSM_InText {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.popSM_btn {
+    text-align: center;
+    font-size: 0;
+    padding: 0 15px 20px;
+}
+
+.btn_popSM_clear, .btn_popSM_confirm {
+    width: 50%;
+    min-width: 120px;
+    max-width: 150px;
+    height: 33px;
+    border-radius: 3px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.popSM_btn input:nth-child(n+2) {
+    width: 48%;
+    min-width: 0;
+    margin-left: 2%;
+}
+
+.popSM_btn input:nth-last-child(n+2) {
+    width: 48%;
+    min-width: 0;
+    margin-right: 2%;
+}
+
+.btn_popSM_clear {
+    background-color: #929292;
+}
+
+    .btn_popSM_clear:hover {
+        background-color: #aaa;
+    }
+
+.btn_popSM_confirm {
+    background-color: #2f8be6;
+}
+
+    .btn_popSM_confirm:hover {
+        background-color: #3a9dff;
+    }
+
+.btn_closeSM {
+    position: absolute;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    background: url(../images/btn_close_w.svg) no-repeat center;
+    background-size: 13px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+    .btn_closeSM:hover {
+        opacity: 1;
+    }
+
+/*-------------------------------------聯盟選擇-------------------------------------*/
+/*彈跳視窗大於pad寬高需有捲軸*/
+.bg_popUpBox_scroll {
+    background-color: rgba(0,0,0,0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: none;
+    -webkit-overflow-scrolling: touch;
+    z-index: 11;
+}
+
+.bg_popUpBox {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+/*針對ios修正-因彈跳視窗內容尺寸小不啟動捲軸，導致捲動時IOS背景被捲動，故增加1px強制bg_popUpBox_scroll捲軸啟動*/
+@supports (-webkit-overflow-scrolling: touch) {
+    @media (min-width:0px) {
+        /*啟動X軸卷軸*/
+        .bg_popUpBox {
+            padding-left: 1px;
+        }
+        /*啟動Y軸卷軸*/
+        .bg_popUpBox_Y {
+            padding-left: 0px;
+            margin-bottom: 1px;
+        }
+    }
+}
+
+.popUpBox {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+}
+/**/
+.allianceSel {
+    position: relative;
+    margin: 0 auto;
+    width: 980px;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    color: #000;
+    display: none;
+}
+
+.alliance_T {
+    background-color: #c66820;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.btn_alliance_close {
+    position: absolute;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    background: url(../images/btn_close_w.svg) no-repeat center;
+    background-size: 13px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+    .btn_alliance_close:hover {
+        opacity: 1;
+    }
+
+.alliance_In {
+    padding: 15px 30px;
+    box-sizing: border-box;
+    background-color: #d8d8d8;
+    position: relative;
+}
+
+.alliance_set {
+    display: table;
+    width: 100%;
+}
+
+.AL_set {
+    float: right;
+}
+
+    .AL_set li {
+        float: left;
+        line-height: 30px;
+        padding-right: 35px;
+        position: relative;
+    }
+
+.icon_AL_checkbox {
+    background-color: #fff;
+    border-radius: 3px;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.btn_AL_allSel, .btn_AL_showSel {
+    cursor: pointer;
+    padding-left: 32px;
+}
+
+.AL_set li.on .icon_AL_checkbox {
+    background: #fff url(../images/icon_check_blue.svg) no-repeat center;
+    background-size: 14px;
+}
+
+.AL_set li.off {
+    cursor: default;
+}
+
+    .AL_set li.off .icon_AL_checkbox {
+        background: #bebebe;
+        background-size: 14px;
+    }
+
+li.btn_AL_setMenu {
+    padding: 0 25px 0 35px;
+    cursor: pointer;
+    position: relative;
+    z-index: 11;
+}
+
+    li.btn_AL_setMenu:hover, li.btn_AL_setMenu.on {
+        color: #006ede;
+    }
+
+.btn_AL_setMenu:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 20px;
+    margin: auto 0;
+    background-color: #888;
+}
+
+.btn_AL_setMenu:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    border-color: #000 transparent transparent transparent;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto 0;
+    opacity: 0.5;
+}
+
+.btn_AL_setMenu.on:after {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.ALSM_T {
+}
+
+.ALSM_In {
+    position: absolute;
+    bottom: -5px;
+    right: -10px;
+    z-index: 1;
+    display: none;
+}
+
+    .ALSM_In:before, .ALSM_In:after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 9px 11px 9px;
+        border-color: transparent transparent #bdbdbd transparent;
+        position: absolute;
+        right: 6px;
+        top: -11px;
+        z-index: 0;
+    }
+
+    .ALSM_In:after {
+        top: -10px;
+        border-color: transparent transparent #ddd transparent;
+        z-index: 1;
+    }
+
+.ALSM_InBox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 126px;
+    text-align: center;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    display: none;
+}
+
+    .ALSM_InBox a {
+        display: block;
+        color: #000;
+        text-decoration: none;
+        padding: 0 15px;
+        background-color: #ddd;
+        border-bottom: 1px solid #ccc;
+    }
+
+        .ALSM_InBox a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .ALSM_InBox a.on {
+            background-color: #f0f0f0;
+            color: #006ede;
+            font-weight: bold;
+        }
+
+/*聯盟捲軸-熱門排序*/
+.alliance_scroll {
+    /*width: 100%;*/
+    max-height: 320px !important;
+    min-height: 125px;
+    margin-top: 15px;
+    margin-right: -2px;
+}
+
+    .alliance_scroll.scrollbar-macosx > .scroll-element div.scroll-bar {
+        background-color: #666;
+    }
+
+    .alliance_scroll.scrollbar-macosx > .scroll-element div {
+        left: -1px;
+    }
+
+    .alliance_scroll li {
+        font-size: 13px;
+        float: left;
+        width: calc((100% - 6px)/3);
+        height: 30px;
+        cursor: pointer;
+        border: 1px solid #bebebe;
+        box-sizing: border-box;
+        margin: 0 2px 2px 0;
+        line-height: 28px;
+        position: relative;
+        padding-left: 32px;
+        text-align: left;
+    }
+
+        .alliance_scroll li:hover {
+            background-color: rgba(255,255,255,0.3);
+        }
+
+    .alliance_scroll .icon_AL_checkbox {
+        border: 1px solid #bbb;
+        left: 2px;
+    }
+
+    .alliance_scroll li.on .icon_AL_checkbox {
+        background: #fff url(../images/icon_check_blue.svg) no-repeat center;
+        background-size: 14px;
+    }
+
+.AL_nameT {
+    max-width: 100%;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.AL_nameShow {
+    text-align: left;
+    position: absolute;
+    background-color: #f0f0f0;
+    color: #000;
+    border-radius: 3px;
+    line-height: 16px;
+    bottom: 28px;
+    left: 30px;
+    right: 2px;
+    padding: 3px 5px;
+    max-width: 400px;
+    z-index: 1;
+    box-shadow: rgba(0,0,0,0.5) 0px 0px 10px;
+    word-break: break-all;
+    word-wrap: break-word;
+    display: none;
+    pointer-events: none;
+}
+
+    .AL_nameShow:before {
+        content: '';
+        border-style: solid;
+        border-color: #f0f0f0 transparent transparent transparent;
+        border-width: 6px 5px 0 5px;
+        position: absolute;
+        left: 8px;
+        bottom: -5px;
+    }
+
+/*針對chrome修正-強制斷行*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .AL_nameShow {
+        word-break: break-word;
+    }
+}
+
+.alliance_scroll li:nth-child(-n+6) .AL_nameShow,
+.alliance_scroll li.boxDown .AL_nameShow {
+    top: 28px;
+    bottom: auto;
+}
+
+    .alliance_scroll li:nth-child(-n+6) .AL_nameShow:before,
+    .alliance_scroll li.boxDown .AL_nameShow:before {
+        border-color: transparent transparent #f0f0f0 transparent;
+        border-width: 0 5px 6px 5px;
+        top: -5px;
+        bottom: auto;
+    }
+
+.alliance_btn {
+    font-size: 0;
+    text-align: center;
+    padding: 20px 0 5px;
+    display: table;
+    width: 100%;
+}
+
+.btn_AL_clear, .btn_AL_confirm {
+    font-weight: bold;
+    display: inline-block;
+    width: 160px;
+    height: 40px;
+    border-radius: 3px;
+    color: #fff;
+    margin: 0 5px;
+}
+
+.btn_AL_clear {
+    background-color: #929292;
+}
+
+    .btn_AL_clear:hover {
+        background-color: #aaa;
+    }
+
+.btn_AL_confirm {
+    background-color: #2f8be6;
+}
+
+    .btn_AL_confirm:hover {
+        background-color: #3a9dff;
+    }
+
+/*聯盟捲軸-球類分類(繼承+微調)*/
+.allianceFAV {
+}
+
+    .allianceFAV .alliance_scroll li {
+        border: 0;
+    }
+
+    .allianceFAV .btn_AL_showSel {
+        padding-right: 0;
+    }
+
+    .allianceFAV .icon_AL_checkbox {
+        border: 0;
+        left: 4px;
+    }
+
+li[class*="AL_li_"] {
+    width: calc(100% - 2px);
+    color: #fff;
+}
+
+    li[class*="AL_li_"] .icon_AL_checkbox {
+        left: 4px;
+    }
+
+li.AL_li_olympic {
+    background-color: #bb3b3c;
+}
+
+    li.AL_li_olympic:hover {
+        background-color: #ce4142;
+    }
+
+li.AL_li_worldCup {
+    background-color: #3ca925;
+}
+
+    li.AL_li_worldCup:hover {
+        background-color: #42ba29;
+    }
+
+li.AL_li_UEFA {
+    background-color: #568ec7;
+}
+
+    li.AL_li_UEFA:hover {
+        background-color: #5f9cdb;
+    }
+
+li.AL_li_fives {
+    background-color: #dc5e5e;
+}
+
+    li.AL_li_fives:hover {
+        background-color: #f26767;
+    }
+
+li.AL_li_champion {
+    background-color: #b1ae1b;
+}
+
+    li.AL_li_champion:hover {
+        background-color: #c3bf1e;
+    }
+
+li.AL_li_soccer {
+    background-color: #208750;
+}
+
+    li.AL_li_soccer:hover {
+        background-color: #239458;
+    }
+
+li.AL_li_basketball {
+    background-color: #d37245;
+}
+
+    li.AL_li_basketball:hover {
+        background-color: #e87d4c;
+    }
+
+li.AL_li_baseball {
+    background-color: #bb9b50;
+}
+
+    li.AL_li_baseball:hover {
+        background-color: #ceaa58;
+    }
+
+li.AL_li_tennis {
+    background-color: #7d9364;
+}
+
+    li.AL_li_tennis:hover {
+        background-color: #89a26e;
+    }
+
+li.AL_li_hockey {
+    background-color: #75aaa8;
+}
+
+    li.AL_li_hockey:hover {
+        background-color: #81bbb9;
+    }
+
+li.AL_li_football {
+    background-color: #b25332;
+}
+
+    li.AL_li_football:hover {
+        background-color: #c45b37;
+    }
+
+li.AL_li_volleyball {
+    background-color: #e0bf36;
+}
+
+    li.AL_li_volleyball:hover {
+        background-color: #f6d23b;
+    }
+
+li.AL_li_badminton {
+    background-color: #dc7d90;
+}
+
+    li.AL_li_badminton:hover {
+        background-color: #f2899e;
+    }
+
+li.AL_li_handball {
+    background-color: #ad9e60;
+}
+
+    li.AL_li_handball:hover {
+        background-color: #beae6a;
+    }
+
+li.AL_li_waterpolo {
+    background-color: #489ab7;
+}
+
+    li.AL_li_waterpolo:hover {
+        background-color: #4fa9c9;
+    }
+
+li.AL_li_pingpong {
+    background-color: #c6914b;
+}
+
+    li.AL_li_pingpong:hover {
+        background-color: #da9f52;
+    }
+
+li.AL_li_billiard {
+    background-color: #a370ab;
+}
+
+    li.AL_li_billiard:hover {
+        background-color: #b37bbc;
+    }
+
+li.AL_li_pcgame {
+    background-color: #7082b1;
+}
+
+    li.AL_li_pcgame:hover {
+        background-color: #7b8fc3;
+    }
+
+li.AL_li_boxing {
+    background-color: #b93939;
+}
+
+    li.AL_li_boxing:hover {
+        background-color: #cb3f3f;
+    }
+
+li.AL_li_other {
+    background-color: #6e889c;
+}
+
+    li.AL_li_other:hover {
+        background-color: #7996ac;
+    }
+
+/*聯盟捲軸-字母排序(以"熱門排序"原CSS微調)*/
+.alliance_A-Z {
+    width: 100%;
+    max-width: 700px;
+    min-width: 514px;
+}
+
+    .alliance_A-Z .alliance_In {
+        height: 460px;
+    }
+
+    .alliance_A-Z .alliance_scroll {
+        width: 95%;
+        height: 320px;
+    }
+
+        .alliance_A-Z .alliance_scroll li {
+            width: 100%;
+            text-align: left;
+        }
+
+            .alliance_A-Z .alliance_scroll li:nth-child(n+3):nth-child(-n+6) .AL_nameShow {
+                top: auto;
+                bottom: 28px;
+            }
+
+                .alliance_A-Z .alliance_scroll li:nth-child(n+3):nth-child(-n+6) .AL_nameShow:before {
+                    border-color: #f0f0f0 transparent transparent transparent;
+                    border-width: 6px 5px 0 5px;
+                    top: auto;
+                    bottom: -5px;
+                }
+
+        .alliance_A-Z .alliance_scroll .AL_nameShow:before {
+            left: 16px;
+        }
+
+.btn_A-Z {
+    position: absolute;
+    top: 60px;
+    right: 28px;
+    table-layout: fixed;
+    height: 320px;
+    border-collapse: separate;
+    border-spacing: 0;
+    box-sizing: border-box;
+    width: 20px;
+    display: none;
+}
+
+    .btn_A-Z td {
+        padding: 0;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+    }
+
+        .btn_A-Z td span {
+            width: 20px;
+            height: 20px;
+            line-height: 21px;
+            border-radius: 50%;
+            padding-left: 1px;
+            box-sizing: border-box;
+            display: block;
+        }
+
+        .btn_A-Z td.on span {
+            color: #fff;
+            background-color: #006ede;
+        }
+
+        .btn_A-Z td:not(.on):hover span {
+            background-color: #bbb;
+        }
+
+@media (max-width:605px) {
+    .alliance_A-Z .btn_AL_allSel,
+    .alliance_A-Z .btn_AL_showSel {
+        padding: 0 20px 0 30px;
+    }
+
+    .alliance_A-Z .btn_AL_setMenu {
+        padding-left: 20px;
+    }
+}
+
+@media (max-width:540px) {
+    .alliance_A-Z .btn_AL_allSel,
+    .alliance_A-Z .btn_AL_showSel {
+        padding: 0 15px 0 25px;
+    }
+
+    .alliance_A-Z .btn_AL_setMenu {
+        padding-left: 15px;
+    }
+}
+/*----------------------------彈跳視窗-共用抬頭(投注記錄)----------------------------*/
+/*平板opera瀏覽器會有問題，需再包一層*/
+.openWindows {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.openWindows_scroll {
+    max-width: 1150px;
+    min-width: 980px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow-y: auto;
+    background-color: #d8d8d8;
+}
+
+    .openWindows_scroll.scrollbar-macosx > .scroll-element div.scroll-bar {
+        background-color: #666;
+    }
+
+    .openWindows_scroll.scroll-content.scroll-scrolly_visible:after {
+        display: none;
+    }
+
+.openWindows_T {
+    background-color: #3fa381;
+    position: relative;
+    height: 70px;
+    width: 100%;
+}
+
+.openWindows_set {
+    background-color: #085239;
+    color: #fff;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px 0 0;
+    box-sizing: border-box;
+}
+
+    .openWindows_set > a {
+        color: #fff;
+        padding: 0 15px;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+        .openWindows_set > a:first-child {
+            padding-left: 20px;
+        }
+
+        .openWindows_set > a:hover {
+            color: #fff;
+        }
+
+        .openWindows_set > a.on {
+            color: #ffe900;
+        }
+
+    .openWindows_set.RT_holdTop {
+        z-index: 6;
+    }
+
+.OW_T_logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    margin: auto 0;
+    height: 40px;
+    font-size: 0;
+}
+
+    /*.OW_T_logo img {
+        width: auto;
+        height: 100%;
+        display: inline-block;
+    }*/
+
+    .OW_T_logo h3 {
+        color: #81f0ca;
+        font-size: 21px;
+        display: inline-block;
+        vertical-align: bottom;
+        margin: 0;
+        line-height: 40px;
+    }
+
+/*.OW_T_logo img + .OW_T_logo h3 {
+        margin-left: 8px;
+    }*/
+
+/*彈跳視窗-主分類nav*/
+.OW_T_nav {
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+}
+
+    .OW_T_nav a {
+        color: #fff;
+        padding: 0 15px;
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+        .OW_T_nav a:after {
+            content: '';
+            height: 3px;
+            background-color: transparent;
+            position: absolute;
+            bottom: 20px;
+            left: 30px;
+            right: 30px;
+            border-radius: 10px;
+            -webkit-transition: all ease 0.2s;
+            transition: all ease 0.2s;
+        }
+
+        .OW_T_nav a:hover:after, .OW_T_nav a.on:after {
+            background-color: #999;
+            left: 10px;
+            right: 10px;
+        }
+
+.OW_setR {
+    float: right;
+    height: 100%;
+}
+
+/*checkbox*/
+.btn_OW_checkbox {
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 44px !important;
+    position: relative;
+}
+
+    .btn_OW_checkbox.on {
+        color: #fff;
+    }
+
+.icon_OW_checkbox {
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid #767676;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    margin: auto 0;
+}
+
+.btn_OW_checkbox.on .icon_OW_checkbox {
+    background: url(../images/icon_check.svg) no-repeat center;
+    background-size: 14px;
+}
+
+/*下拉選單_基本款*/
+.btn_OW_setMenu {
+    min-width: 76px;
+    padding: 0 30px 0 10px;
+    cursor: pointer;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    border: 1px solid #767676;
+    border-radius: 3px;
+    height: 26px;
+    line-height: 24px;
+    box-sizing: border-box;
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: top;
+    z-index: 1;
+}
+
+    .btn_OW_setMenu.on {
+        color: #fff;
+    }
+
+    .btn_OW_setMenu:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 5px 0 5px;
+        border-color: #fff transparent transparent transparent;
+        top: 0;
+        bottom: 0;
+        right: 10px;
+        margin: auto 0;
+        opacity: 0.5;
+    }
+
+    .btn_OW_setMenu.on:after {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+.OSM_T {
+    color: #fff;
+}
+
+.OSM_In {
+    position: absolute;
+    bottom: -5px;
+    right: -1px;
+    z-index: 1;
+    display: none;
+}
+
+    .OSM_In:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 9px 11px 9px;
+        border-color: transparent transparent #ddd transparent;
+        position: absolute;
+        right: 7px;
+        top: -10px;
+        z-index: 1;
+    }
+
+.OSM_InBox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 76px;
+    text-align: left;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    display: none;
+}
+
+    .OSM_InBox a {
+        display: block;
+        color: #000;
+        text-decoration: none;
+        padding: 0 15px;
+        background-color: #ddd;
+        border-bottom: 1px solid #ccc;
+        white-space: nowrap;
+    }
+
+        .OSM_InBox a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .OSM_InBox a.on {
+            background-color: #f0f0f0;
+            color: #006ede;
+            font-weight: bold;
+        }
+
+.btn_OW_button, .btn_OW_back {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    margin-left: 10px;
+    border-radius: 3px;
+    padding: 0 12px;
+    height: 26px;
+    background-color: #336699;
+    color: #fff;
+    vertical-align: top;
+    min-width: 55px;
+}
+
+    .btn_OW_button:hover {
+        background-color: #4782bd;
+    }
+
+.btn_OW_back {
+    background: #ddd url(../images/btn_back.svg) no-repeat 5px 50%;
+    background-size: 13px;
+    color: #000;
+    padding-left: 23px;
+}
+
+    .btn_OW_back:hover {
+        background-color: #fff;
+    }
+
+.btn_OW_goTop {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    right: 15px;
+    bottom: 25px;
+    cursor: pointer;
+    opacity: 0.5;
+    z-index: 6;
+    display: none;
+}
+
+    .btn_OW_goTop.hover, .btn_OW_goTop:active {
+        opacity: 1;
+    }
+
+    .btn_OW_goTop:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url(../images/btn_goTop.svg) no-repeat center top;
+        background-size: 100%;
+    }
+
+@media (min-width:1005px) {
+    .btn_OW_goTop {
+        position: fixed;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        transform: translateX(545px);
+        -webkit-transform: translateX(545px);
+    }
+}
+
+/*快速投注-彈跳視窗*/
+.popUp_FastBet {
+    position: absolute;
+    width: 270px;
+    background-color: #f0f0f0;
+    color: #000;
+    box-shadow: rgba(0,0,0,0.3) 0px 0px 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 31;
+    display: none;
+}
+
+    .popUp_FastBet:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 9px 11px 9px;
+        border-color: transparent transparent #f0f0f0 transparent;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: -10px;
+        margin: 0 auto;
+        z-index: 1;
+    }
+
+    .popUp_FastBet.bottom:before {
+        border-width: 11px 9px 0 9px;
+        border-color: #f0f0f0 transparent transparent transparent;
+        right: 0;
+        left: 0;
+        top: auto;
+        bottom: -10px;
+    }
+
+.btn_closeFB {
+    background: url(../images/btn_close.svg) no-repeat center;
+    background-size: 13px;
+    width: 33px;
+    height: 38px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+    .btn_closeFB:hover {
+        opacity: 1;
+    }
+
+.popFB_info {
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    padding: 0 23px 8px 0;
+    margin: -1px 0 10px;
+    line-height: 19px;
+}
+
+.popFB_info_T {
+    color: #005aff;
+}
+
+.popFB_info_bet {
+    margin-top: 5px;
+    color: #666;
+}
+
+.popFB_money {
+    float: left;
+    width: 55%;
+    height: 35px;
+    line-height: 35px;
+}
+
+    .popFB_money span {
+        font-size: 19px;
+        font-weight: bold;
+        vertical-align: middle;
+        margin-top: -2px;
+        display: inline-block;
+    }
+
+.btn_popFB_confirm, .btn_popFB_loading, .btn_popFB_change, .btn_popFB_confirmOK, .btn_popFB_close {
+    border-radius: 3px;
+    height: 35px;
+    line-height: 35px;
+    width: 45%;
+    float: right;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn_popFB_confirm {
+    background-color: #ffdf1b;
+}
+
+    .btn_popFB_confirm:hover {
+        background-color: #ffff1b;
+    }
+
+.btn_popFB_change {
+    background-color: #41b590;
+    color: #fff;
+}
+
+    .btn_popFB_change:hover {
+        background-color: #44d2a5;
+    }
+
+.btn_popFB_confirmOK, .btn_popFB_close {
+    background-color: #3a86de;
+    color: #fff;
+}
+
+    .btn_popFB_confirmOK:hover, .btn_popFB_close:hover {
+        background-color: #3a9dff;
+    }
+
+.btn_popFB_loading {
+    background-color: #d83838;
+    color: #fff;
+    text-align: center;
+}
+
+    .btn_popFB_loading:after {
+        content: '';
+        background: url(../images/icon_loading2.png) no-repeat center;
+        background-size: 100%;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        margin: -2px 0 0 8px;
+        animation: FB_loading 0.5s linear infinite;
+        -webkit-animation: FB_loading 0.5s linear infinite;
+    }
+
+/*針對IE修正*/
+@media screen and (min-width:0\0) {
+    .btn_popFB_loading:after {
+        margin: -4px 0 0 8px;
+    }
+}
+
+@keyframes FB_loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes FB_loading {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.popFB_prompt {
+    color: #f00;
+    display: table;
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+    font-size: 13px;
+    background-color: #e1e1e1;
+    text-align: center;
+    padding: 5px;
+    box-sizing: border-box;
+    display: none;
+}
+
+/*收藏成功-提示氣泡*/
+.popFavMsg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0,0.8);
+    min-width: 250px;
+    max-width: 80%;
+    border-radius: 100px;
+    margin-right: -30%;
+    z-index: 5;
+    display: none;
+}
+
+.popFavMsg_In {
+    display: table;
+    margin: 0 auto;
+    color: #fff;
+    padding: 10px 25px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/*盤口教程*/
+/*2欄*/
+.tutorials {
+    position: relative;
+    width: 830px;
+    margin: 0 auto;
+    box-shadow: rgba(0 0 0 / 30%) 0px 0px 10px;
+    color: #000;
+    display: none;
+}
+
+.tutorials_T {
+    background-color: #336699;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.btn_tutorials_close {
+    position: absolute;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    background: url(../images/btn_close_w.svg) no-repeat center;
+    background-size: 13px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+    .btn_tutorials_close:hover {
+        opacity: 1;
+    }
+
+[class*="tutorials_nav"] {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.tutorials_nav {
+    align-items: center;
+    height: 50px;
+    background-color: #404040;
+    color: #bbb;
+    font-size: 15px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+    .tutorials_nav li {
+        cursor: pointer;
+        padding: 0 20px;
+    }
+
+        .tutorials_nav li.on,
+        .tutorials_nav li:hover,
+        .tutorials_nav li:active {
+            color: #ffea01;
+        }
+
+.tutorialsIn {
+    display: flex;
+    flex-direction: column;
+    height: 630px;
+    padding-bottom: 18px;
+    background-color: #d8d8d8;
+    box-sizing: border-box;
+    padding: 10px 0 18px 0;
+}
+
+    .tutorialsIn .btn_OW_goTop {
+        position: absolute;
+        left: initial;
+        right: 12px;
+        bottom: 18px;
+        margin: 0;
+        transform: none;
+        -webkit-transform: none;
+    }
+
+.btn_OW_goTop:before {
+    top: 0;
+    left: 0;
+}
+
+.tutorialsIn_nav {
+    flex: 0 0 auto;
+}
+
+    .tutorialsIn_nav ul {
+        padding-bottom: 10px;
+        font-size: 15px;
+        display: none;
+    }
+
+        .tutorialsIn_nav ul.on {
+            display: flex;
+        }
+
+    .tutorialsIn_nav li {
+        background-color: #fff;
+        padding: 0 26px;
+        height: 32px;
+        line-height: 32px;
+        margin-right: 16px;
+        border-radius: 15px;
+        color: #5993cc;
+        cursor: pointer;
+    }
+
+        .tutorialsIn_nav li:hover,
+        .tutorialsIn_nav li.on {
+            color: #fff;
+            background-color: #5993cc;
+        }
+
+        .tutorialsIn_nav li:last-child {
+            margin-right: 0;
+        }
+
+.tutorials_scroll {
+    width: 100%;
+    overflow-y: scroll;
+    flex: 1 1 auto;
+}
+
+    .tutorials_scroll.scrollbar-macosx > .scroll-element div.scroll-bar {
+        background-color: #666;
+    }
+
+    .tutorials_scroll.scroll-content.scroll-scrolly_visible:after {
+        display: none;
+    }
+
+.tutorials_main {
+    display: none;
+}
+
+    .tutorials_main.on {
+        display: block;
+    }
+
+.tutorials_list {
+    padding: 20px 18px 0;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+    .tutorials_list:first-child {
+        padding-top: 5px;
+    }
+
+    .tutorials_list:last-child {
+        margin-bottom: 20px;
+    }
+
+.tutorials_listT {
+    color: #404040;
+    font-size: 16px;
+    line-height: 1.5;
+    width: 100%;
+    min-height: 30px;
+    margin: 0;
+}
+
+.tutorials_card {
+    padding: 10px 10px 0;
+    width: 0;
+    flex-grow: 1;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+}
+
+    .tutorials_card + .tutorials_card {
+        margin-left: 8px;
+    }
+
+.tutorials_top, .mid_detal {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.mid_detal {
+    flex-grow: 1;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.tutorials_bottom {
+    position: relative;
+    margin: 10px 0 0;
+    padding: 8px 0;
+    color: #888888;
+    border-top: 1px solid rgba(0,0,0,.1);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.L_team {
+    order: 0;
+}
+
+.mid_detal {
+    order: 1;
+}
+
+.R_team {
+    order: 2;
+}
+
+.tutorials [class*="_team"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .tutorials [class*="_team"] .team_hard {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 10px;
+        /*修正圖片模糊問題*/
+        image-rendering: -moz-crisp-edges; /* Firefox */
+        image-rendering: -o-crisp-edges; /* Opera */
+        image-rendering: -webkit-optimize-contrast; /* Webkit*/
+        image-rendering: optimizeQuality;
+        -ms-interpolation-mode: nearest-neighbor; /* IE*/
+    }
+
+.L_team .team_hard {
+    background: url(../images/icon_tutorials_home.png) no-repeat;
+    background-size: 100%;
+}
+
+.C_team .team_hard {
+    background: url(../images/icon_tutorials_home.png) no-repeat,#fff;
+    background-size: 100%;
+    filter: grayscale(1) opacity(0.8);
+    -webkit-filter: grayscale(1) opacity(0.8);
+}
+
+.R_team .team_hard {
+    background: url(../images/icon_tutorials_away.png) no-repeat;
+    background-size: 100%;
+}
+
+.team_bottom {
+    box-sizing: border-box;
+    width: 100px;
+    font-size: 14px;
+    min-height: 30px;
+    line-height: 100%;
+    padding: 0 14px;
+    color: #fff;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.L_team .team_bottom {
+    background-color: #03a7ff;
+}
+
+.C_team .team_bottom {
+    background-color: #82ab7f;
+}
+
+.R_team .team_bottom {
+    background-color: #ff5353;
+}
+
+.tutorials [class*="_point"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.mid_point {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    font-family: Arial;
+}
+
+    .mid_point span {
+        font-size: 14px;
+        color: #888;
+        font-weight: normal;
+    }
+
+.result {
+    width: 45px;
+    height: 45px;
+    box-sizing: border-box;
+    font-size: 21px;
+    font-weight: bold;
+    border-radius: 100%;
+    color: #aaa;
+    border: 1px solid #aaa;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .result.num {
+        font-size: 12px;
+        letter-spacing: -0.8px;
+        font-family: Arial;
+    }
+
+    .result.win {
+        color: #05931d;
+        border-color: #05931d;
+    }
+
+    .result.lose {
+        color: #ff0000;
+        border-color: #ff0000;
+    }
+
+.sub_point {
+    font-size: 13px;
+    font-family: Arial;
+    font-weight: bold;
+    white-space: nowrap;
+    margin: 0 -5px;
+}
+
+/*獨贏*/
+.alone {
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+    .alone .tutorials_card {
+        width: 100%;
+    }
+
+        .alone .tutorials_card + .tutorials_card {
+            margin: 8px 0 0 0;
+        }
+
+    .alone .tutorials_top {
+        align-items: center;
+    }
+
+    .alone [class*="_team"] {
+        position: relative;
+        order: initial;
+        flex: 1 auto;
+    }
+
+    .alone .mid_detal {
+        justify-content: center;
+        order: initial;
+        flex: 1 auto;
+        padding: 0;
+    }
+
+    .alone .result {
+        position: absolute;
+        left: calc(50% + 40px );
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+/*3欄*/
+.tutorials .three .team_hard {
+    width: 57px;
+    height: 57px;
+}
+
+.three .team_bottom {
+    width: 80px;
+}
+
+.three .mid_point {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 26px;
+    letter-spacing: 3px;
+    padding-left: 4px;
+}
+
+.three .mid_detal {
+    margin: 0 -10px;
+}
+
+.three .R_point,
+.three .L_point {
+    width: 48%;
+}
+
+.three .result {
+    width: 30px;
+    height: 30px;
+}
+
+    .three .result:not(.num) {
+        font-size: 15px;
+    }
+
+.three .sub_point {
+    letter-spacing: -1px;
+}
+
+/*模擬投注*/
+.demo .tutorials_top [class*="_team"] {
+    flex-direction: row;
+    width: calc(50% - 50px);
+    flex: 1 auto;
+}
+
+.demo .tutorials_top .L_team {
+    justify-content: right;
+}
+
+.demo .tutorials_top .R_team {
+    justify-content: left;
+}
+
+.demo .mid_detal {
+    width: 100px;
+    flex: 0 auto;
+    padding-bottom: 0;
+    justify-content: center;
+}
+
+.demo .tutorials_top .team_hard {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0;
+    flex: 0 0 auto;
+}
+
+.team_name {
+    padding: 0 12px;
+    font-size: 16px;
+}
+
+.demo .tutorials_top .L_team {
+    flex-direction: row-reverse;
+}
+
+.tutorials_mid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+    .tutorials_mid [class*="_team"] {
+        flex-direction: row;
+        justify-content: space-between;
+        width: calc(50% - 50px);
+        flex: 1 auto;
+    }
+
+    .tutorials_mid .L_team {
+        margin-right: 50px;
+    }
+
+    .tutorials_mid .R_team {
+        margin-left: 50px;
+    }
+
+    .tutorials_mid .L_team .team_hard {
+        margin-right: 5px;
+    }
+
+    .tutorials_mid .R_team .team_hard {
+        order: 1;
+        margin-left: 5px;
+    }
+
+.demo .tutorials_mid .team_hard {
+    width: 40px;
+    height: 40px;
+    margin-block: 0;
+}
+
+.team_list {
+    display: flex;
+    justify-content: center;
+    flex: 1 auto;
+}
+
+    .team_list li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1 50px;
+        max-width: 100px;
+        height: 50px;
+        font-size: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .team_list li + li {
+            margin-left: 4px;
+        }
+
+    .team_list.team_list li:hover,
+    .team_list.team_list li:active {
+        background-color: #b0d8ff;
+    }
+
+    .team_list.team_list li.on {
+        border-color: #fff;
+        background-color: #2f8be6;
+        color: #fff;
+    }
+
+    .team_list span {
+        color: #777;
+        font-size: 14px;
+    }
+
+    .team_list li.on span {
+        color: #fff;
+    }
+
+    .team_list div {
+        font-weight: bold;
+        margin: 2px 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .team_list div.up {
+            color: #ff3b3b;
+        }
+
+        .team_list div.down {
+            color: #25a13a;
+        }
+
+            .team_list div.up:after,
+            .team_list div.down:after {
+                content: '';
+                display: inline-block;
+                width: 0;
+                height: 0;
+                margin: 0 -11px 0 5px;
+                border-style: solid;
+            }
+
+        .team_list div.up:after {
+            border-width: 0 3px 5px 3px;
+            border-color: transparent transparent #ff3b3b transparent;
+        }
+
+        .team_list div.down:after {
+            border-width: 5px 3px 0 3px;
+            border-color: #25a13a transparent transparent transparent;
+        }
+
+    .team_list li.on div.down {
+        color: #07fe0b;
+    }
+
+    .team_list li.on div.up {
+        color: #ffadad;
+    }
+
+    .team_list li.on div.down:after {
+        border-color: #07fe0b transparent transparent transparent;
+    }
+
+    .team_list li.on div.up:after {
+        border-color: transparent transparent #ffadad transparent;
+    }
+
+.demo .tutorials_bottom {
+    border: 0;
+    background-color: #eff6ff;
+    border-radius: 10px;
+    margin: 15px 0 10px;
+    padding: 15px 50px 15px 20px;
+    text-align: left;
+    color: #000;
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: normal;
+    display: none;
+}
+
+    .demo .tutorials_bottom.on {
+        display: block;
+    }
+
+    .demo .tutorials_bottom b {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+.demo .result {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    text-align: center;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+}
+
+    .demo .result:not(.num) {
+        font-size: 18px;
+    }
+
+    .demo .result.num {
+        font-size: 17px;
+    }
+
+/*滾球頁面配色*/
+/*main.css*/
+.rollLive .SM_listIn li.on,
+.rollLive .SM_listT_counter,
+/*betList.css*/
+.rollLive .btn_GLOdds,
+/*betSubList.css*/
+.rollLive .GSOdds_B,
+.rollLive .GSOdds_R {
+    color: #ffdf1b;
+}
+
+.rollLive .sportMenu.ZoomOut .SM_listIn li.on {
+    color: #ff8800;
+}
+
+/*賠率變化*/
+.oddsText {
+    color: #dab1ff !important;
+}
+
+.btn_GLOdds.on .oddsText,
+.btn_GSOdds.on .oddsText {
+    color: #bb6fff !important;
+}
+
+.oddsUp {
+    color: #fe8989 !important;
+}
+
+.btn_GLOdds.on .oddsUp, .btn_GLOdds.on.oddsUp,
+.btn_GSOdds.on .oddsUp, .btn_GSOdds.on.oddsUp {
+    color: #f00 !important;
+}
+
+.oddsDown {
+    color: #07fe0b !important;
+}
+
+.btn_GLOdds.on .oddsDown, .btn_GLOdds.on.oddsDown,
+.btn_GSOdds.on .oddsDown, .btn_GSOdds.on.oddsDown {
+    color: #00cc00 !important;
+}

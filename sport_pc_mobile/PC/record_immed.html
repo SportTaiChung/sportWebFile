@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>UP-Sport</title>
+    <link href="styles/main.css" rel="stylesheet" />
+    <link href="styles/record.css" rel="stylesheet" />
+    <!--捲軸-->
+    <link href="styles/jquery.scrollbar.css" rel="stylesheet" />
+    <!--色系-->
+    <link href="bgColor_w/styles/bgColor_w.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="openWindows">
+        <div class="openWindows_scroll scrollbar-macosx">
+            <div class="openWindows_T">
+                <div class="OW_T_logo">
+                    <h3>投注紀錄</h3>
+                </div>
+            </div>
+            <div class="openWindows_set RT_holdTop">
+                <a class="on" href="record_immed.html">未結算注單</a>
+                <a href="record_history.html">已結算注單</a>
+                <div class="OW_setR">
+                    <div class="btn_OW_checkbox">
+                        <div class="icon_OW_checkbox"></div>只顯數可兌現注單
+                    </div>
+                    <input type="button" value="更新" class="btn_OW_button" />
+                </div>
+            </div>
+            <table class="recordTable RT_holdTop">
+                <tr>
+                    <th class="RT_info">注單訊息</th>
+                    <th class="RT_name">投注內容</th>
+                    <th class="RT_bet">投注額</th>
+                    <th class="RT_w110">投注後餘額</th>
+                    <th class="RT_w110">最高返還</th>
+                    <th class="RT_cash">兌現</th>
+                </tr>
+            </table>
+            <table class="recordTable">
+                <tr>
+                    <td class="RT_info">
+                        <div class="RT_row">下注：<span class="t_size12">03-03 17:52</span></div>
+                        <div class="RT_row">比賽：<span class="t_size12">03-03 04:26</span></div>
+                        <div class="RT_row">單號：<span class="t_size12">12345678900000</span></div>
+                        <div class="RT_row">賠率：<span class="t_size12">含本金</span></div>
+                    </td>
+                    <td class="RT_name">
+                        <div class="RT_row">NBA美國職業籃球 [全場]</div>
+                        <div class="RT_row">費城76人<span class="t_orange">(主)</span><span class="t_gray"> VS </span>波士頓賽爾提克</div>
+                        <div class="RT_row">
+                            <div class="RT_rowT"><span class="t_gray">投注：</span></div>
+                            <div class="RT_rowIn"><span class="t_blue">波士頓賽爾提克</span> <div class="t_inlineBox">@ <span class="t_red">0.980</span></div></div>
+                        </div>
+                        <div class="icon_RT_ok">已確認</div>
+                    </td>
+                    <td class="RT_bet">000000000</td>
+                    <td class="RT_w110">123456789.99</td>
+                    <td class="RT_w110">000000000.00</td>
+                    <td class="RT_cash">
+                        <!--投注记录-兌現按鈕步驟-->
+                        <spna class="RT_cashText">84.60</spna>
+                        <!--Step1-->
+                        <button class="btn_RT_cash">兌現</button>
+                        
+						<div class="RT_cashBox" style=" display:none">
+                            <button class="btn_RT_cashCancel">取消</button>
+                            <button class="btn_RT_cashConfirm">確認</button>
+                        </div>
+						<div class="RT_cashLoad" style=" display:none">等待中...</div>
+						<div class="RT_cashOk" style=" display:none">兌現成功</div>
+						<div class="RT_cashNo" style=" display:none">兌現失敗</div>
+                        <button class="btn_RT_cashBack" style=" display:none">返回</button>
+						<div class="RT_cashStop" style=" display:none">無法兌現</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="RT_info">
+                        <div class="RT_row">下注：<span class="t_size12">03-03 17:52</span></div>
+                        <div class="RT_row">比賽：<span class="t_size12">03-03 04:26</span></div>
+                        <div class="RT_row">單號：<span class="t_size12">12345678900000</span></div>
+                        <div class="RT_row">賠率：<span class="t_size12">含本金</span></div>
+                    </td>
+                    <td class="RT_name">
+                        <div class="RT_row">NBA美國職業籃球 [全場]</div>
+                        <div class="RT_row">費城76人<span class="t_orange">(主)</span><span class="t_gray"> VS </span>波士頓賽爾提克</div>
+                        <div class="RT_row">
+                            <div class="RT_rowT"><span class="t_gray">投注：</span></div>
+                            <div class="RT_rowIn"><span class="t_blue">波士頓賽爾提克</span> <div class="t_inlineBox">@ <span class="t_red">0.980</span></div></div>
+                        </div>
+                        <div class="btn_RT_i">
+                            <div class="RT_i_T">兌現取消</div>
+                            <div class="RT_i_In">
+                                <div class="RT_i_InBox">比分异动</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="RT_bet">000000000</td>
+                    <td class="RT_w110">000000000.00</td>
+                    <td class="RT_w110">000000000.00</td>
+                     <td class="RT_cash">
+                        <!--投注记录-兌現按鈕步驟-->
+                        <spna class="RT_cashText">20.60</spna>
+                        <!--Step1-->
+                        <button class="btn_RT_cash">兌現</button>
+                        
+						<div class="RT_cashBox" style=" display:none">
+                            <button class="btn_RT_cashCancel">取消</button>
+                            <button class="btn_RT_cashConfirm">確認</button>
+                        </div>
+						<div class="RT_cashLoad" style=" display:none">等待中...</div>
+						<div class="RT_cashOk" style=" display:none">兌現成功</div>
+						<div class="RT_cashNo" style=" display:none">兌現失敗</div>
+                        <button class="btn_RT_cashBack" style=" display:none">返回</button>
+						<div class="RT_cashStop" style=" display:none">無法兌現</div>
+                    </td>
+                </tr>
+                
+                
+                <tr>
+                    <td class="RT_info">
+                        <div class="RT_row">下注：<span class="t_size12">03-03 17:52</span></div>
+                        <div class="RT_row">比賽：<span class="t_size12">03-03 04:26</span></div>
+                        <div class="RT_row">單號：<span class="t_size12">12345678900000</span></div>
+                        <div class="RT_row">賠率：<span class="t_size12">含本金</span></div>
+                    </td>
+                    <td class="RT_name">
+                        <div class="RT_row">NBA美國職業籃球 [全場]</div>
+                        <div class="RT_row">費城76人<span class="t_orange">(主)</span><span class="t_gray"> VS </span>波士頓賽爾提克</div>
+                        <div class="RT_row">
+                            <div class="RT_rowT"><span class="t_gray">投注：</span></div>
+                            <div class="RT_rowIn"><span class="t_blue">波士頓賽爾提克</span> <div class="t_inlineBox">@ <span class="t_red">0.980</span></div></div>
+                        </div>
+                        <div class="btn_RT_wait">
+                            <div class="RT_wait_T">等待中</div>
+                            <div class="RT_wait_In">
+                                <div class="RT_wait_InBox">您的注單正在處理中</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="RT_bet">000000000</td>
+                    <td class="RT_w110">000000000.00</td>
+                    <td class="RT_w110">000000000.00</td>
+                     <td class="RT_cash">
+                        <!--投注记录-兌現按鈕步驟-->
+                        <spna class="RT_cashText">84.60</spna>
+                        <!--Step1-->
+                        <button class="btn_RT_cash">兌現</button>
+                        
+						<div class="RT_cashBox" style=" display:none">
+                            <button class="btn_RT_cashCancel">取消</button>
+                            <button class="btn_RT_cashConfirm">確認</button>
+                        </div>
+						<div class="RT_cashLoad" style=" display:none">等待中...</div>
+						<div class="RT_cashOk" style=" display:none">兌現成功</div>
+						<div class="RT_cashNo" style=" display:none">兌現失敗</div>
+                        <button class="btn_RT_cashBack" style=" display:none">返回</button>
+						<div class="RT_cashStop" style=" display:none">無法兌現</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="RT_info">
+                        <div class="RT_row">下注：<span class="t_size12">03-03 15:08</span></div>
+                        <div class="RT_row">單號：<span class="t_size12">12345678900000</span></div>
+                        <div class="RT_row">賠率：<span class="t_size12">含本金</span></div>
+                        <div class="RT_row">
+                            <div class="RT_rowT">類型：</div>
+                            <div class="RT_rowIn">
+                                過關<br />
+                                <a onclick="OpenPopupCenter('record_complex.html', '_blank', 1150, 650);">2串1 x 3</a><br />
+                                <span class="t_red">已删除</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="RT_name">
+                        <ul class="RT_rowGroup">
+                            <li class="RT_rowGroup_T">1</li>
+                            <li>
+                                <div class="RT_row">NBA美國職業籃球</div>
+                                <div class="RT_row">費城76人<span class="t_gray"> VS </span>波士頓賽爾提克<span class="t_orange">(主)</span></div>
+                                <div class="RT_row">
+                                    <div class="RT_rowT"><span class="t_gray">投注：</span></div>
+                                    <div class="RT_rowIn"><span class="t_blue">大</span> <div class="t_inlineBox"><span class="t_red">1+25</span> @ <span class="t_red">0.920</span></div></div>
+                                </div>
+                                <div class="RT_row"><span class="t_gray">賽果：</span><span class="t_green">114：112</span></div>
+                                <div class="RT_row"><span class="t_gray">比賽時間：03-03 18:30</span></div>
+                                <div class="icon_RT_ok">已確認</div>
+                            </li>
+                        </ul>
+                        <ul class="RT_rowGroup">
+                            <li class="RT_rowGroup_T">2</li>
+                            <li>
+                                <div class="RT_row">NBA美國職業籃球</div>
+                                 <div class="RT_row">費城76人<span class="t_gray"> VS </span>波士頓賽爾提克<span class="t_orange">(主)</span></div>
+                                <div class="RT_row">
+                                    <div class="RT_rowT"><span class="t_gray">投注：</span></div>
+                                    <div class="RT_rowIn"><span class="t_blue">大</span> <div class="t_inlineBox"><span class="t_red">1-25</span> @ <span class="t_red">0.960</span></div></div>
+                                </div>
+                                <div class="RT_row"><span class="t_gray">賽果：</span><span class="t_green">114：112</span></div>
+                                <div class="RT_row"><span class="t_gray">比賽時間：03-03 18:30</span></div>
+                            </li>
+                        </ul>
+                        <ul class="RT_rowGroup">
+                            <li class="RT_rowGroup_T">3</li>
+                            <li>
+                                <div class="RT_row">NBA美國職業籃球</div>
+                                 <div class="RT_row">費城76人<span class="t_gray"> VS </span>波士頓賽爾提克<span class="t_orange">(主)</span></div>
+                                <div class="RT_row">
+                                    <div class="RT_rowT"><span class="t_gray">投注：</span></div>
+                                    <div class="RT_rowIn"><span class="t_blue">大</span> <div class="t_inlineBox"><span class="t_red">1-25</span> @ <span class="t_red">0.960</span></div></div>
+                                </div>
+                                <div class="RT_row"><span class="t_gray">賽果：</span><span class="t_green">114：112</span></div>
+                                <div class="RT_row"><span class="t_gray">比賽時間：03-03 18:30</span></div>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="RT_bet deleteLine">100.00</td>
+                    <td class="RT_w110 deleteLine">100.00</td>
+                    <td class="RT_w110 deleteLine">98.00</td>
+                    <td class="RT_cash">
+                        <!--投注记录-兌現按鈕步驟-->
+                        <spna class="RT_cashText">84.60</spna>
+                        <!--Step1-->
+                        <button class="btn_RT_cash">兌現</button>
+                        
+						<div class="RT_cashBox" style=" display:none">
+                            <button class="btn_RT_cashCancel">取消</button>
+                            <button class="btn_RT_cashConfirm">確認</button>
+                        </div>
+						<div class="RT_cashLoad" style=" display:none">等待中...</div>
+						<div class="RT_cashOk" style=" display:none">兌現成功</div>
+						<div class="RT_cashNo" style=" display:none">兌現失敗</div>
+                        <button class="btn_RT_cashBack" style=" display:none">返回</button>
+						<div class="RT_cashStop" style=" display:none">無法兌現</div>
+                    </td>
+                </tr>
+                
+                
+                
+            </table>
+            <table class="recordTable RT_total RT_holdBtm">
+                <tr>
+                    <td class="RT_total_T">總合計</td>
+                    <td class="RT_bet">999.00</td>
+                    <td class="RT_w110"></td>
+                    <td class="RT_w110">999.99</td>
+                    <td class="RT_cash"></td>
+                </tr>
+            </table>
+            <!--回頂部-->
+            <div class="btn_OW_goTop"></div>
+        </div>
+    </div>
+    <script src="scripts/jquery1.11.0.min.js"></script>
+    <script src="scripts/ArtDemo.js"></script>
+    <!--捲軸-->
+    <script src="scripts/jquery.scrollbar.js"></script>
+    <!--色系-->
+    <script src="bgColor_w/scripts/bgColor_w.js"></script>
+</body>
+</html>
